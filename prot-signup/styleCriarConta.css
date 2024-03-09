@@ -6,6 +6,7 @@ button {
 
 .header {
     background-color: whitesmoke;
+    border-bottom: 1px solid #5ea5aeab;
     height: 80px;
     color: #fff;
 }
@@ -25,22 +26,19 @@ button {
     bottom: 35px;
     left: 25px;
 }
-
 .logo {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    left: 70px;
+    top: 30px;
+}
+.logoIndex {
     width: 500px;
     height: 500px;
     position: relative;
     top: 30px;
     left: 750px;
-}
-
-.titulo {
-    position: absolute;
-    font-family: "Overpass", sans-serif;
-    color: #0499AE;
-    font-size: 90px;
-    top: 150px;
-    left: 200px; 
 }
 
 .botao {
@@ -59,15 +57,30 @@ button {
     cursor: pointer;
     border-radius: 40px;
 }
-.container {
-    width: 800px; 
+
+.container0 {
+    width: 250px; 
     height: 450px;
-    background-color: whitesmoke;
+    font-family: "Overpass", sans-serif;
+    background-color: #5ea5ae;
     position: relative;
     bottom: 20px;
+    right: 250px;
     margin: 0 auto; 
     padding: 20px; 
-    border-radius: 8px; 
+}
+
+.container1 {
+    width: 450px; 
+    height: 450px;
+    color: #5ea5ae;
+    background-color: whitesmoke;
+    position: relative;
+    border: 1px solid #5ea5ae;
+    bottom: 470px;
+    left: 100px;
+    margin: 0 auto; 
+    padding: 20px; 
 }
 
 .voltar {
@@ -84,4 +97,30 @@ button {
     margin: 5px 25px;
     cursor: pointer;
     border-radius: 40px;
+}
+.btn {
+ color:#0499AE;
+ border: 1px solid #5ea5ae;
+ border-radius: 20px;
+ position: relative;
+ top: 10px;
+ left: 300px;
+}
+.jpuc {
+    color: #fff;
+    font-family: "Overpass", sans-serif;
+    position: relative;
+    top: 50px;
+}
+
+.jpuc-btn{
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 20px;
+    color: #0499AE;
+    padding: 10px 30px;
+    font-family: "Overpass", sans-serif;
+    position: relative;
+    top: 20px;
+    left: 50px;
 }
