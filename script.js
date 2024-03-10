@@ -1,58 +1,59 @@
-function getParameters() {
-
-   var params    = new Array();
-   var paramsRet = new Array();
-   var url = window.location.href;     // Obtém a URL
-   var paramsStart = url.indexOf("?"); // Procura ? na URL
-
-   if(paramsStart != -1){ 
-    // Encontrou ? na URL
-     var paramString = url.substring(paramsStart + 1); // Retorna parte da URL após ?
-     paramString = decodeURIComponent(paramString);    // Decodifica código de URI da URL
-     var params = paramString.split("&"); // Retorna trechos da String separados por &
-     for(var i = 0 ; i < params.length ; i++) {
-       var pairArray = params[i].split("="); // Retorna trechos da String separados por =
-       if(pairArray.length == 2){
-         paramsRet[pairArray[0]] = pairArray[1];
-       }
-
-     }
-     return paramsRet;
-   }
-   return null; // Não encontrou ? na URL
+function verificaElementos(){//funcao que chama as funcoes de verificacao
+    if(verificaCPF() == false){ //verificando CPF
+        return  window.alert("CPF invalido")
 }
+    else{
+        if(verificaTefelfone() == false){ //verificando telefone
+        return  window.alert("Telefone invalido")}
+        else{if(verificaEmail() == false){//verificando email
+            return  window.alert("Email invalido")
 
-function mascaraTelefone(event) {
-  let tecla = event.key;
-  // Regex: 
-  // g = não termina verificação enquanto não houver combinação para todos os elementos da Regex
-  // \D+ = troca qualquer caractere que não seja um dígito por caracter vazio
-  let telefone = event.target.value.replace(/\D+/g, "");
+        }
+        else{
+            window.alert("Conta criada com sucesso")
+        }
 
-  // Regex: i = case insensitive
-  // Se Tecla é número, concatena com telefone
-  if (/^[0-9]$/i.test(tecla)) {
-    telefone = telefone + tecla;
-    let tamanho = telefone.length;
+  
 
-    if (tamanho >= 12) { // Se telefone com 12 ou mais caracteres, não faz mais nada
-      return false;
     }
 
-    if (tamanho > 10) { 
-      telefone = telefone.replace(/^(\d\d)(\d{5})(\d{4}).*/, "($1) $2-$3");
-    } else if (tamanho > 5) { 
-      telefone = telefone.replace(/^(\d\d)(\d{4})(\d{0,4}).*/, "($1) $2-$3");
-    } else if (tamanho > 2) { 
-      telefone = telefone.replace(/^(\d\d)(\d{0,5})/, "($1) $2");
-    } else {
-      telefone = telefone.replace(/^(\d*)/, "($1");
-    }
-
-    event.target.value = telefone;
-  }
-
-  if (!["Backspace", "Delete", "Tab"].includes(tecla)) {
-    return false;
-  }
 }
+}
+
+function verificaEmail(){       
+    var email = document.getElementById("inputemail").value;
+
+   
+    const regexEmail = /^([a-z0-9_.-]{2,})@([a-z0-9]{2,})(\.[a-z]{2,})?$/gi //declarar ragex de email
+    
+    return(regexEmail.test(email));
+
+}
+
+function verificaTefelfone(){
+
+    var telefone = document.getElementById("imputTelefone").value;
+
+    
+    const regexTelefone = /^(\(\d{2}\)?|\d{2,3}?)?(\d{4,5}?\d{4})$/g //declarar ragex de telefone
+
+    return(regexTelefone.test(telefone));
+
+  
+
+   
+}
+
+function verificaCPF(){
+    var CPF = document.getElementById("imputCPF").value;
+
+    
+    const regexCPF = /^(?:(?:(?:\d{3}\.){2}\d{3}|\d{9})[-.]?\d{2}|000\.000\.000-00)$/g //declarar ragex de CPF
+    return(regexCPF.test(CPF));
+    
+    
+
+
+}
+
+    
