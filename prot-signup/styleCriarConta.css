@@ -1,4 +1,6 @@
-
+.error {
+    color: red;
+}
 
 button {
     border-radius: 12px;

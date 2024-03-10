@@ -7,6 +7,7 @@ button {
 .header {
     background-color: whitesmoke;
     height: 80px;
+    border-bottom: 1px solid #5ea5aeab;
     color: #fff;
 }
 
@@ -36,7 +37,6 @@ button {
     width: 500px;
     height: 500px;
     position: relative;
-    top: 30px;
     left: 750px;
 }
 
@@ -54,7 +54,7 @@ button {
     font-family: "Overpass", sans-serif;
     border: none;
     position: relative;
-    top: 300px;
+    top: -200px;
     left: 150px;
     color: #0499AE;
     padding: 15px 40px;
@@ -70,8 +70,8 @@ button {
     font-family: "Overpass", sans-serif;
     border: none;
     position: relative;
-    top: 10px;
-    left: 600px;
+    bottom: 40px;
+    left: 900px;
     color: #0499AE;
     padding: 15px 40px;
     text-align: center;
