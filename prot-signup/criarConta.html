@@ -33,7 +33,6 @@
                 <div class="mb-1">
                     <label for="email" class="form-label"></label>
                     <input type="email" id="email" placeholder="E-mail" class="form-control">
-                    <span id="error" class="error"></span>
                 </div>
                 <div class="row mb-1 g-1">
                     <div class="col-6">
@@ -63,18 +62,6 @@
         </div>
     </div>
     <script>
-        function validateInput() {
-            const emailInput =  document.getElementById('email');
-            const error = document.getElementById('error');
-            const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        
-            if (!regexEmail.test(emailInput.value)) {
-                error.textContent = 'Formato de E-mail inválido.';
-            } else {
-                error.textContent = '';
-                window.location.href = "homePage.html";
-            }
-        }
         function voltarIndex() {
             window.location.href = "index.html";
         }
@@ -84,6 +71,72 @@
         function irParaLogin() {
             window.location.href = "login.html";
         }
+
+        function validateInput() {
+    if (validaCamposPreenchidos() == true) {
+        window.alert("Preencha todos os campos!");
+    } else if (validaEmail() == false) {
+        window.alert("E-mail inválido!");
+    } else if (validaCpf() == false) {
+        window.alert("CPF inválido!");
+    } else if (validaTelefone() == false) {
+        window.alert("Telefone inválido!");
+    } else if (validaCep() == false) {
+        window.alert("Cep inválido!");
+    } else {
+        window.location.href = "homePage.html";
+    }
+}
+
+function validaCamposPreenchidos() {
+    const nomeInput = document.getElementById('nome').value;
+    const emailInput = document.getElementById("email").value;
+    const telInput = document.getElementById("telefone").value;
+    const cpfInput = document.getElementById("cpf").value;
+    const cepInput = document.getElementById("cep").value;
+    const endInput = document.getElementById("endereco").value;
+    const senhaInput = document.getElementById("senha").value;
+
+    if (
+        nomeInput.trim() === '' ||
+        emailInput.trim() === '' ||
+        telInput.trim() === '' ||
+        cepInput.trim() === '' ||
+        cpfInput.trim() === '' ||
+        endInput.trim() === '' ||
+        senhaInput.trim() === ''
+    ) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function validaEmail() {
+    const emailInput = document.getElementById("email").value;
+    const regexEmail = /^[\w.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/g;
+    return regexEmail.test(emailInput);
+}
+
+function validaTelefone() {
+    const telInput = document.getElementById("telefone").value;
+    const regexTelefone = /^(\(?\d{2}\)?)?\s?9?\s?\d{4}\-?\d{4}$/g;
+    return regexTelefone.test(telInput);
+}
+
+function validaCpf() {
+    const cpfInput = document.getElementById("cpf").value;
+    const regexCpf = /^(?:(?:(?:\d{3}\.){2}\d{3}|\d{9})[-.]?\d{2}|000\.000\.000-00)$/g;
+    return regexCpf.test(cpfInput);
+}
+
+function validaCep() {
+    const cepInput = document.getElementById("cep").value;
+    const cepRegex = /^\d{2}\.?\d{3}-?\d{3}$/g;
+    return cepRegex.test(cepInput);
+}
+
+
       </script>
     <script src="bootstrap/js/bootstrap.min.js"> </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
