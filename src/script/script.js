@@ -2,8 +2,7 @@ const regexEmail = /^[\w.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const regexPhone = /^(\(?\d{2}\)?)?\s?9?\s?\d{4}\-?\d{4}$/;
 const regexCPF = /^(?:(?:(?:\d{3}\.){2}\d{3}|\d{9})[-.]?\d{2}|000\.000\.000-00)$/;
 const regexCEP = /^\d{2}\.?\d{3}-?\d{3}$/;
-//const regexUsername = //;
-//const regexPassword = //;
+const regexPassword = /^(?=.*\d).{8,}$/;
 
 //funções de navegação a serem implementadas futuramente
 const goToLogin = () => {};
@@ -23,6 +22,8 @@ function voltarIndex() {
 function validateInput() {
     if (!validateFieldsV2()) {
         window.alert("Preencha todos os campos!");
+    }else if(!validateRegex(/^.{3,}$/, 'nome')){
+        alert('Nome inválido, precisa ter 3 ou mais caracteres.');
     } else if (!validateRegex(regexEmail, 'email')) {
         window.alert("E-mail inválido!");
     } else if (!validateRegex(regexCPF, 'cpf')) {
@@ -31,7 +32,11 @@ function validateInput() {
         window.alert("Telefone inválido!");
     } else if (!validateRegex(regexCEP, 'cep')) {
         window.alert("Cep inválido!");
-    } else {
+    } 
+    else if(!validateRegex(regexPassword, 'senha')){
+        alert('Senha inválida, precisa ter 8 ou mais caracteres e ao menos 1 número.')
+    }
+    else {
         window.location.href = "../../homePageUser.html";
     }
 }
