@@ -81,3 +81,678 @@ button {
     cursor: pointer;
     border-radius: 40px;
 }
+
+@media screen and (max-width: 1500px) {
+    .titulo {
+        position: relative;
+        font-family: "Overpass", sans-serif;
+        color: #0499AE;
+        font-size: 90px;
+        top: 150px;
+        left: 200px; 
+    }
+    .logoIndex {
+        width: 450px;
+        height: 450px;
+        position: relative;
+        bottom: 150px;
+        left: 800px;
+    }
+    .botao {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        top: -300px;
+        left: 150px;
+        color: #0499AE;
+        padding: 15px 40px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 20px;
+        margin: 5px 10px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+
+}
+@media screen and (max-width: 1300px) {
+    .titulo {
+        position: relative;
+        font-family: "Overpass", sans-serif;
+        color: #0499AE;
+        font-size: 70px;
+        top: 100px;
+        left: 150px; 
+    }
+    .logoIndex {
+        width: 400px;
+        height: 400px;
+        position: relative;
+        bottom: 150px;
+        left: 650px;
+    }
+    .botao {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        top: -300px;
+        left: 100px;
+        color: #0499AE;
+        padding: 10px 26px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 20px;
+        margin: 5px 10px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+    .botaoH {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        bottom: 40px;
+        left: 750px;
+        color: #0499AE;
+        padding: 15px 40px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 20px;
+        margin: 5px 10px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+
+}
+@media screen and (max-width: 1150px) {
+    .titulo {
+        position: relative;
+        font-family: "Overpass", sans-serif;
+        color: #0499AE;
+        font-size: 70px;
+        top: 100px;
+        left: 150px; 
+    }
+    .logoIndex {
+        width: 350px;
+        height: 350px;
+        position: relative;
+        bottom: 150px;
+        left: 600px;
+    }
+    .botao {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        top: -250px;
+        left: 100px;
+        color: #0499AE;
+        padding: 10px 26px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 20px;
+        margin: 5px 10px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+    .botaoH {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        bottom: 40px;
+        left: 600px;
+        color: #0499AE;
+        padding: 15px 40px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 20px;
+        margin: 5px 10px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+
+}
+@media screen and (max-width: 970px) {
+    .titulo {
+        position: relative;
+        font-family: "Overpass", sans-serif;
+        color: #0499AE;
+        font-size: 70px;
+        top: 100px;
+        left: 100px; 
+    }
+    .logoIndex {
+        width: 350px;
+        height: 350px;
+        position: relative;
+        bottom: 150px;
+        left: 500px;
+    }
+    .botao {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        top: -250px;
+        left: 100px;
+        color: #0499AE;
+        padding: 7px 18px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+        margin: 5px 10px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+    .botaoH {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        bottom: 40px;
+        left: 500px;
+        color: #0499AE;
+        padding: 15px 40px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 20px;
+        margin: 5px 10px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+}
+@media screen and (max-width: 850px) {
+    .titulo {
+        position: relative;
+        font-family: "Overpass", sans-serif;
+        color: #0499AE;
+        font-size: 80px;
+        top: 100px;
+        left: 100px; 
+    }
+    .logoIndex {
+        width: 250px;
+        height: 250px;
+        position: relative;
+        bottom: 100px;
+        left: 500px;
+    }
+    .botao {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        top: -150px;
+        left: 60px;
+        color: #0499AE;
+        padding: 10px 30px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+        margin: 5px 10px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+    .botaoH {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        bottom: 30px;
+        left: 450px;
+        color: #0499AE;
+        padding: 7px 16px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+        margin: 2px 5px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+
+}
+@media screen and (max-width: 700px) {
+    .titulo {
+        position: relative;
+        font-family: "Overpass", sans-serif;
+        color: #0499AE;
+        font-size: 60px;
+        top: 100px;
+        left: 80px; 
+    }
+    .logoIndex {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        bottom: 100px;
+        left: 400px;
+    }
+    .botao {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        top: -100px;
+        left: 60px;
+        color: #0499AE;
+        padding: 15px 30px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+        margin: 10px 10px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+    .botaoH {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        bottom: 30px;
+        left: 400px;
+        color: #0499AE;
+        padding: 7px 16px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+        margin: 2px 5px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+
+}
+@media screen and (max-width: 600px) {
+    .header {
+        background-color: whitesmoke;
+        height: 60px;
+        border-bottom: 1px solid #5ea5aeab;
+        color: #fff;
+    }
+    
+    .logoNomeIndex {
+        width: 121px;
+        height: 35px;
+        position: relative;
+        top: 45px;
+        left: 10px;
+    }
+    .titulo {
+        position: relative;
+        font-family: "Overpass", sans-serif;
+        color: #0499AE;
+        font-size: 60px;
+        top: 100px;
+        left: 30px; 
+    }
+    .logoIndex {
+        width: 150px;
+        height: 150px;
+        position: relative;
+        top: 80px;
+        left: 340px;
+    }
+    .botao {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        top: -70px;
+        left: 10px;
+        color: #0499AE;
+        padding:10px 45px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 20px;
+        margin: 10px 10px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+    .botaoH {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        bottom: 40px;
+        left: 350px;
+        color: #0499AE;
+        padding: 7px 16px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+        margin: 2px 5px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+
+}
+@media screen and (max-width: 550px) {
+    .header {
+        background-color: whitesmoke;
+        height: 60px;
+        border-bottom: 1px solid #5ea5aeab;
+        color: #fff;
+    }
+    
+    .logoNomeIndex {
+        width: 121px;
+        height: 35px;
+        position: relative;
+        top: 45px;
+        left: 10px;
+    }
+    .titulo {
+        position: relative;
+        font-family: "Overpass", sans-serif;
+        color: #0499AE;
+        font-size: 60px;
+        top: 130px;
+        left: 30px; 
+    }
+    .logoIndex {
+        height: 150px;
+        width: 150px;
+        position: relative;
+        top: 150px;
+        left: 330px;
+    }
+    .botao {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        top: -0px;
+        left: 10px;
+        color: #0499AE;
+        padding: 15px 45px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 20px;
+        margin: 10px 10px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+    .botaoH {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        bottom: 40px;
+        left: 300px;
+        color: #0499AE;
+        padding: 7px 16px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 12px;
+        margin: 2px 0px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+
+}
+@media screen and (max-width: 500px) {
+    .header {
+        background-color: whitesmoke;
+        height: 80px;
+        border-bottom: 1px solid #5ea5aeab;
+        color: #fff;
+    }
+    
+    .logoNomeIndex {
+        width: 121px;
+        height: 35px;
+        position: relative;
+        top: 45px;
+        left: 10px;
+    }
+    .titulo {
+        position: relative;
+        font-family: "Overpass", sans-serif;
+        color: #0499AE;
+        font-size: 50px;
+        top: 120px;
+        left: 30px; 
+    }
+    .logoIndex {
+        width: 130px;
+        height: 130px;
+        position: relative;
+        top: 130px;
+        left: 280px;
+    }
+    .botao {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        top: -0px;
+        left: 10px;
+        color: #0499AE;
+        padding: 10px 30px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 20px;
+        margin: 10px 10px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+    .botaoH {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        bottom: 40px;
+        left: 250px;
+        color: #0499AE;
+        padding: 7px 16px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 12px;
+        margin: 2px 0px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+
+}
+@media screen and (max-width: 480px) {
+    .header {
+        background-color: whitesmoke;
+        height: 60px;
+        border-bottom: 1px solid #5ea5aeab;
+        color: #fff;
+    }
+    
+    .logoNomeIndex {
+        width: 121px;
+        height: 35px;
+        position: relative;
+        top: 45px;
+        left: 0px;
+    }
+    .titulo {
+        position: relative;
+        font-family: "Overpass", sans-serif;
+        color: #0499AE;
+        font-size: 50px;
+        top: 120px;
+        left: 30px; 
+    }
+    .logoIndex {
+        width: 130px;
+        height: 130px;
+        position: relative;
+        top: 120px;
+        left: 270px;
+    }
+    .botao {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        top: -0px;
+        left: 20px;
+        color: #0499AE;
+        padding: 10px 30px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+        margin: 10px 10px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+    .botaoH {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        bottom: 40px;
+        left: 200px;
+        color: #0499AE;
+        padding: 7px 16px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 12px;
+        margin: 2px 0px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+
+}
+@media screen and (max-width: 380px) {
+    .header {
+        background-color: whitesmoke;
+        height: 60px;
+        border-bottom: 1px solid #5ea5aeab;
+        color: #fff;
+    }
+    
+    .logoNomeIndex {
+        width: 121px;
+        height: 35px;
+        position: relative;
+        top: 45px;
+        left: 0px;
+    }
+    .logoNomeIndex {
+        width: 121px;
+        height: 35px;
+        position: relative;
+        top: 45px;
+        left: 0px;
+    }
+    .titulo {
+        position: relative;
+        font-family: "Overpass", sans-serif;
+        color: #0499AE;
+        font-size: 50px;
+        top: 80px;
+        left: 30px; 
+    }
+    .logoIndex {
+        width: 130px;
+        height: 130px;
+        position: relative;
+        top: 70px;
+        left: 220px;
+    }
+    .botao {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        top: -50px;
+        left: 20px;
+        color: #0499AE;
+        padding: 6px 18px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+        margin: 10px 10px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+    .botaoH {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        bottom: 40px;
+        left: 200px;
+        color: #0499AE;
+        padding: 7px 16px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 12px;
+        margin: 2px 0px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+
+}
+@media screen and (max-width: 300px) {
+    .header {
+        background-color: whitesmoke;
+        height: 60px;
+        border-bottom: 1px solid #5ea5aeab;
+        color: #fff;
+    }
+    
+    .logoNomeIndex {
+        width: 121px;
+        height: 35px;
+        position: relative;
+        top: 45px;
+        left: 0px;
+    }
+    .titulo {
+        position: relative;
+        font-family: "Overpass", sans-serif;
+        color: #0499AE;
+        font-size: 50px;
+        top: 50px;
+        left: 30px; 
+    }
+    .logoIndex {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        top: 50px;
+        left: 200px;
+    }
+    .botao {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        top: -50px;
+        left: 20px;
+        color: #0499AE;
+        padding: 6px 18px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+        margin: 10px 5px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+    .botaoH {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        bottom: 40px;
+        left: 180px;
+        color: #0499AE;
+        padding: 7px 16px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 10px;
+        margin: 0px 0px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+
+}
