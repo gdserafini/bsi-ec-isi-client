@@ -1,3 +1,17 @@
+const regexEmail = /^[\w.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const regexPhone = /^(\(?\d{2}\)?)?\s?9?\s?\d{4}\-?\d{4}$/;
+const regexCPF = /^(?:(?:(?:\d{3}\.){2}\d{3}|\d{9})[-.]?\d{2}|000\.000\.000-00)$/;
+const regexCEP = /^\d{2}\.?\d{3}-?\d{3}$/;
+//const regexUsername = //;
+//const regexPassword = //;
+
+//funções de navegação a serem implementadas futuramente
+const goToLogin = () => {};
+const goToAbout = () => {};
+const goToLocalRegistration = () => {};
+const goToLocals = () => {};
+//
+
 function irParaCriarConta() {
     window.location.href = "src/page/criarConta.html";
 }
@@ -7,65 +21,31 @@ function voltarIndex() {
 }
 
 function validateInput() {
-    if (validaCamposPreenchidos() == true) {
+    if (!validateFieldsV2()) {
         window.alert("Preencha todos os campos!");
-    } else if (validaEmail() == false) {
+    } else if (!validateRegex(regexEmail, 'email')) {
         window.alert("E-mail inválido!");
-    } else if (validaCpf() == false) {
+    } else if (!validateRegex(regexCPF, 'cpf')) {
         window.alert("CPF inválido!");
-    } else if (validaTelefone() == false) {
+    } else if (!validateRegex(regexPhone, 'telefone')) {
         window.alert("Telefone inválido!");
-    } else if (validaCep() == false) {
+    } else if (!validateRegex(regexCEP, 'cep')) {
         window.alert("Cep inválido!");
     } else {
         window.location.href = "../../homePageUser.html";
     }
 }
 
-function validaCamposPreenchidos() {
-    const nomeInput = document.getElementById('nome').value;
-    const emailInput = document.getElementById("email").value;
-    const telInput = document.getElementById("telefone").value;
-    const cpfInput = document.getElementById("cpf").value;
-    const cepInput = document.getElementById("cep").value;
-    const endInput = document.getElementById("endereco").value;
-    const senhaInput = document.getElementById("senha").value;
-
-    if (
-        nomeInput.trim() === '' ||
-        emailInput.trim() === '' ||
-        telInput.trim() === '' ||
-        cepInput.trim() === '' ||
-        cpfInput.trim() === '' ||
-        endInput.trim() === '' ||
-        senhaInput.trim() === ''
-    ) {
-        return true;
-    } else {
-        return false;
-    }
+function validateFieldsV2(){
+    const fields = [
+        'nome', 'email', 'telefone', 
+        'cpf', 'cep', 'endereco', 'senha'
+    ];
+    return fields.every(
+        field =>  document.getElementById(field).value.trim() !== ''
+    );
 }
 
-function validaEmail() {
-    const emailInput = document.getElementById("email").value;
-    const regexEmail = /^[\w.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/g;
-    return regexEmail.test(emailInput);
-}
-
-function validaTelefone() {
-    const telInput = document.getElementById("telefone").value;
-    const regexTelefone = /^(\(?\d{2}\)?)?\s?9?\s?\d{4}\-?\d{4}$/g;
-    return regexTelefone.test(telInput);
-}
-
-function validaCpf() {
-    const cpfInput = document.getElementById("cpf").value;
-    const regexCpf = /^(?:(?:(?:\d{3}\.){2}\d{3}|\d{9})[-.]?\d{2}|000\.000\.000-00)$/g;
-    return regexCpf.test(cpfInput);
-}
-
-function validaCep() {
-    const cepInput = document.getElementById("cep").value;
-    const cepRegex = /^\d{2}\.?\d{3}-?\d{3}$/g;
-    return cepRegex.test(cepInput);
+function validateRegex(regex, field){
+    return regex.test(document.getElementById(field).value);
 }

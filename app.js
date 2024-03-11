@@ -9,7 +9,7 @@ const params = {
     port: 3000,
     host: '0.0.0.0',
     root: './',
-    open: true,
+    open: false,
     ignore: 'scss,my/templates',
     file: 'index.html',
     logLevel: 2
