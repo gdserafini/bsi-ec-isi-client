@@ -1,7 +1,44 @@
 
-
 button {
     border-radius: 12px;
+}
+
+.container0{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.container1{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.oauthImages {
+    display: flex;
+    justify-content: space-around;
+}
+
+.oauthImages img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.form-control {
+    margin-bottom: -15px;
+    height: 30px;
+}
+
+#btndiv{
+    margin-top: -25px;
+}
+
+.btn btn-light{
+    margin-top: 50px;
 }
 
 .header {
@@ -244,7 +281,7 @@ button {
         position: relative;
     }
     .btn {
-        position: relative;
+        position: center;
         left: 150px;
     }
     .logo{

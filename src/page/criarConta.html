@@ -23,40 +23,27 @@
                     <button class="jpuc-btn" >Entrar</button>
                 </div>
                 <div class="container1 p-3">
-                    <h2>Criar Conta</h2>
+                    <h2 id="signup-title">Criar Conta</h2>
+                    <div class="oauthImages">
+                        <img src="../../resources/github_logo.png" alt="">
+                        <img src="../../resources/google_logo.png" alt="">
+                        <img src="../../resources/linkedin_logo.webp" alt="">
+                    </div>
                     <form action="">
-                        <div class="mb-1">
+                        Ou crie conta com seu email:
                             <label for="nome" class="form-label"></label>
-                            <input type="text" required id="nome" placeholder="Nome" class="form-control">
-                        </div>
-                        <div class="mb-1">
+                            <input type="text" required id="nome" placeholder="Nome/Nome fantasia" class="form-control">                        
                             <label for="email" class="form-label"></label>
-                            <input type="email" required id="email" placeholder="E-mail" class="form-control">
-                        </div>
-                        <div class="row mb-1 g-1">
-                            <div class="col-6">
-                                <label for="cpf" class="form-label"></label>
-                                <input type="text" required id="cpf" placeholder="CPF" class="form-control">
-                            </div>
-                            <div class="col-6">
-                                <label for="telefone" class="form-label"></label>
-                                <input type="text" required id="telefone" placeholder="Telefone" class="form-control">
-                            </div>
-                        
-                            <div class="col-8">
-                                <label for="endereco" class="form-label"></label>
-                                <input type="text" required id="endereco" placeholder="Endereço" class="form-control">
-                            </div>
-                            <div class="col-4">
-                                <label for="cep" class="form-label"></label>
-                                <input type="text" required id="cep" placeholder="CEP" class="form-control">
-                            </div>
-                        </div>
-                        <div class="mb-1">
+                            <input type="email" required id="email" placeholder="E-mail" class="form-control">                        
+                            <label for="cpf" class="form-label"></label>
+                            <input type="text" required id="cpf" placeholder="CPF/CNPJ" class="form-control">
+                            <label for="telefone" class="form-label"></label>
+                            <input type="text" required id="telefone" placeholder="Telefone" class="form-control">                            
                             <label for="senha" class="form-label"></label>
                             <input type="password" required id="senha" placeholder="Senha" class="form-control">
-                        </div>
-                        <buttom class="btn btn-light" onclick="validateInput()">Criar Conta</buttom>
+                            <br><label for="type" class="form-label"></label>
+                            Aceito os termos de uso <input type="checkbox" name="use-term" id="use-term" checked>
+                            <div id="btndiv"><buttom class="btn btn-light" onclick="validateInput()">Criar Conta</buttom></div>
                     </form>
                 </div>
             </div>
