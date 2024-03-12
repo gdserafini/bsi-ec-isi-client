@@ -1,0 +1,329 @@
+
+button {
+    border-radius: 12px;
+}
+
+.container0{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.container1{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.oauthImages {
+    display: flex;
+    justify-content: space-around;
+}
+
+.oauthImages img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.form-control {
+    margin-bottom: -15px;
+    height: 30px;
+}
+
+#btndiv{
+    margin-top: -25px;
+}
+
+.btn btn-light{
+    margin-top: 50px;
+}
+
+.header {
+    background-color: whitesmoke;
+    border-bottom: 1px solid #5ea5aeab;
+    height: 80px;
+    color: #fff;
+}
+
+.logoNomeIndex {
+    width: 171px;
+    height: 50px;
+    position: relative;
+    top: 45px;
+    left: 25px;
+}
+
+.logoNome {
+    width: 171px;
+    height: 50px;
+    position: relative;
+    bottom: 35px;
+    left: 25px;
+}
+.logo {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    left: 70px;
+    top: 30px;
+}
+.logoIndex {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    top: 30px;
+    left: 750px;
+}
+
+.botao {
+    background-color: whitesmoke;
+    font-family: "Overpass", sans-serif;
+    border: none;
+    position: relative;
+    top: 300px;
+    left: 200px;
+    color: #0499AE;
+    padding: 15px 40px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 5px 25px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+.container0 {
+    width: 250px; 
+    height: 450px;
+    font-family: "Overpass", sans-serif;
+    border: 1px solid #5ea5ae;
+    background-color: #5ea5ae;
+    position: relative;
+    bottom: 20px;
+    right: 250px;
+    margin: 0 auto; 
+    padding: 20px; 
+}
+
+.container1 {
+    width: 450px; 
+    height: 450px;
+    color: #5ea5ae;
+    background-color: whitesmoke;
+    position: relative;
+    border: 1px solid #5ea5ae;
+    bottom: 210px;
+    left: 229px;
+    margin: 0 auto; 
+    padding: 20px; 
+}
+
+.voltar {
+    background-color: whitesmoke;
+    border: none;
+    position: relative;
+    
+    top: 0px;
+    right: 20px;
+    color: #04acc2bc;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 5px 25px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+.btn {
+ color:#0499AE;
+ border: 1px solid #5ea5ae;
+ border-radius: 20px;
+ position: relative;
+ top: 10px;
+ left: 300px;
+}
+.jpuc {
+    color: #fff;
+    font-family: "Overpass", sans-serif;
+    position: relative;
+    top: 50px;
+}
+
+.jpuc-btn{
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 20px;
+    color: #0499AE;
+    padding: 10px 30px;
+    font-family: "Overpass", sans-serif;
+    position: relative;
+    top: 20px;
+    left: 50px;
+}
+
+@media screen and (max-width: 750px) {
+    .container0 {
+        position: relative;
+        right: 200px;
+        width: 220px;
+        height: 450px;
+    }
+    .jpuc-btn {
+        position: relative;
+        left: 30px;
+    }
+
+    .container1 {
+        position: relative;
+        width: 400px;
+        height: 450px;
+        left: 199px;
+    }
+    .btn {
+        position: relative;
+        left: 230px;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .container0 {
+        position: relative;
+        right: 200px;
+        width: 150px;
+        height: 450px;
+    }
+    .jpuc-btn {
+        position: relative;
+        left: 0px;
+    }
+    .logo{
+        position: relative;
+        left: 20px;
+    }
+    .container1 {
+        position: relative;
+        width: 400px;
+        height: 450px;
+        left: 129px;
+        bottom: 277px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .container0 {
+        position: relative;
+        left: 0px;
+        width: 450px;
+        height: 200px;
+    }
+    .jpuc-btn {
+        display: none;
+    }
+    .logo{
+        display: none;
+    }
+    .container1 {
+        position: relative;
+        width: 450px;
+        height: 450px;
+        left: -21px;
+        bottom: 70px;
+    }
+    .btn {
+        position: relative;
+        left: 280px;
+    }
+    .jpuc {
+        position: relative;
+        top: 10px;
+        
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .container0 {
+        position: relative;
+        left: 0px;
+        width: 400px;
+        height: 200px;
+    }
+    .jpuc-btn {
+        position: relative;
+    }
+    .logo{
+        display: none;
+    }
+    .container1 {
+        position: relative;
+        width: 400px;
+        height: 450px;
+        left: -21px;
+        bottom: 30px;
+    }
+    .btn {
+        position: relative;
+        left: 230px;
+    }
+    .jpuc {
+        display: none;
+    }
+}
+@media screen and (max-width: 350px) {
+    .container0 {
+        position: relative;
+        left: 0px;
+        width: 290px;
+        height: 200px;
+    }
+    .jpuc-btn {
+        position: relative;
+    }
+    .btn {
+        position: center;
+        left: 150px;
+    }
+    .logo{
+        display: none;
+    }
+    .container1 {
+        position: relative;
+        width: 290px;
+        height: 450px;
+        left: -21px;
+        bottom: 30px;
+    }
+    .jpuc {
+        display: none;
+    }
+}
+@media screen and (max-width: 300px) {
+    .container0 {
+        position: relative;
+        left: 0px;
+        width: 250px;
+        height: 200px;
+    }
+    .jpuc-btn {
+        position: relative;
+    }
+    
+    .btn {
+        position: relative;
+        left: 100px;
+    }
+    .logo{
+        display: none;
+    }
+    .container1 {
+        position: relative;
+        width: 250px;
+        height: 450px;
+        left: -21px;
+        bottom: 30px;
+    }
+    .jpuc {
+        display: none;
+    }
+}
