@@ -59,7 +59,7 @@ function validatePatterns(){
 }
 
 document.getElementById('cpf').addEventListener('input', function() {
-    this.value = this.value.replace(/\D/g, '');
+    this.value = this.value.replace(/[^\d./-]/g, '');
 });
 
 /**
