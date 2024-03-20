@@ -64,7 +64,7 @@ function validatePatterns(){
  * do formulário para o back-end. A ser implementada.
  */
 function submitLogin(){
-    if(validatePatterns()){ return; }
+    if(validatePatterns() && termsChecked()){ return; }
 }
 
 function termsChecked(){
