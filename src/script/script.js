@@ -41,7 +41,7 @@ function validateInput() {
     }
     else {
         logSignupSubmit();
-        window.location.href = "../../homePageUser.html";
+        window.location.href = "../../homeUsers.html";
     }
 }
 
