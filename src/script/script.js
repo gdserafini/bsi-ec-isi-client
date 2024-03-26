@@ -14,7 +14,9 @@ const goToLocals = () => {};
 function irParaCriarConta() {
     window.location.href = "src/page/criarConta.html";
 }
-
+function irParaLogin() {
+    window.location.href = "src/page/login.html";
+}
 function voltarIndex() {
     window.location.href = "../../index.html";
 }
@@ -39,9 +41,8 @@ function validateInput() {
     else if(!termsChecked()){ 
         alert('Aceite os termos de uso para criar a conta'); 
     }
-    else {
-        logSignupSubmit();
-        window.location.href = "../../homeUsers.html";
+    else {logSignupSubmit();
+        window.location.href = "src/page/homeUsers.html";
     }
 }
 

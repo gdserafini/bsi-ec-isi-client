@@ -91,11 +91,29 @@ button {
     border-radius: 40px;
 }
 
-.home {
+.sobreHome {
     background-color: #0499AE;
     font-family: "Overpass", sans-serif;
     color: #ffff;
     padding: 50px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
 
+.btnHomeSobre {
+    color: #fff;
+    font-family: "Overpass", sans-serif;
+    border: none;
+    color: #0499AE;
+    padding: 7px 25px;
+    position: relative;
+    left: 1050px;
+    bottom: 20px;
+}
+
+.locaisHome {
+    background-color: #fff;
+    font-family: "Overpass", sans-serif;
+    color: #0499AE;
+    padding: 50px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
