@@ -62,6 +62,10 @@ document.getElementById('cpf').addEventListener('input', function() {
     this.value = this.value.replace(/[^\d./-]/g, '');
 });
 
+document.getElementById('telefone').addEventListener('input', function() {
+    this.value = this.value.replace(/[^\d-() ]/g, '');
+});
+
 /**
  * @description
  * Esta função irá realizar toda a lógica de enviar os dados
