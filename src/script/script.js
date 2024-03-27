@@ -21,8 +21,11 @@ function voltarIndex() {
     window.location.href = "../../index.html";
 }
 
+/**
+ * @deprecated Substituida pela validação do próprio HTML
+ */
 function validateInput() {
-    if (!validateFieldsV2()) {
+    if (!validateFields()) {
         if(!termsChecked()){ 
             alert('Aceite os termos de uso para criar a conta'); 
         }else{window.alert("Preencha todos os campos");}
@@ -46,15 +49,39 @@ function validateInput() {
     }
 }
 
+function validatePatterns(){
+    const fields = ['nome', 'email', 'telefone', 'cpf', 'senha'];
+    return fields.every(
+        field =>  {
+            return (new RegExp(document.getElementById(field).pattern))
+                .test(document.getElementById(field).value);
+        }
+    );
+}
+
+document.getElementById('cpf').addEventListener('input', function() {
+    this.value = this.value.replace(/[^\d./-]/g, '');
+});
+
+document.getElementById('telefone').addEventListener('input', function() {
+    this.value = this.value.replace(/[^\d-() ]/g, '');
+});
+
+/**
+ * @description
+ * Esta função irá realizar toda a lógica de enviar os dados
+ * do formulário para o back-end. A ser implementada.
+ */
+function submitLogin(){
+    if(validatePatterns() && termsChecked()){ return; }
+}
+
 function termsChecked(){
     return document.getElementById('use-term').checked;
 }
 
-function validateFieldsV2(){
-    const fields = [
-        'nome', 'email', 'telefone', 
-        'cpf', 'senha'
-    ];
+function validateFields(){
+    const fields = ['nome', 'email', 'telefone', 'cpf', 'senha'];
     return fields.every(
         field =>  document.getElementById(field).value.trim() !== ''
     );

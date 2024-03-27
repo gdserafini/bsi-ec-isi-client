@@ -4,6 +4,7 @@
         <title>Criar Conta</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <link rel="icon" type="image/x-icon" href="/resources/favicon.ico">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="../style/styleCriarConta.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,24 +33,24 @@
                     <form action="">
                         Ou crie conta com seu email:
                             <label for="nome" class="form-label"></label>
-                            <input type="text" required id="nome" placeholder="Nome/Nome fantasia" class="form-control">                        
+                            <input type="text" minlength="3" id="nome" placeholder="Nome/Nome fantasia" class="form-control" title="Informe um nome válido.">                        
                             
                             <label for="email" class="form-label"></label>
                             <input type="email" required id="email" placeholder="E-mail" pattern="^[\w.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Informe um email válido" class="form-control">                        
                             
                             <label for="cpf" class="form-label"></label>
-                            <input type="text" required id="cpf" placeholder="CPF/CNPJ" pattern="^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$|^\d{2}\.?\d{3}\.?\d{3}\/?[0-9]{4}-?\d{2}$" title="Informe um CPF ou CNPJ válido" class="form-control">
+                            <input type="text" maxlength="18" id="cpf" placeholder="CPF/CNPJ" pattern="^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$|^\d{2}\.?\d{3}\.?\d{3}\/?[0-9]{4}-?\d{2}$" title="Informe um CPF ou CNPJ válido" class="form-control">
             
                             <label for="telefone" class="form-label"></label>
-                            <input type="text" required id="telefone" placeholder="Telefone" class="form-control" pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$" title="Informe um telefone válido">
+                            <input type="text" maxlength="15" id="telefone" placeholder="Telefone" class="form-control" pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$" title="Informe um telefone válido">
                              
                             <label for="senha" class="form-label"></label>
-                            <input type="password" required id="senha" placeholder="Senha" pattern="^(?=.*\d).{8,}$" title="Informe um senha válida" class="form-control">
+                            <input type="password" minlength="8" id="senha" placeholder="Senha" pattern="^(?=.*\d).{8,}$" title="Informe um senha válida" class="form-control">
 
                             <br><label for="type" class="form-label"></label>
-                            Aceito os termos de uso <input type="checkbox" name="use-term" id="use-term" checked>
+                            Aceito os termos de uso <input type="checkbox" name="use-term" id="use-term" checked required>
                             <div>
-                                <input  class="btn btn-light" type="submit" onclick="logSignupSubmit()" id="btndiv" value="Criar conta">
+                                <input  class="btn btn-light" type="submit" onclick="submitLogin()" id="btndiv" value="Criar conta">
                             </div>
                     </form>
                 </div>
