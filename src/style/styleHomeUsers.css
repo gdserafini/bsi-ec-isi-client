@@ -9,6 +9,7 @@ button {
     height: 80px;
     border-bottom: 1px solid #5ea5aeab;
     color: #fff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .perfilIcon {
@@ -73,6 +74,8 @@ button {
     margin: 5px 10px;
     cursor: pointer;
     border-radius: 40px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+
 }
 .botaoH {
     background-color: whitesmoke;
@@ -96,7 +99,7 @@ button {
     font-family: "Overpass", sans-serif;
     color: #ffff;
     padding: 50px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btnHomeSobre {
@@ -108,12 +111,49 @@ button {
     position: relative;
     left: 1050px;
     bottom: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-.locaisHome {
-    background-color: #fff;
+.containerLocais{
+    width: 800px; 
+    height: 200px;
     font-family: "Overpass", sans-serif;
     color: #0499AE;
-    padding: 50px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    position: relative;
+    top: 50px;
+    left: 300px;
+    padding: 50px 325px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.btnHomeLocais{
+    background-color: whitesmoke;
+    font-family: "Overpass", sans-serif;
+    border: none;
+    position: relative;
+    width: 300px;
+    right: 90px;
+    top: 10px;
+    color: #0499AE;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+.footer {
+    background-color: whitesmoke;
+    border-top: 1px solid #0499AE;
+}
+
+.logoNomeFooter {
+    width: 150px;
+    height: 44px;
+    position: relative;
+    left: 600px;
+    bottom: 10px;
 }
