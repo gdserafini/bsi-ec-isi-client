@@ -1,6 +1,29 @@
-
 button {
     border-radius: 12px;
+}
+
+.header {
+    background-color: whitesmoke;
+    height: 80px;
+    border-bottom: 1px solid #5ea5aeab;
+    color: #fff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.perfilIcon {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    left: 780px;
+    bottom: 45px;
+}
+
+.logoNomeIndex {
+    width: 171px;
+    height: 50px;
+    position: relative;
+    top: 40px;
+    left: 25px;
 }
 
 .container0{
@@ -19,15 +42,22 @@ button {
     display: flex;
     justify-content: space-around;
 }
-
-.oauthImages img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-    margin-top: 20px;
-    margin-bottom: 50px;
+.botaoH {
+    background-color: whitesmoke;
+    font-family: "Overpass", sans-serif;
+    border: none;
+    position: relative;
+    bottom: 40px;
+    left: 750px;
+    color: #0499AE;
+    padding: 15px 40px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 5px 10px;
+    cursor: pointer;
+    border-radius: 40px;
 }
- 
 .form-control {
     margin-bottom: -15px;
     height: 30px;
@@ -47,16 +77,17 @@ button {
     height: 80px;
     color: #fff;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-
 }
+
 
 .logoNome {
     width: 171px;
     height: 50px;
     position: relative;
-    top: 10px;
+    bottom: 30px;
     left: 50px;
 }
+
 .logo {
     width: 70px;
     height: 70px;
@@ -89,7 +120,7 @@ button {
     border: 1px solid #5ea5ae;
     background-color: #5ea5ae;
     position: relative;
-    top: 70px;
+    top: 30px;
     right: 250px;
     margin: 0 auto; 
     padding: 20px; 
@@ -102,27 +133,44 @@ button {
     background-color: whitesmoke;
     position: relative;
     border: 1px solid #5ea5ae;
-    bottom: 210px;
+    bottom: 244px;
     left: 229px;
     margin: 0 auto; 
     padding: 20px; 
 }
 
+.voltar {
+    background-color: whitesmoke;
+    border: none;
+    position: relative;
+    
+    top: 0px;
+    right: 20px;
+    color: #04acc2bc;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 5px 25px;
+    cursor: pointer;
+    border-radius: 40px;
+}
 .btn {
  color:#0499AE;
  border: 1px solid #5ea5ae;
  border-radius: 20px;
  position: relative;
- top: 10px;
+ top: 50px;
  left: 300px;
  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-
 }
+
 .jpuc {
     color: #fff;
     font-family: "Overpass", sans-serif;
     position: relative;
     top: 50px;
+    
 }
 
 .jpuc-btn{
@@ -134,8 +182,8 @@ button {
     font-family: "Overpass", sans-serif;
     position: relative;
     top: 20px;
-    left: 30px;
+    left: 50px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 
 }
-
+ 

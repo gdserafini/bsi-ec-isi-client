@@ -6,13 +6,13 @@ button {
 .container0{
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .container1{
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .oauthImages {
@@ -46,36 +46,24 @@ button {
     border-bottom: 1px solid #5ea5aeab;
     height: 80px;
     color: #fff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-.logoNomeIndex {
-    width: 171px;
-    height: 50px;
-    position: relative;
-    top: 45px;
-    left: 25px;
-}
 
 .logoNome {
     width: 171px;
     height: 50px;
     position: relative;
-    bottom: 35px;
-    left: 25px;
+    top: 10px;
+    left: 50px;
 }
+
 .logo {
     width: 70px;
     height: 70px;
     position: relative;
     left: 70px;
     top: 30px;
-}
-.logoIndex {
-    width: 500px;
-    height: 500px;
-    position: relative;
-    top: 30px;
-    left: 750px;
 }
 
 .botao {
@@ -102,7 +90,7 @@ button {
     border: 1px solid #5ea5ae;
     background-color: #5ea5ae;
     position: relative;
-    bottom: 20px;
+    top: 70px;
     right: 250px;
     margin: 0 auto; 
     padding: 20px; 
@@ -144,12 +132,15 @@ button {
  position: relative;
  top: 10px;
  left: 300px;
+ box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
+
 .jpuc {
     color: #fff;
     font-family: "Overpass", sans-serif;
     position: relative;
     top: 50px;
+    
 }
 
 .jpuc-btn{
@@ -162,8 +153,10 @@ button {
     position: relative;
     top: 20px;
     left: 50px;
-}
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 
+}
+ 
 @media screen and (max-width: 750px) {
     .container0 {
         position: relative;

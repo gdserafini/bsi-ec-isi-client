@@ -145,15 +145,3 @@ button {
     border-radius: 20px;
 }
 
-.footer {
-    background-color: whitesmoke;
-    border-top: 1px solid #0499AE;
-}
-
-.logoNomeFooter {
-    width: 150px;
-    height: 44px;
-    position: relative;
-    left: 600px;
-    bottom: 10px;
-}

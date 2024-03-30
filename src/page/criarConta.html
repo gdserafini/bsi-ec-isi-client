@@ -4,7 +4,7 @@
         <title>Criar Conta</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <link rel="icon" type="image/x-icon" href="/resources/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="../../resources/favicon.ico">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="../style/styleCriarConta.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,9 +13,8 @@
     </head>
     <body>
         <div class="header">
-            <button type="submit" onclick="voltarIndex()" class="voltar">🠐</button>
-            <div class="logoNome">
-                <a href="/"><img src="/resources/logoNome-removebg-preview.png" class="logoNome"/></a>
+            <div>
+                <img src="../../resources/logoNome-removebg-preview.png" class="logoNome"/>
             </div>
             <div class="container0">
                 <img src="../../resources/logo-removebg.png" class="logo"/>
@@ -48,7 +47,7 @@
                             <input type="password" minlength="8" id="senha" placeholder="Senha" pattern="^(?=.*\d).{8,}$" title="Informe um senha válida" class="form-control">
 
                             <br><label for="type" class="form-label"></label>
-                            Aceito os termos de uso <input type="checkbox" name="use-term" id="use-term" checked required>
+                            <input type="checkbox" name="use-term" id="use-term" checked required>  Aceito os termos de uso 
                             <div>
                                 <input  class="btn btn-light" type="submit" onclick="submitLogin()" id="btndiv" value="Criar conta">
                             </div>
