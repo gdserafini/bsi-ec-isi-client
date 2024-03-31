@@ -1,5 +1,3 @@
-
-
 button {
     border-radius: 12px;
 }
@@ -98,4 +96,97 @@ button {
     position: relative;
     left: 600px;
     bottom: 10px;
+}
+@media screen and (max-width: 500px) {
+    button {
+        border-radius: 12px;
+    }
+    
+    .header {
+        background-color: whitesmoke;
+        height: 60px;
+        border-bottom: 1px solid #5ea5aeab;
+        color: #fff;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .perfilIcon {
+        height: 30px;
+        width: 30px;
+        position: relative;
+        left: 0px;
+        bottom: 20px;
+    }
+    
+    .logoNomeIndex {
+        width: 105px;
+        height: 31px;
+        position: relative;
+        top: 7px;
+        left: 15px;
+    }
+    
+    .logoNome {
+        width: 105px;
+        height: 31px;
+        position: relative;
+        top: 7px;
+        left: 15px;
+    }
+    .logo {
+        width: 70px;
+        height: 70px;
+        position: relative;
+        left: 45px;
+        top: 40px;
+    }
+    .imgInicio {
+        display: none;
+    }
+    
+    .botaoH {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        bottom: -40px;
+        left: 30px;
+        color: #0499AE;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+        margin: 5px 10px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+    
+    .containerSobre {
+        width: 250px; 
+        height: 470px;
+        font-family: "Overpass", sans-serif;
+        color: #0499AE;
+        border: none;
+        border-radius: 20px;
+        background-color: whitesmoke;
+        position: relative;
+        top: 80px;
+        left: 25px;
+        padding: 50px 25px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .textoSobre{
+        position: relative;
+        font-size: 20px;
+        bottom: 20px;
+    }
+    
+    .footer {
+        display: none;
+    }
+    
+    .logoNomeFooter {
+        display: none;
+    }
 }

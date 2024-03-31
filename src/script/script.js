@@ -4,12 +4,12 @@ const regexCpfCnpj = /^(?:(?:(?:\d{3}\.){2}\d{3}|\d{9})[-.]?\d{2}|(?:\d{2}\.?\d{
 const regexCEP = /^\d{2}\.?\d{3}-?\d{3}$/;
 const regexPassword = /^(?=.*\d).{8,}$/;
 
-//funções de navegação a serem implementadas futuramente
+/*funções de navegação a serem implementadas futuramente
 const goToLogin = () => {};
 const goToAbout = () => {};
 const goToLocalRegistration = () => {};
 const goToLocals = () => {};
-//
+*/
 
 function irParaCriarConta() {
     window.location.href = "src/page/criarConta.html";
@@ -17,9 +17,22 @@ function irParaCriarConta() {
 function irParaLogin() {
     window.location.href = "src/page/login.html";
 }
-function voltarIndex() {
-    window.location.href = "../../index.html";
+function irParaSobre() {
+    window.location.href = "src/page/sobre.html";
 }
+function irParaHomeUsers() {
+    window.location.href = "src/page/homeUsers.html";
+}
+function irParaCadLocais() {
+    window.location.href = "src/page/cadLocais.html";
+}
+function irParaLocais() {
+    window.location.href = "src/page/locais.html";
+}
+function irParaLocal() {
+    window.location.href = "src/page/local.html";
+}
+
 
 /**
  * @deprecated Substituida pela validação do próprio HTML
