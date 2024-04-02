@@ -18,7 +18,7 @@
           </div>
           <div>
             <button type="submit" class="botaoH">Home</button>
-            <button type="submit" onclick="irParaSobre()" class="botaoH">Sobre</button>
+            <button type="submit" onclick="goToAbout()" class="botaoH">Sobre</button>
             <button type="submit" onclick="irParaLocais()" class="botaoH">Locais</button>          
             <img src="../../resources/perfilIcon.png" alt="Perfil" class="perfilIcon">
           </div>
@@ -28,20 +28,22 @@
         <img src="../../resources/imgInicio.jpeg" class="imgInicio"/>
       </div>
         <div>
-          <button type="submit" onclick="irParaSobre()" class="botao">Sobre</button>
+          <button type="submit" onclick="goToAbout()" class="botao">Sobre</button>
           <button type="submit" class="botao">Locais</button>
           <button type="submit" class="botao">Minha Conta</button>
         </div>
         <br>
         <div class="sobreHome">
-          <br>
-          <h1>Sobre</h1>
-          <br>
-          <h5> GreenPath é um aplicativo que ajuda os usuários a localizar pontos de descarte de lixo correto
-               de forma rápida e conveniente.
-               Estabelecimentos podem cadastrar, e fornecer informações sobre a reciclagem de diferentes 
-               tipos de resíduos, promovendo práticas de descarte sustentáveis.</h5>
-              <br>
+          <h1 id="titSobre">Sobre</h1>
+          <h5 id="txtSobre"> GreenPath é um aplicativo que ajuda <br>
+                            os usuários a localizar pontos de <br>
+                            descarte de lixo correto de forma<br>
+                            rápida e conveniente.<br>
+                            Estabelecimentos podem cadastrar, <br>
+                            e fornecer informações sobre a <br>
+                            reciclagem de diferentes tipos de<br>
+                             resíduos, promovendo práticas <br>
+                             de descarte sustentáveis.</h5> <br>
                 <button type="button" class="btnHomeSobre">Saiba Mais</button>
         </div>
         <div class="locaisHome">

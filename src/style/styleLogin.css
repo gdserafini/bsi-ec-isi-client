@@ -81,7 +81,7 @@ button {
     cursor: pointer;
     border-radius: 40px;
 }
-
+ 
 .container0 {
     width: 250px; 
     height: 450px;
@@ -139,3 +139,128 @@ button {
 
 }
 
+@media screen and (max-width: 500px) {
+
+    button {
+        border-radius: 12px;
+    }
+    
+    .container0{
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .container1{
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .oauthImages {
+        display: flex;
+        justify-content: space-around;
+    } 
+    
+    .oauthImages img {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+     
+    .form-control {
+        margin-bottom: -15px;
+        height: 30px;
+    }
+    
+    #btndiv{
+        margin-top: -25px;
+    }
+    
+    .btn btn-light{
+        margin-top: 50px;
+    }
+    
+    .header {
+        background-color: whitesmoke;
+        height: 60px;
+        border-bottom: 1px solid #5ea5aeab;
+        color: #fff;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .logoNomeIndex {
+        width: 105px;
+        height: 31px;
+        position: relative;
+        top: 7px;
+        left: 15px;
+    }
+    
+    .logoNome {
+        width: 105px;
+        height: 31px;
+        position: relative;
+        top: 7px;
+        left: 15px;
+    }
+    .logo {
+        display: none;
+    }
+    
+    .botao {
+        display: none;
+    }
+     
+    .botaoH {
+        display: none;
+    }
+    .container0 {
+        width: 7px; 
+        height: 400px;
+        font-family: "Overpass", sans-serif;
+        border: 1px solid #5ea5ae;
+        background-color: #5ea5ae;
+        position: relative;
+        top: 50px;
+        left: -175px;
+        margin: 0 auto; 
+        padding: 20px; 
+    }
+    .container1 {
+        width: 190px; 
+        height: 400px;
+        color: #5ea5ae;
+        background-color: whitesmoke;
+        position: relative;
+        border: 1px solid #5ea5ae;
+        bottom: 21px;
+        left: 10px;
+        margin: 0 auto; 
+        padding: 20px; 
+    }
+    
+    #signup-title {
+        font-size: 25px;
+    }
+    .btn {
+     color:#0499AE;
+     border: 1px solid #5ea5ae;
+     border-radius: 20px;
+     position: relative;
+     top: 10px;
+     left: 70px;
+     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .jpuc {
+        display: none;
+    }
+    
+    .jpuc-btn{
+        display: none;
+    }
+    
+}

@@ -114,7 +114,7 @@ button {
         height: 30px;
         width: 30px;
         position: relative;
-        left: 0px;
+        left: -40px;
         bottom: 20px;
     }
     
@@ -123,7 +123,7 @@ button {
         height: 31px;
         position: relative;
         top: 7px;
-        left: 15px;
+        left: 10px;
     }
     
     .logoNome {
@@ -131,14 +131,10 @@ button {
         height: 31px;
         position: relative;
         top: 7px;
-        left: 15px;
+        left: 10px;
     }
     .logo {
-        width: 70px;
-        height: 70px;
-        position: relative;
-        left: 45px;
-        top: 40px;
+        display: none;
     }
     .imgInicio {
         display: none;
@@ -150,20 +146,20 @@ button {
         border: none;
         position: relative;
         bottom: -40px;
-        left: 30px;
+        left: 10px;
         color: #0499AE;
         padding: 5px 10px;
         text-align: center;
         text-decoration: none;
         font-size: 15px;
-        margin: 5px 10px;
+        margin: 5px 5px;
         cursor: pointer;
         border-radius: 40px;
     }
     
     .containerSobre {
-        width: 250px; 
-        height: 470px;
+        width: 220px; 
+        height: 300px;
         font-family: "Overpass", sans-serif;
         color: #0499AE;
         border: none;
@@ -171,17 +167,23 @@ button {
         background-color: whitesmoke;
         position: relative;
         top: 80px;
-        left: 25px;
-        padding: 50px 25px;
+        left: 10px;
+        padding: 10px 10px;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
     }
     
     .textoSobre{
         position: relative;
         font-size: 20px;
-        bottom: 20px;
+        bottom: 0px;
+    }
+    #titSobre {
+        font-size: 30px;
     }
     
+    #txtSobre {
+        font-size: 15px;
+    }
     .footer {
         display: none;
     }

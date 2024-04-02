@@ -181,9 +181,155 @@ button {
     padding: 10px 30px;
     font-family: "Overpass", sans-serif;
     position: relative;
-    top: 20px;
+    top: 50px;
     left: 50px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 
 }
  
+@media screen and (max-width: 500px) {
+    button {
+        border-radius: 12px;
+    }
+    
+    .header {
+        background-color: whitesmoke;
+        height: 60px;
+        border-bottom: 1px solid #5ea5aeab;
+        color: #fff;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .perfilIcon {
+        height: 30px;
+        width: 30px;
+        position: relative;
+        left: -30px;
+        bottom: 40px;
+    }
+    
+    .logoNomeIndex {
+        width: 105px;
+        height: 31px;
+        position: relative;
+        top: 45px;
+        left: -30px;
+    }
+
+    .container0{
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #signup-title {
+        font-size: 20px;
+    }
+    
+    .container1{
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .botaoH {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        bottom: -25px;
+        left: 15px;
+        color: #0499AE;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+        margin: 5px 10px;
+        cursor: pointer;
+        border-radius: 40px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+
+    }
+    .form-control {
+        margin-bottom: -15px;
+        height: 30px;
+    }
+    
+    #btndiv{
+        margin-top: -25px;
+    }
+    
+    .btn btn-light{
+        margin-top: 50px;
+    }
+
+    .logoNome {
+        width: 171px;
+        height: 50px;
+        position: relative;
+        bottom: 30px;
+        left: 50px;
+    }
+    
+    .logo {
+        width: 70px;
+        height: 70px;
+        position: relative;
+        left: 70px;
+        top: 30px;
+    }
+    
+    .container0 {
+        width: 15px; 
+        height: 370px;
+        font-family: "Overpass", sans-serif;
+        border: 1px solid #5ea5ae;
+        background-color: #5ea5ae;
+        position: relative;
+        top: 70px;
+        left: -170px;
+        margin: 0 auto; 
+        padding: 20px; 
+    }
+    
+    .container1 {
+        width: 200px; 
+        height: 370px;
+        color: #5ea5ae;
+        background-color: whitesmoke;
+        position: relative;
+        border: 1px solid #5ea5ae;
+        bottom: 135px;
+        left: 20px;
+        margin: 0 auto; 
+        padding: 20px; 
+    }
+
+    .btn {
+     color:#0499AE;
+     border: 1px solid #5ea5ae;
+     border-radius: 20px;
+     position: relative;
+     top: 50px;
+     left: 70px;
+     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .jpuc {
+        display: none;
+    }
+    
+    .jpuc-btn{
+        background-color: whitesmoke;
+        border: none;
+        border-radius: 20px;
+        color: #0499AE;
+        padding: 10px 30px;
+        font-family: "Overpass", sans-serif;
+        position: relative;
+        top: 20px;
+        left: 50px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    
+    }
+}

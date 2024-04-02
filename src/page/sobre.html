@@ -17,9 +17,9 @@
           <a><img src="../../resources/logoNome-removebg-preview.png" class="logoNomeIndex"/></a>
         </div>
         <div>
-          <button type="submit" onclick="irParaHomeUsers()" class="botaoH">Home</button>
-          <button type="submit" onclick="irParaSobre()" class="botaoH">Sobre</button>
-          <button type="submit" onclick="irParaLocais()" class="botaoH">Locais</button>          
+          <button type="submit" class="botaoH">Home</button>
+          <button type="submit" class="botaoH">Sobre</button>
+          <button type="submit" onclick="irParaCriarConta()" class="botaoH">Locais</button>          
           <img src="../../resources/perfilIcon.png" alt="Perfil" class="perfilIcon">
         </div>
         </div>
@@ -29,8 +29,8 @@
           <img src="../../resources/imgGreen.png" class="imgInicio"/>
         </div>
         <div class="textoSobre">
-            <h1>Sobre</h1>
-            <h5> GreenPath é um aplicativo que ajuda os usuários 
+            <h1 id="titSobre">Sobre</h1>
+            <h5 id="txtSobre"> GreenPath é um aplicativo que ajuda os usuários 
               a localizar pontos de descarte de lixo correto
               de forma rápida e conveniente.<br>
               Estabelecimentos podem cadastrar, e fornecer informações 
@@ -41,5 +41,5 @@
           </div>
       </div>
       <script src="./src/script/script.js"></script>
-    </body>
-</html>
+  </body>
+</html> 
