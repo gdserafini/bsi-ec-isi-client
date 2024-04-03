@@ -11,29 +11,39 @@ const goToLocalRegistration = () => {};
 const goToLocals = () => {};
 */
 
-function irParaCriarConta() {
+function irParaCriarContaIndex() {
     window.location.href = "src/page/criarConta.html";
 }
-function irParaLogin() {
+function irParaLoginIndex() {
     window.location.href = "src/page/login.html";
 }
-function irParaSobre() {
-    window.location.href = "src/page/sobre.html";
-}
-function irParaHomeUsers() {
-    window.location.href = "src/page/homeUsers.html";
-}
-function irParaCadLocais() {
-    window.location.href = "src/page/cadLocais.html";
-}
-function irParaLocais() {
-    window.location.href = "src/page/locais.html";
+function irParaLogin() {
+    window.location.href = "login.html";
 }
 function irParaLocal() {
-    window.location.href = "src/page/local.html";
+    window.location.href = "local.html";
 }
-
-
+function irParaSobre() {
+    window.location.href = "sobre.html";
+}
+function irParaLocais() {
+    window.location.href = "locais.html";
+}
+function irParaCriarConta() {
+    window.location.href = "criarConta.html";
+}
+function irParaSobreIndex() {
+    window.location.href = "src/page/sobreIndex.html";
+}
+function irParaHomeUsers() {
+    window.location.href = "homeUsers.html";
+}
+function irParaCadLocaisIndex() {
+    window.location.href = "src/page/cadLocal.html";
+}
+function irParaLocaisIndex() {
+    window.location.href = "src/page/locaisIndex.html";
+}
 /**
  * @deprecated Substituida pela validação do próprio HTML
  */
@@ -58,7 +68,7 @@ function validateInput() {
         alert('Aceite os termos de uso para criar a conta'); 
     }
     else {logSignupSubmit();
-        window.location.href = "src/page/homeUsers.html";
+        window.location.href = "homeUsers.html";
     }
 }
 

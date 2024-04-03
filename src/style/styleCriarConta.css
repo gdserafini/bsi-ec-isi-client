@@ -8,7 +8,10 @@ button {
     border-bottom-left-radius: 15px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
-
+#form {
+    position: relative;
+    bottom: 30px;
+}
 .container1{
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -114,7 +117,7 @@ button {
  border: 1px solid #5ea5ae;
  border-radius: 20px;
  position: relative;
- top: 10px;
+ top: 0px;
  left: 300px;
  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
@@ -180,7 +183,10 @@ button {
         margin-bottom: -15px;
         height: 30px;
     }
-    
+    #form {
+        position: relative;
+        top: 0px;
+    }
     #btndiv{
         margin-top: -25px;
     }
@@ -214,7 +220,7 @@ button {
     
     .container0 {
         width: 15px; 
-        height: 430px;
+        height: 470px;
         font-family: "Overpass", sans-serif;
         border: 1px solid #5ea5ae;
         background-color: #5ea5ae;
@@ -227,7 +233,7 @@ button {
     
     .container1 {
         width: 200px; 
-        height: 430px;
+        height: 470px;
         color: #5ea5ae;
         background-color: whitesmoke;
         position: relative;
@@ -243,8 +249,8 @@ button {
      border: 1px solid #5ea5ae;
      border-radius: 20px;
      position: relative;
-     top: 10px;
-     left: 70px;
+     top: 0px;
+     left: 50px;
      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
     }
     

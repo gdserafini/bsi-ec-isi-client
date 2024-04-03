@@ -20,7 +20,7 @@
                 <img src="../../resources/logo-removebg.png" class="logo"/>
                 <div class="jpuc">
                     <h3>Já Possui uma Conta?</h3>
-                    <button class="jpuc-btn" >Entrar</button>
+                    <button onclick="irParaLogin()" class="jpuc-btn" >Entrar</button>
                 </div>
                 <div class="container1 p-3">
                     <h2 id="signup-title">Criar Conta</h2>
@@ -29,7 +29,7 @@
                         <img src="../../resources/google_logo.png" alt="">
                         <img src="../../resources/linkedin_logo.webp" alt="">
                     </div>
-                    <form action="">
+                    <form id="form" action="">
                         Ou crie conta com seu email:
                             <label for="nome" class="form-label"></label>
                             <input type="text" minlength="3" id="nome" placeholder="Nome/Nome fantasia" class="form-control" title="Informe um nome válido.">                        
@@ -46,15 +46,18 @@
                             <label for="senha" class="form-label"></label>
                             <input type="password" minlength="8" id="senha" placeholder="Senha" pattern="^(?=.*\d).{8,}$" title="Informe um senha válida" class="form-control">
 
+                            <label for="senha" class="form-label"></label>
+                            <input type="password" minlength="8" id="senha" placeholder="Confirmar senha" pattern="^(?=.*\d).{8,}$" title="Informe um senha válida" class="form-control">
+
                             <br><label for="type" class="form-label"></label>
                             <input type="checkbox" name="use-term" id="use-term" checked required>  Aceito os termos de uso 
                             <div>
-                                <input  class="btn btn-light" type="submit" onclick="submitLogin()" id="btndiv" value="Criar conta">
+                                <input  class="btn btn-light" type="submit" onclick="validateInput()" id="btndiv" value="Criar conta">
                             </div>
                     </form>
                 </div>
             </div>
             </div>
-        <script src="../script/script.js"></script>
-    </body>
+            <script src="../script/script.js"></script>
+        </body>
 </html> 
