@@ -1,0 +1,221 @@
+
+
+button {
+    border-radius: 12px;
+}
+
+.header {
+    background-color: whitesmoke;
+    height: 80px;
+    border-bottom: 1px solid #5ea5aeab;
+    color: #fff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.perfilIcon {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    left: 780px;
+    bottom: 45px;
+}
+
+.logoNomeIndex {
+    width: 171px;
+    height: 50px;
+    position: relative;
+    top: 45px;
+    left: 25px;
+}
+
+.logoNome {
+    width: 171px;
+    height: 50px;
+    position: relative;
+    bottom: 35px;
+    left: 25px;
+}
+.logo {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    left: 45px;
+    top: 40px;
+}
+.imgInicio {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    bottom: 100px;
+    right: 500px;
+}
+
+.botaoH {
+    background-color: whitesmoke;
+    font-family: "Overpass", sans-serif;
+    border: none;
+    position: relative;
+    bottom: 40px;
+    left: 750px;
+    color: #0499AE;
+    padding: 15px 40px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 5px 10px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+.containerLocais {
+    width: 800px; 
+    height: 400px;
+    font-family: "Overpass", sans-serif;
+    color: #0499AE;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    position: relative;
+    top: 10px;
+    left: 300px;
+    padding: 50px 25px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.usuario{
+    font-family: "Overpass", sans-serif;
+    border: none;
+    position: relative;
+    bottom: 40px;
+    left: 750px;
+    color: #04616d;
+    padding: 15px 40px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+
+}
+
+.resultadoLocais {
+    width: 700px; 
+    height: 250px;
+    font-family: "Overpass", sans-serif;
+    color: #0499AE;
+    border-radius: 20px;
+    background-color: white;
+    position: relative;
+    top: 30px;
+    left: 20px;
+    padding: 50px 25px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.locais{
+    color:black;
+    padding: 10px;
+
+} 
+.btnDeletar{
+    background-color: whitesmoke;
+    font-family: "Overpass", sans-serif;
+    border: none;
+    position: relative;
+    
+    
+    color: #0499AE;
+    
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 5px 10px;
+    cursor: pointer;
+    border-radius: 40px;
+    transition-duration: 0.4s;
+
+}
+.btnDeletar:hover{
+    background-color: rgba(220, 43, 43, 0.827);
+    color:white;
+}   
+
+@media screen and (max-width: 500px) {
+    button {
+        border-radius: 12px;
+    }
+    
+    .header {
+        background-color: whitesmoke;
+        height: 60px;
+        border-bottom: 1px solid #5ea5aeab;
+        color: #fff;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .perfilIcon {
+        height: 30px;
+        width: 30px;
+        position: relative;
+        left: 10px;
+        bottom: 20px;
+    }
+    
+    .logoNomeIndex {
+        width: 105px;
+        height: 31px;
+        position: relative;
+        top: 10px;
+        left: 10px;
+    }
+    
+    .logoNome {
+        width: 105px;
+        height: 31px;
+        position: relative;
+        top: 0px;
+        left: 10px;
+    }
+
+    .botaoH {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        bottom: -40px;
+        left: 30px;
+        color: #0499AE;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+        margin: 5px 5px;
+        cursor: pointer;
+        border-radius: 40px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .containerLocais {
+        width: 250px; 
+        height: 400px;
+        font-family: "Overpass", sans-serif;
+        color: #0499AE;
+        border-radius: 20px;
+        background-color: whitesmoke;
+        position: relative;
+        top: 50px;
+        left: 10px;
+        padding: 20px 20px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .resultadoLocais {
+        width: 230px; 
+        height: 300px;
+        font-family: "Overpass", sans-serif;
+        color: #0499AE;
+        border-radius: 20px;
+        background-color: white;
+        position: relative;
+        top: 20px;
+        left: -10px;
+        padding: 20px 20px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+}
