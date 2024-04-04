@@ -192,3 +192,76 @@ button {
         display: none;
     }
 }
+
+#main{
+    border:solid;
+    height:100vh;
+    border-width: 0px;
+  }
+  #footer{
+    border:solid;
+  }
+
+footer {
+    border-top: 1px solid #0499AE;
+    background-color: whitesmoke;
+    color: #0499AE;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    position: static; 
+    width: 100%; 
+    text-align:left;
+    margin-top: 200px;
+  }
+  
+  .footer-section {
+    margin: 30px;
+  }
+  
+  .footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul li a {
+    color: #416368;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+  
+  .footer-section ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    text-align:left;
+    border-top: 1px solid #555;
+    margin-top: 20px;
+    padding-top: 20px;
+    width: 100%;
+    font-size: 14px;
+  }
+  
+  .footer-bottom a {
+    color: #416368;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.2s;
+  }
+  
+  .footer-bottom p {
+    font-size: 12px;
+    color: #416368;
+    text-align:left;
+  }
