@@ -4,13 +4,6 @@ const regexCpfCnpj = /^(?:(?:(?:\d{3}\.){2}\d{3}|\d{9})[-.]?\d{2}|(?:\d{2}\.?\d{
 const regexCEP = /^\d{2}\.?\d{3}-?\d{3}$/;
 const regexPassword = /^(?=.*\d).{8,}$/;
 
-/*funções de navegação a serem implementadas futuramente
-const goToLogin = () => {};
-const goToAbout = () => {};
-const goToLocalRegistration = () => {};
-const goToLocals = () => {};
-*/
-
 function irParaCriarContaIndex() {
     window.location.href = "src/page/criarConta.html";
 }
@@ -22,6 +15,9 @@ function irParaLogin() {
 }
 function irParaLocal() {
     window.location.href = "local.html";
+}
+function irParaEditarConta() {
+    window.location.href = "editarConta.html";
 }
 function irParaSobre() {
     window.location.href = "sobre.html";
@@ -47,33 +43,9 @@ function irParaLocaisIndex() {
 /**
  * @deprecated Substituida pela validação do próprio HTML
  */
-function validateInput() {
-    if (!validateFields()) {
-        if(!termsChecked()){ 
-            alert('Aceite os termos de uso para criar a conta'); 
-        }else{window.alert("Preencha todos os campos");}
-    }else if(!validateRegex(/^.{3,}$/, 'nome')){
-        alert('Nome inválido, deve ter 3 ou mais caracteres');
-    } else if (!validateRegex(regexEmail, 'email')) {
-        window.alert("E-mail inválido, deve estar no formato texto@texto.com(.br)");
-    } else if (!validateRegex(regexCpfCnpj, 'cpf')) {
-        window.alert("CPF inválido, deve estar no formato 0000000000/000.000.000-00");
-    } else if (!validateRegex(regexPhone, 'telefone')) {
-        window.alert("Telefone inválido, deve estar no formato 00000000000/(00) 00000-0000");
-    } 
-    else if(!validateRegex(regexPassword, 'senha')){
-        alert('Senha inválida, precisa ter 8 ou mais caracteres e ao menos 1 número.')
-    }
-    else if(!termsChecked()){ 
-        alert('Aceite os termos de uso para criar a conta'); 
-    }
-    else {logSignupSubmit();
-        window.location.href = "homeUsers.html";
-    }
-}
 
 function validatePatterns(){
-    const fields = ['nome', 'email', 'telefone', 'cpf', 'senha'];
+    const fields = ['nome', 'email', 'telefone', 'cpf', 'senha', 'confirmarSenha'];
     return fields.every(
         field =>  {
             return (new RegExp(document.getElementById(field).pattern))
@@ -104,7 +76,7 @@ function termsChecked(){
 }
 
 function validateFields(){
-    const fields = ['nome', 'email', 'telefone', 'cpf', 'senha'];
+    const fields = ['nome', 'email', 'telefone', 'cpf', 'senha', 'confirmarSenha'];
     return fields.every(
         field =>  document.getElementById(field).value.trim() !== ''
     );
@@ -121,4 +93,37 @@ function logSignupSubmit(){
     const code = document.getElementById('cpf').value;
     console.log(
         `form submit: name: ${name}, email: ${email}, code: ${phone}, phone: ${code}, password: @encrypted`);
+}
+/**
+function validatePassword() {
+    var senha = document.getElementById("senha").value;
+    var confirmarSenha = document.getElementById("confirmarSenha").value;
+
+    if (senha != confirmarSenha) {
+      document.getElementById("confirmarSenha").setCustomValidity("As senhas não coincidem!");
+    } else {
+      document.getElementById("confirmarSenha").setCustomValidity('');
+    }
+  }
+ */
+
+// validar login
+
+function validarLogin() {
+    var nome = document.getElementById('nome').value;
+    var email = document.getElementById('email').value;
+    var senha = document.getElementById('senha').value;
+    if (nome.length < 3) {
+        return false;
+    } 
+    if (!email.match(/^[\w.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
+        return false;
+    }
+    if (!senha.match(/^(?=.*\d).{8,}$/)) {
+        return false;
+    }
+    else {
+        return true;
+        window.location.href = "homeUsers.html";
+}
 }
