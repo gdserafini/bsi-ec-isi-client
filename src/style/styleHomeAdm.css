@@ -137,46 +137,46 @@ button {
     .logo {
         display: none;
     }
-    
-#cardUsuario {
-    position: relative;
-    top: 80px;
-    left: 50px;
-    background-color: whitesmoke;
-}
-#btnUsuario {
-    background-color: #0499AE;
-}
+        
+    #cardUsuario {
+        position: relative;
+        top: 80px;
+        left: 50px;
+        background-color: whitesmoke;
+    }
+    #btnUsuario {
+        background-color: #0499AE;
+    }
 
-#cardLocal {
-    position: relative;
-    top: 110px;
-    left: 50px;
-    background-color: whitesmoke;
-}
-#btnLocal {
-    background-color: #0499AE;
-}
+    #cardLocal {
+        position: relative;
+        top: 110px;
+        left: 50px;
+        background-color: whitesmoke;
+    }
+    #btnLocal {
+        background-color: #0499AE;
+    }
 
-#cardResiduo {
-    position: relative;
-    top: 170px;
-    left: 50px;
-    background-color: whitesmoke;
-}
-#btnResiduo {
-    background-color: #0499AE;
-}
+    #cardResiduo {
+        position: relative;
+        top: 170px;
+        left: 50px;
+        background-color: whitesmoke;
+    }
+    #btnResiduo {
+        background-color: #0499AE;
+    }
 
-#cardEmpresa {
-    position: relative;
-    top: 140px;
-    left: 50px;
-    background-color: whitesmoke;
-}
-#btnEmpresa {
-    background-color: #0499AE;
-}
+    #cardEmpresa {
+        position: relative;
+        top: 140px;
+        left: 50px;
+        background-color: whitesmoke;
+    }
+    #btnEmpresa {
+        background-color: #0499AE;
+    }
 
     .botaoH {
         background-color: whitesmoke;
