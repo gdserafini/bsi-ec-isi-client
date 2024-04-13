@@ -1,0 +1,197 @@
+button {
+    border-radius: 12px;
+}
+
+.header {
+    background-color: whitesmoke;
+    height: 80px;
+    border-bottom: 1px solid #5ea5aeab;
+    color: #fff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.perfilIcon {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    left: 780px;
+    bottom: 45px;
+}
+
+#cardUsuario {
+    position: relative;
+    top: 50px;
+    left: 250px;
+    background-color: whitesmoke;
+}
+#btnUsuario {
+    background-color: #0499AE;
+}
+
+#cardLocal {
+    position: relative;
+    bottom: 100px;
+    left: 700px;
+    background-color: whitesmoke;
+}
+#btnLocal {
+    background-color: #0499AE;
+}
+
+#cardResiduo {
+    position: relative;
+    bottom: 175px;
+    left: 700px;
+    background-color: whitesmoke;
+}
+#btnResiduo {
+    background-color: #0499AE;
+}
+
+#cardEmpresa {
+    position: relative;
+    left: 250px;
+    bottom: 20px;
+    background-color: whitesmoke;
+}
+#btnEmpresa {
+    background-color: #0499AE;
+}
+
+.logoNomeIndex {
+    width: 171px;
+    height: 50px;
+    position: relative;
+    top: 45px;
+    left: 25px;
+}
+
+.logoNome {
+    width: 171px;
+    height: 50px;
+    position: relative;
+    bottom: 35px;
+    left: 25px;
+}
+.logo {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    left: 45px;
+    top: 40px;
+}
+
+.botaoH {
+    background-color: whitesmoke;
+    font-family: "Overpass", sans-serif;
+    border: none;
+    position: relative;
+    bottom: 40px;
+    left: 750px;
+    color: #0499AE;
+    padding: 15px 40px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 5px 10px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+@media screen and (max-width: 500px) {
+    button {
+        border-radius: 12px;
+    }
+    
+    .header {
+        background-color: whitesmoke;
+        height: 60px;
+        border-bottom: 1px solid #5ea5aeab;
+        color: #fff;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .perfilIcon {
+        height: 30px;
+        width: 30px;
+        position: relative;
+        left: 160px;
+        bottom: 20px;
+    }
+    
+    .logoNomeIndex {
+        width: 105px;
+        height: 31px;
+        position: relative;
+        top: 7px;
+        left: 10px;
+    }
+    
+    .logoNome {
+        width: 105px;
+        height: 31px;
+        position: relative;
+        top: 7px;
+        left: 10px;
+    }
+    .logo {
+        display: none;
+    }
+        
+    #cardUsuario {
+        position: relative;
+        top: 80px;
+        left: 50px;
+        background-color: whitesmoke;
+    }
+    #btnUsuario {
+        background-color: #0499AE;
+    }
+
+    #cardLocal {
+        position: relative;
+        top: 110px;
+        left: 50px;
+        background-color: whitesmoke;
+    }
+    #btnLocal {
+        background-color: #0499AE;
+    }
+
+    #cardResiduo {
+        position: relative;
+        top: 170px;
+        left: 50px;
+        background-color: whitesmoke;
+    }
+    #btnResiduo {
+        background-color: #0499AE;
+    }
+
+    #cardEmpresa {
+        position: relative;
+        top: 140px;
+        left: 50px;
+        background-color: whitesmoke;
+    }
+    #btnEmpresa {
+        background-color: #0499AE;
+    }
+
+    .botaoH {
+        background-color: whitesmoke;
+        font-family: "Overpass", sans-serif;
+        border: none;
+        position: relative;
+        bottom: -40px;
+        left: 100px;
+        color: #0499AE;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+        margin: 5px 5px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+}

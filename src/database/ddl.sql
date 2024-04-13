@@ -38,11 +38,10 @@ CREATE TABLE Residuo (
 );
 
 CREATE TABLE Usuario (
-    id_Usuario INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    id INT PRIMARY KEY NOT NULL,
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL,
     senha VARCHAR(100) NOT NULL,
-    telefone VARCHAR(100) NOT NULL,
     data_nascimento DATE NOT NULL,
     avatar VARCHAR(255),
     fk_TipoUsuario_id INT,

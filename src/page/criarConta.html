@@ -31,31 +31,31 @@
                         <img src="../../resources/google_logo.png" alt="">
                         <img src="../../resources/linkedin_logo.webp" alt="">
                     </div>
-                    <form id="form" action="">
+                    <form id="form" action="criarConta_exe.php">
                         Ou crie conta com seu email:
                             <label for="nome" class="form-label"></label>
-                            <input type="text" minlength="3" id="nome" placeholder="Nome/Nome fantasia" 
+                            <input type="text" minlength="3" id="nome" name="nome" placeholder="Nome/Nome fantasia" 
                             class="form-control" title="Informe um nome válido. Minimo 3 digitos">                        
                             
                             <label for="email" class="form-label"></label>
-                            <input type="email" required id="email" placeholder="E-mail" pattern="^[\w.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
+                            <input type="email" required id="email" name="email" placeholder="E-mail" pattern="^[\w.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
                             title="Informe um email válido" class="form-control">                        
                             
                             <label for="cpf" class="form-label"></label>
-                            <input type="text" maxlength="18" id="cpf" placeholder="CPF/CNPJ" 
+                            <input type="text" maxlength="18" id="cpf" name="cpf"placeholder="CPF/CNPJ" 
                             pattern="^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$|^\d{2}\.?\d{3}\.?\d{3}\/?[0-9]{4}-?\d{2}$" 
                             title="Deve estar no formato 00000000000 ou 000.000.000-00" class="form-control">
             
                             <label for="telefone" class="form-label"></label>
-                            <input type="text" maxlength="15" id="telefone" placeholder="Telefone" class="form-control" 
+                            <input type="text" maxlength="15" id="telefone" name="telefone" placeholder="Telefone" class="form-control" 
                             pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$" title="Deve estar no formato 00000000000 ou (00) 00000-0000">
                              
                             <label for="senha" class="form-label"></label>
-                            <input type="password" minlength="8" id="senha" placeholder="Senha" 
+                            <input type="password" minlength="8" id="senha"  placeholder="Senha" 
                             pattern="^(?=.*\d).{8,}$" title="Deve conter no minimo 8 digitos e 1 número" class="form-control">
 
                             <label for="confirmarSenha" class="form-label"></label>
-                            <input type="password" minlength="8" id="confirmarSenha" placeholder="Confirmar senha" 
+                            <input type="password" minlength="8" id="confirmarSenha" name="senha" placeholder="Confirmar senha" 
                             pattern="^(?=.*\d).{8,}$" title="As senhas não são iguais" class="form-control">
 
                             <br><label for="type" class="form-label"></label>
