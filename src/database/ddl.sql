@@ -42,6 +42,7 @@ CREATE TABLE Usuario (
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL,
     senha VARCHAR(100) NOT NULL,
+    telefon VARCHAR(100) NOT NULL,
     data_nascimento DATE NOT NULL,
     avatar VARCHAR(255),
     fk_TipoUsuario_id INT,
