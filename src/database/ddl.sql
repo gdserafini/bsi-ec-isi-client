@@ -1,3 +1,4 @@
+
 DROP DATABASE IF EXISTS green_path_db;
 
 CREATE DATABASE green_path_db
@@ -24,8 +25,9 @@ CREATE TABLE Empresa (
     setor VARCHAR(50) NOT NULL,
     telefone VARCHAR(15) NOT NULL,
     bairro VARCHAR(50) NOT NULL,
-    fk_Usuario_id INT,
-    UNIQUE (nome_fantasia, cnpj, razao_social, telefone)
+    fk_Usuario_id INT NOT NULL,
+    UNIQUE (nome_fantasia, cnpj, razao_social, telefone),
+    CONSTRAINT check_cnpj_digits CHECK(cnpj REGEXP '^[0-9]{14}$')
 );
 
 CREATE TABLE TipoResiduo (
@@ -43,14 +45,16 @@ CREATE TABLE Usuario (
     avatar MEDIUMBLOB DEFAULT NULL,
     cpf_cnpj VARCHAR(14) NOT NULL,
     telefone VARCHAR(15) NOT NULL,
-    fk_TipoUsuario_id INT,
-    UNIQUE (email, cpf_cnpj)
+    fk_TipoUsuario_id INT NOT NULL,
+    UNIQUE (email, cpf_cnpj),
+    CONSTRAINT check_cnpj_cpf_digits CHECK(cpf_cnpj REGEXP '^[0-9]{9,14}$')
 );
 
 CREATE TABLE TipoUsuario (
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     nome_tipo VARCHAR(50) UNIQUE NOT NULL,
-    nivel INT NOT NULL
+    nivel INT NOT NULL DEFAULT 1,
+    CONSTRAINT check_level_range CHECK(nivel >= 1 AND nivel <=3)
 );
 
 CREATE TABLE RelacLocalResiduo (
@@ -62,33 +66,39 @@ CREATE TABLE RelacEmpresaLocal (
     fk_Empresa_id INT,
     fk_LocalDescarte_id INT
 );
- 
+
 ALTER TABLE Empresa ADD CONSTRAINT FK_Empresa_2
     FOREIGN KEY (fk_Usuario_id)
-    REFERENCES Usuario (id)
-    ON DELETE CASCADE;
- 
+    REFERENCES Usuario (id) 
+    ON DELETE CASCADE 
+    ON UPDATE CASCADE;
+
 ALTER TABLE Usuario ADD CONSTRAINT FK_Usuario_2
     FOREIGN KEY (fk_TipoUsuario_id)
     REFERENCES TipoUsuario (id)
-    ON DELETE CASCADE;
+    ON DELETE RESTRICT
+    ON UPDATE CASCADE;
  
 ALTER TABLE RelacLocalResiduo ADD CONSTRAINT FK_RelacLocalResiduo_1
     FOREIGN KEY (fk_TipoResiduo_id)
     REFERENCES TipoResiduo (id)
-    ON DELETE RESTRICT;
+    ON DELETE SET NULL
+    ON UPDATE CASCADE;
  
 ALTER TABLE RelacLocalResiduo ADD CONSTRAINT FK_RelacLocalResiduo_2
     FOREIGN KEY (fk_LocalDescarte_id)
     REFERENCES LocalDescarte (id)
-    ON DELETE SET NULL;
+    ON DELETE SET NULL
+    ON UPDATE CASCADE;
  
 ALTER TABLE RelacEmpresaLocal ADD CONSTRAINT FK_RelacEmpresaLocal_1
     FOREIGN KEY (fk_Empresa_id)
     REFERENCES Empresa (id)
-    ON DELETE SET NULL;
+    ON DELETE SET NULL
+    ON UPDATE CASCADE;
  
 ALTER TABLE RelacEmpresaLocal ADD CONSTRAINT FK_RelacEmpresaLocal_2
     FOREIGN KEY (fk_LocalDescarte_id)
     REFERENCES LocalDescarte (id)
-    ON DELETE SET NULL;
+    ON DELETE SET NULL
+    ON UPDATE CASCADE;
