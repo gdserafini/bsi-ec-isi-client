@@ -19,7 +19,7 @@
 				</div>
 
 				<?php
-				$id      = $_POST['id'];
+				$id_usu      = $_POST['id_usu'];
                 $nome    = $_POST['nome'];   
                 $email   = $_POST['email'];   
                 $cpf_cnpj   = $_POST['cpf_cnpj'];  
@@ -32,12 +32,12 @@
 				if ($_FILES['avatar']['size'] == 0) {
 					$sql = "UPDATE Usuario SET nome = '$nome', email = '$email', cpf_cnpj = '$cpf_cnpj', 
                     telefone = '$telefone', senha = '$md5Senha', tipo_usuario = '$tipo_usuario'
-                     WHERE id = $id";
+                     WHERE id_usu = $id_usu";
 				} else {  
 					$avatar = addslashes(file_get_contents($_FILES['avatar']['tmp_name']));
 					$sql = "UPDATE Usuario SET nome = '$nome', email = '$email', cpf_cnpj = '$cpf_cnpj', 
                     telefone = '$telefone', senha = '$md5Senha', tipo_usuario = '$tipo_usuario'
-                     WHERE id = $id";
+                     WHERE id_usu = $id_usu";
 				}
 				
 

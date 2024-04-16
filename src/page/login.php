@@ -13,6 +13,20 @@
     </head>
     <body>
     <?php
+            session_start();
+            if (isset($_SESSION['id_tipo_usu'])) {                         
+                if ($_SESSION['id_tipo_usu'] == 1){
+                    $url = 'location: /bsi-ec-isi-client/src/page/homeAdm.php';	             
+                    header($url);                                       
+                    exit();
+                }else if ($_SESSION['id_tipo_usu'] == 2){
+                    $url = 'location: /bsi-ec-isi-client/src/page/homeUser.php';	 
+                    header($url);                                         	 
+                    exit();
+                }
+            }
+        ?>
+    <?php
         $msg        = "";
         $msg_header = "";
         if(isset($_SESSION['nao_autenticado'])){ 
@@ -21,6 +35,7 @@
             $style      = "display:block";
         }else{
             unset($_SESSION['nao_autenticado']);
+            $style      = "display:none";
         }
         //session_destroy(); 
         ?>

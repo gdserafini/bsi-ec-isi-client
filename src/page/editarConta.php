@@ -14,40 +14,40 @@
     <body>
     <?php require '../database/connectDB.php'; ?>
     <?php		
-				$id = $_GET['id'];
+				$id_usu = $_GET['id_usu'];
 
 				$conn = mysqli_connect($servername, $username, $password, $database);
 
 				if (!$conn) {
 					die("<strong> Falha de conexão: </strong>" . mysqli_connect_error());
 				}
-                $sql = "SELECT id, fk_TipoUsuario_id, nome, email, telefone, cpf_cnpj, senha, avatar
-                FROM Usuario WHERE id = $id";
+                $sql = "SELECT id_usu, fk_TipoUsuario_id, nome, email, telefone, cpf_cnpj, senha, avatar
+                FROM Usuario WHERE id_usu = $id_usu";
 
 				echo "<div class='container'>";
 				if ($result = mysqli_query($conn, $sql)) {
 					if(mysqli_num_rows($result) == 1){
 						$row = mysqli_fetch_assoc($result);
 						
-						$id  = $row['id'];
+						$id_usu  = $row['id_usu'];
 						$nome = $row['nome'];
 						$email = $row['email'];
 						$cpf_cnpj = $row['cpf_cnpj'];
 						$telefone = $row['telefone'];
-						$tipo_usuario = $row['fk_TipoUsuario_id'];
+						$tipo_usuario = $row['tipo_usuario'];
 						$senha = $row['senha'];
 						$avatar = $row['avatar'];
 
-						$sqlTU = "SELECT id, nome_tipo FROM TipoUsuario";
+						$sqlTU = "SELECT id_tipo_usu, nome_tipo FROM TipoUsuario";
 							
 						$optionsUser = array();
 						
 						if ($result = mysqli_query($conn, $sqlTU)) {
 							while ($row = mysqli_fetch_assoc($result)) {
 								$selected = "";
-								if ($row['id'] == $tipo_usuario)
+								if ($row['id_tipo_usu'] == $tipo_usuario)
 									$selected = "selected";
-								array_push($optionsUser, "\t\t\t<option " . $selected . " value='". $row["id"]."'>".$row["nome_tipo"]."</option>\n");
+								array_push($optionsUser, "\t\t\t<option " . $selected . " value='". $row["id_tipo_usu"]."'>".$row["nome_tipo"]."</option>\n");
 							}
 						}
 
@@ -85,7 +85,7 @@
                 </div>
                 <div class="container1 p-3">
                     <h2 id="signup-title">Editar Conta</h2>
-                        <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
+                        <input type="hidden" id="id_usu" name="id_usu" value="<?php echo $id_usu; ?>">
 
                             <label for="nome" class="form-label"></label>
                             <input type="text" name="nome" minlength="3" id="nome" placeholder="Nome/Nome fantasia" 
@@ -97,7 +97,7 @@
                             <div class="row g-3">
                                 <div class="col-md-4">
                                     <label class="form-label"></label>
-                                        <select name="tipo_usuario" id="tipo_usuario" placeholder="Tipo de usuário" required>
+                                        <select name="fk_Usuario_id" id="fk_Usuario_id" placeholder="Tipo de usuário" required>
                                             <option value=""></option>
                                         <?php
                                             foreach($optionsUser as $key => $value){

@@ -21,10 +21,10 @@
 					die("<strong> Falha de conexão: </strong>" . $conn->connect_error);
 				}
 
-				$id=$_GET['id'];
+				$id_usu=$_GET['id_usu'];
 				
-				$sql = "SELECT id, nome, email, telefone, cpf_cnpj, senha FROM Usuario 
-				WHERE id = $id;";
+				$sql = "SELECT id_usu, nome, email, telefone, cpf_cnpj, senha FROM Usuario 
+				WHERE id_usu = $id_usu;";
 				echo "<div class='container'>";  
 				if ($result = $conn->query($sql)) {
 					if ($result->num_rows == 1) {
@@ -45,7 +45,7 @@
 							<h2>Exclusão de [<?php echo $row['nome']; ?>]</h2>
 						</div>
 						<form id="cf" class="container" action="excluirContaDB.php" method="post" onsubmit="return check(this.form)">
-							<input type="hidden" id="id" name="id" value="<?php echo $row['id']; ?>">
+							<input type="hidden" id="id_usu" name="id_usu" value="<?php echo $row['id_usu']; ?>">
 							<p>
 							<label><b>Nome: </b> <?php echo $row['nome']; ?> </label></p>
 							<p>

@@ -37,27 +37,27 @@
 			  <h2>Listagem de Contas</h2>
 			</div>
 <?php
-            $sql = "SELECT U.id, nome_tipo, nome, email, telefone, cpf_cnpj, senha, avatar
-            FROM Usuario AS U INNER JOIN TipoUsuario AS TU ON (U.fk_TipoUsuario_id = TU.id) 
+            $sql = "SELECT id_usu, TU.nome_tipo, nome, email, telefone, cpf_cnpj, senha, avatar
+            FROM Usuario AS U INNER JOIN TipoUsuario AS TU ON (U.fk_TipoUsuario_id = TU.id_tipo_usu) 
             ORDER BY nome";
             echo "<div id='ctable' class='container'>";
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='table'>";
                 echo "	<tr>";
-                echo "	  <th width='10%'>Código</th>";
+                echo "	  <th width='5%'>Código</th>";
                 echo "	  <th width='10%'>Tipo</th>";
                 echo "	  <th width='10%'>Nome</th>";
-                echo "	  <th width='10%'>Avatar</th>";
+                echo "	  <th width='5%'>Avatar</th>";
                 echo "	  <th width='10%'>E-mail</th>";
-                echo "	  <th width='10%'>Telefone</th>";
-                echo "	  <th width='10%'>CPF/CNPJ</th>";
+                echo "	  <th width='7%'>Telefone</th>";
+                echo "	  <th width='7%'>CPF/CNPJ</th>";
                 echo "	  <th width='10%'>Senha</th>";
-                echo "	  <th width='10%'>Editar</th>";
-                echo "	  <th width='10%'>Excluir</th>";
+                echo "	  <th width='7%'>Editar</th>";
+                echo "	  <th width='7%'>Excluir</th>";
                 echo "	</tr>";
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
-                        $cod = $row["id"];
+                        $cod = $row["id_usu"];
                         echo "<tr>";
                         echo "<td>";
                         echo $cod;
@@ -73,7 +73,7 @@
                         } else {
                             ?>
                             <td>
-                                <img id="imagemSelecionada" class="rounded-circle" src="../../resources/perfilIcon.png" />
+                                <img id="imagemSelecionada" class="rounded-circle" src="../../resources/perfilIconListar.png" />
                             </td><td>
                             <?php
                         }
@@ -83,7 +83,7 @@
                         echo "</td><td>";
                         echo $row["cpf_cnpj"];
                         echo "</td><td>";
-                        echo $senhaMd5;
+                        echo $row["senha"];
                         echo "</td><td>";
         ?>              <td>       
                         <button onclick="window.location.href='editarConta.php'">Editar</button>

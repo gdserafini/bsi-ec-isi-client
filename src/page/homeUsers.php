@@ -12,20 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
   <body> 
-  <?php
-            session_start();
-            if (isset($_SESSION['nome_tipo_user'])) {
-                if ($_SESSION['nome_tipo_user'] == 'Administrador'){
-                    $url = 'location: src/homeAdm.php';	             
-                    header($url);            
-                    exit();
-                }else if ($_SESSION['nome_tipo_user'] == 'Usuário'){
-                    $url = 'location: /src/homeUser.php';	 
-                    header($url);                                     
-                    exit();
-                }
-            }
-        ?>
       <div class="header">
           <div class="logoNome">
             <a href="../../index.html"><img src="../../resources/logoNome-removebg-preview.png" class="logoNomeIndex"/></a>

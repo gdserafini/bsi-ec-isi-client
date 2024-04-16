@@ -13,14 +13,14 @@
   <body>
     <?php
             session_start();
-            if (isset($_SESSION['nome_tipo_user'])) {
-                if ($_SESSION['nome_tipo_user'] == 'Administrador'){
-                    $url = 'location: homeAdm.php';	             
-                    header($url);            
+            if (isset($_SESSION['id_tipo_usu'])) {
+                if ($_SESSION['id_tipo_usu'] == 1){
+                  $url = 'location: /bsi-ec-isi-client/src/page/homeAdm.php';	 
+                  header($url);            
                     exit();
-                }else if ($_SESSION['nome_tipo_user'] == 'Usuário'){
-                    $url = 'location: homeUser.php';	 
-                    header($url);                                     
+                }else if ($_SESSION['id_tipo_usu'] == 2){
+                  $url = 'location: /bsi-ec-isi-client/src/page/homeUser.php';	 
+                  header($url);                                     
                     exit();
                 }
             }

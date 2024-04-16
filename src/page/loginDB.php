@@ -26,20 +26,20 @@
     $senha   = $conn->real_escape_string($_POST['senha']); 
     
 
-    $sql = "SELECT U.id, U.nome, TU.nome_tipo 
+    $sql = "SELECT id_usu, nome, id_tipo_usu 
     FROM Usuario as U, TipoUsuario as TU 
-    WHERE U.fk_TipoUsuario_id = TU.id 
+    WHERE U.fk_TipoUsuario_id = TU.id_tipo_usu 
     AND email = '$email' AND senha = md5('$senha')";
 
     if ($result = $conn->query($sql)) {
         if ($result->num_rows == 1) { 
             $row = $result->fetch_assoc();
             $_SESSION ['email']       = $email;
-            $_SESSION ['nome_tipo_user'] = $row['nome_tipo'];
-            $_SESSION ['id']  = $row['id'];
+            $_SESSION ['id_tipo_usu'] = $row['id_tipo_usu'];
+            $_SESSION ['id_usu']  = $row['id_usu'];
             $_SESSION ['nome']        = $row['nome'];
             unset($_SESSION['nao_autenticado']);       
-            if( $_SESSION ['nome_tipo_user'] == 'Administrador'){           
+            if( $_SESSION ['id_tipo_usu'] == 1){           
                 $conn->close(); 
                 header('location: /bsi-ec-isi-client/src/page/homeAdm.php'); 
                 exit();

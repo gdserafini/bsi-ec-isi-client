@@ -31,19 +31,21 @@
 	$md5Senha = md5($senha);
     $tipo_usuario = $conn->real_escape_string($_POST['tipo_usuario']); 
 
-    $sql = "INSERT INTO Usuario (nome, email, cpf_cnpj, telefone, senha, avatar) 
-    VALUES ('$nome','$email','$cpf_cnpj', '$telefone','$md5Senha', NULL)";
+    $sql = "INSERT INTO Usuario (nome, email, cpf_cnpj, telefone, senha, avatar, fk_TipoUsuario_id) 
+    VALUES ('$nome','$email','$cpf_cnpj', '$telefone','$md5Senha', NULL, $tipo_usuario)";
 
     if ($result = $conn->query($sql)) {
         $msg = "Registro cadastrado com sucesso! Você já pode realizar login.";
     } else {
         $msg = "Erro executando INSERT: " . $conn-> error . " Tente novo cadastro.";
     }
+
+    // primeira coisa a fazer, se não autenticar o login, encerra a conexao com bd
     $_SESSION['nao_autenticado'] = true;
     $_SESSION['mensagem_header'] = "Cadastro";
     $_SESSION['mensagem']        = $msg;
     $conn->close();
-    header('location: homeAdm.php'); 
+    header('location: ../../index.php'); 
     ?>
 </body>
 </html>

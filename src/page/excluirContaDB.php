@@ -19,7 +19,7 @@
 	</div>
 
 	<?php
-		$id = $_POST['id'];		
+		$id_usu = $_POST['id_usu'];		
 
 		$conn = new mysqli($servername, $username, $password, $database);
 
@@ -27,7 +27,7 @@
 			die("<strong> Falha de conexão: </strong>" . $conn->connect_error);
 		}
 
-		$sql = "DELETE FROM Usuario WHERE id = $id";
+		$sql = "DELETE FROM Usuario WHERE id_usu = $id_usu";
 
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = $conn->query($sql)) {

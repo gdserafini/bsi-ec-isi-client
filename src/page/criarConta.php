@@ -21,13 +21,13 @@
 				if (!$conn) {
 					die("<strong> Falha de conexão: </strong>" . mysqli_connect_error());
 				}
-				$sqlTU = "SELECT id, nome_tipo FROM TipoUsuario";
+				$sqlTU = "SELECT id_tipo_usu, nome_tipo FROM TipoUsuario";
 				
 				$optionsUser = array();
 				
 				if ($result = mysqli_query($conn, $sqlTU)) {
 					while ($row = mysqli_fetch_assoc($result)) {
-                       array_push($optionsUser, "\t\t\t<option value='". $row["id"]."'>".$row["nome_tipo"]."</option>\n");
+                       array_push($optionsUser, "\t\t\t<option value='". $row["id_tipo_usu"]."'>".$row["nome_tipo"]."</option>\n");
 					}
 				}
 
