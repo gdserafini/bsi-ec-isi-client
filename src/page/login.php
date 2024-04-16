@@ -43,9 +43,9 @@
                     </div>
                     <form action="loginDB.php" method="POST">
                         Ou entre com seu e-mail:
-                            <label for="nome" class="form-label"></label>
+                            <!--<label for="nome" class="form-label"></label>
                             <input type="text" minlength="3" name="nome" id="nome" placeholder="Nome/Nome fantasia" 
-                            class="form-control" title="Informe um nome válido. Minimo 3 digitos">                       
+                            class="form-control" title="Informe um nome válido. Minimo 3 digitos">-->                   
                             
                             <label for="email" class="form-label"></label>
                             <input type="email" name="email" required id="email" placeholder="E-mail" 
