@@ -35,7 +35,6 @@
 
       <div id="titLC" class="container">
 			  <h2>Listagem de Contas</h2>
-
 			</div>
 <?php
             $sql = "SELECT U.id, nome_tipo, nome, email, telefone, cpf_cnpj, senha, avatar

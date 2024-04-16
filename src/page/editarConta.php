@@ -59,6 +59,7 @@
                 </a>
             </div>
             <div class="container0">
+            <form id="form" action="editarContaDB.php" method="POST">
                 <td>
                     <?php
                     if ($avatar) {?>
@@ -84,7 +85,6 @@
                 </div>
                 <div class="container1 p-3">
                     <h2 id="signup-title">Editar Conta</h2>
-                    <form id="form" action="editarContaDB.php" method="POST">
                         <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
 
                             <label for="nome" class="form-label"></label>

@@ -73,8 +73,8 @@
                                         </select>
                                 </div>
                             <div class="col-md-8">
-                                <label for="cpf" class="form-label"></label>
-                                <input type="text" name="cpf" maxlength="18" id="cpf" placeholder="CPF/CNPJ" 
+                                <label for="cpf_cnpj" class="form-label"></label>
+                                <input type="text" name="cpf_cnpj" maxlength="18" id="cpf_cnpj" placeholder="CPF/CNPJ" 
                                 pattern="^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$|^\d{2}\.?\d{3}\.?\d{3}\/?[0-9]{4}-?\d{2}$" 
                                 title="Deve estar no formato 00000000000 ou 000.000.000-00" class="form-control" required>
                             </div>
