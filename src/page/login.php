@@ -22,10 +22,10 @@
         }else{
             unset($_SESSION['nao_autenticado']);
         }
-        session_destroy(); 
+        //session_destroy(); 
         ?>
         <div class="header">
-            <a href="../../index.html">
+            <a href="../../index.php">
                 <img src="../../resources/logoNome-removebg-preview.png" class="logoNome"/>
             </a>
             <div class="container0">

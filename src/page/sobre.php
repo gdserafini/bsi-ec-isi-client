@@ -14,7 +14,7 @@
   <body>
       <div class="header">
         <div class="logoNome">
-          <a href="../../index.html">
+          <a href="../../index.php">
             <img src="../../resources/logoNome-removebg-preview.png" class="logoNome"/>
           </a>
         </div>
