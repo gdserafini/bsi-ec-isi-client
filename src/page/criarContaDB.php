@@ -25,14 +25,14 @@
 
     $nome    = $conn->real_escape_string($_POST['nome']);   
     $email   = $conn->real_escape_string($_POST['email']);   
-    $cpf   = $conn->real_escape_string($_POST['cpf']);  
+    $cpf_cnpj   = $conn->real_escape_string($_POST['cpf_cnpj']);  
     $telefone = $conn->real_escape_string($_POST['telefone']);
     $senha   = $conn->real_escape_string($_POST['senha']);  
 	$md5Senha = md5($senha);
     $tipo_usuario = $conn->real_escape_string($_POST['tipo_usuario']); 
 
-    $sql = "INSERT INTO Usuario (nome, email, cpf, telefone, senha, avatar) 
-    VALUES ('$nome','$email','$cpf', '$telefone','$md5Senha', NULL)";
+    $sql = "INSERT INTO Usuario (nome, email, cpf_cnpj, telefone, senha, avatar) 
+    VALUES ('$nome','$email','$cpf_cnpj', '$telefone','$md5Senha', NULL)";
 
     if ($result = $conn->query($sql)) {
         $msg = "Registro cadastrado com sucesso! Você já pode realizar login.";
@@ -43,7 +43,7 @@
     $_SESSION['mensagem_header'] = "Cadastro";
     $_SESSION['mensagem']        = $msg;
     $conn->close();
-    header('location: ../../index.php'); 
+    header('location: homeAdm.php'); 
     ?>
 </body>
 </html>

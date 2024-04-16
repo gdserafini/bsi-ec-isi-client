@@ -26,7 +26,7 @@
     $senha   = $conn->real_escape_string($_POST['senha']); 
     
 
-    $sql = "SELECT U.id, nome, TU.nome_tipo 
+    $sql = "SELECT U.id, U.nome, TU.nome_tipo 
     FROM Usuario as U, TipoUsuario as TU 
     WHERE U.fk_TipoUsuario_id = TU.id 
     AND email = '$email' AND senha = md5('$senha')";
@@ -41,11 +41,11 @@
             unset($_SESSION['nao_autenticado']);       
             if( $_SESSION ['nome_tipo_user'] == 'Administrador'){           
                 $conn->close(); 
-                header('location: /GreenPath/src/page/homeAdm.php'); 
+                header('location: /bsi-ec-isi-client/src/page/homeAdm.php'); 
                 exit();
             }else {  
                 $conn->close();                                
-                header('location: /GreenPath/src/page/homeUsers.php');  
+                header('location: /bsi-ec-isi-client/src/page/homeUsers.php');  
                 exit();
             }
         }else{
@@ -53,7 +53,7 @@
             $_SESSION['mensagem_header'] = "email";
             $_SESSION['mensagem']        = "Senha ou e-mail incorreto.";
             $conn->close(); 
-            header('location: /GreenPath/index.php'); 
+            header('location: /bsi-ec-isi-client/index.php'); 
             exit();
         }
     }
@@ -63,7 +63,7 @@
         $_SESSION['mensagem_header'] = "email";
         $_SESSION['mensagem']        = $msg;
         $conn->close();
-        header('location: /GreenPath/index.php'); 
+        header('location: /bsi-ec-isi-client/index.php'); 
     }
 ?>
 	</body>

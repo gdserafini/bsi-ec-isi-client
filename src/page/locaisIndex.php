@@ -33,6 +33,6 @@
                 <button type="button" class="btn">ExemploB - Rua YYY, Descarte de X</button>
               </div>
           </div>
-          <script src="../script/script.js"></script>
+          <script type="text/javascript" src="../script/script.js"></script>
         </body>
 </html>

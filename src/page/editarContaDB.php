@@ -22,7 +22,7 @@
 				$id      = $_POST['id'];
                 $nome    = $_POST['nome'];   
                 $email   = $_POST['email'];   
-                $cpf   = $_POST['cpf'];  
+                $cpf_cnpj   = $_POST['cpf_cnpj'];  
                 $telefone = $_POST['telefone'];
                 $senha   = $_POST['senha'];  
                 $md5Senha = md5($senha);
@@ -30,12 +30,12 @@
                 $tipo_usuario = $_POST['tipo_usuario'];
 
 				if ($_FILES['avatar']['size'] == 0) {
-					$sql = "UPDATE Usuario SET nome = '$nome', email = '$email', cpf = '$cpf', 
+					$sql = "UPDATE Usuario SET nome = '$nome', email = '$email', cpf_cnpj = '$cpf_cnpj', 
                     telefone = '$telefone', senha = '$md5Senha', tipo_usuario = '$tipo_usuario'
                      WHERE id = $id";
 				} else {  
 					$avatar = addslashes(file_get_contents($_FILES['avatar']['tmp_name']));
-					$sql = "UPDATE Usuario SET nome = '$nome', email = '$email', cpf = '$cpf', 
+					$sql = "UPDATE Usuario SET nome = '$nome', email = '$email', cpf_cnpj = '$cpf_cnpj', 
                     telefone = '$telefone', senha = '$md5Senha', tipo_usuario = '$tipo_usuario'
                      WHERE id = $id";
 				}

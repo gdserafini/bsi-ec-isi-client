@@ -12,6 +12,46 @@
         <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
+    <?php require '../database/connectDB.php'; ?>
+    <?php		
+				$id = $_GET['id'];
+
+				$conn = mysqli_connect($servername, $username, $password, $database);
+
+				if (!$conn) {
+					die("<strong> Falha de conexão: </strong>" . mysqli_connect_error());
+				}
+                $sql = "SELECT id, fk_TipoUsuario_id, nome, email, telefone, cpf_cnpj, senha, avatar
+                FROM Usuario WHERE id = $id";
+
+				echo "<div class='container'>";
+				if ($result = mysqli_query($conn, $sql)) {
+					if(mysqli_num_rows($result) == 1){
+						$row = mysqli_fetch_assoc($result);
+						
+						$id  = $row['id'];
+						$nome = $row['nome'];
+						$email = $row['email'];
+						$cpf_cnpj = $row['cpf_cnpj'];
+						$telefone = $row['telefone'];
+						$tipo_usuario = $row['fk_TipoUsuario_id'];
+						$senha = $row['senha'];
+						$avatar = $row['avatar'];
+
+						$sqlTU = "SELECT id, nome_tipo FROM TipoUsuario";
+							
+						$optionsUser = array();
+						
+						if ($result = mysqli_query($conn, $sqlTU)) {
+							while ($row = mysqli_fetch_assoc($result)) {
+								$selected = "";
+								if ($row['id'] == $tipo_usuario)
+									$selected = "selected";
+								array_push($optionsUser, "\t\t\t<option " . $selected . " value='". $row["id"]."'>".$row["nome_tipo"]."</option>\n");
+							}
+						}
+
+						?>
         <div class="header">
             <div>
                 <a href="../../index.php">
@@ -49,11 +89,11 @@
 
                             <label for="nome" class="form-label"></label>
                             <input type="text" name="nome" minlength="3" id="nome" placeholder="Nome/Nome fantasia" 
-                            class="form-control" title="Informe um nome válido. Minimo 3 digitos" required>                        
+                            class="form-control" title="Informe um nome válido. Minimo 3 digitos" value="<?php echo $nome; ?>"required>                        
                             
                             <label for="email" class="form-label"></label>
                             <input type="email" name="email" id="email" placeholder="E-mail" pattern="^[\w.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
-                            title="Informe um email válido" class="form-control" required>    
+                            title="Informe um email válido" class="form-control" value="<?php echo $email; ?>"required>    
                             <div class="row g-3">
                                 <div class="col-md-4">
                                     <label class="form-label"></label>
@@ -67,15 +107,15 @@
                                         </select>
                                 </div>
                                 <div class="col-md-8">
-                                    <label for="cpf" class="form-label"></label>
-                                    <input type="text" name="cpf" maxlength="18" id="cpf" placeholder="CPF/CNPJ" 
+                                    <label for="cpf_cnpj" class="form-label"></label>
+                                    <input type="text" name="cpf_cnpj" maxlength="18" id="cpf_cnpj" placeholder="CPF/CNPJ" 
                                     pattern="^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$|^\d{2}\.?\d{3}\.?\d{3}\/?[0-9]{4}-?\d{2}$" 
-                                    title="Deve estar no formato 00000000000 ou 000.000.000-00" class="form-control" required>
+                                    title="Deve estar no formato 00000000000 ou 000.000.000-00" class="form-control" value="<?php echo $cpf_cnpj; ?>"required>
                                 </div>
                             </div>
                             <label for="telefone" class="form-label"></label>
                             <input type="text" name="telefone" maxlength="15" id="telefone" placeholder="Telefone" class="form-control" 
-                            pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$" title="Deve estar no formato 00000000000 ou (00) 00000-0000" required>
+                            pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$" title="Deve estar no formato 00000000000 ou (00) 00000-0000" value="<?php echo $telefone; ?>"required>
                              
                             <label for="senha"  class="form-label"></label>
                             <input type="password" name="senha" minlength="8" id="senha" 
@@ -94,10 +134,26 @@
                                 <input class="btn btn-light" type="submit" id="btnAlt" value="Alterar">
                                 <input class="btn btn-light" type="button" id="btnCan" value="Cancelar" onclick="window.location.href='homeUsers.php'">
                             </div>
-                    </form>
-                </div>
-            </div>
-            </div>
-            <script src="../script/script.js"></script>
+                            </form>
+								<?php
+					}else{
+						?>
+								<div class="container">
+								<h2>Conta inexistente</h2>
+								</div>
+								<br>
+							<?php
+							}
+							mysqli_stmt_close($stmt);
+						} else {
+							echo "<p style='text-align:center'>Erro preparando a consulta: " . mysqli_error($conn) . "</p>";
+						}
+				echo "</div>";
+				mysqli_close($conn);
+				?>
+			</div>
+			</p>
+		</div>
+            <script type="text/javascript" src="../script/script.js"></script>
         </body>
-</html> 
+</html>

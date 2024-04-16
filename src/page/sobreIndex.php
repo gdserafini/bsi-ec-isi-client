@@ -65,6 +65,6 @@
             <a href="#">Configuração de Cookies</a>
             <p style="margin-left: 10px;">Copyright ©2024 GreenPath Inc. Todos Direitos Reservados.</p>
 
-      <script src="../script/script.js"></script>
+            <script type="text/javascript" src="../script/script.js"></script>
   </body>
 </html> 

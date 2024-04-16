@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
 <body>
+<?php require '../database/connectDB.php'; ?>
+
   <div class="header">
     <div class="logoNome">
       <a><img src="../../resources/logoNome-removebg-preview.png" class="logoNomeIndex"/></a>
@@ -22,32 +24,37 @@
       <a href='editarConta.php'><img src='../../resources/perfilIcon.png' alt="Perfil" class="perfilIcon"></a>
     </div>
     </div>
-  <?php
+    <?php
 
-            $conn = mysqli_connect($servername, $username, $password, $database);
-            
-            if (!$conn) {
-                echo "</table>";
-                echo "</div>";
-                die("Falha na conexão com o Banco de Dados: " . mysqli_connect_error());
-            }
+      $conn = new mysqli($servername, $username, $password, $database);
 
-            $sql = "SELECT id, nome, email, telefone, cpf, senha, avatar FROM Usuario AS U 
-            INNER JOIN TipoUsuario AS TU ON (TU.fk_TipoUsuario_id = U.id) 
+      if ($conn->connect_error) {
+        die("<strong> Falha de conexão: </strong>" . $conn->connect_error);
+      }
+      ?>
+
+      <div id="titLC" class="container">
+			  <h2>Listagem de Contas</h2>
+
+			</div>
+<?php
+            $sql = "SELECT U.id, nome_tipo, nome, email, telefone, cpf_cnpj, senha, avatar
+            FROM Usuario AS U INNER JOIN TipoUsuario AS TU ON (U.fk_TipoUsuario_id = TU.id) 
             ORDER BY nome";
-            echo "<div class='container'>";
+            echo "<div id='ctable' class='container'>";
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='table'>";
                 echo "	<tr>";
-                echo "	  <th width='11%'>Código</th>";
-                echo "	  <th width='11%'>Nome</th>";
-                echo "	  <th width='11%'>Avatar</th>";
-                echo "	  <th width='11%'>E-mail</th>";
-                echo "	  <th width='11%'>Telefone</th>";
-                echo "	  <th width='11%'>CPF</th>";
-                echo "	  <th width='11%'>Senha</th>";
-                echo "	  <th width='11%'> </th>";
-                echo "	  <th width='11%'> </th>";
+                echo "	  <th width='10%'>Código</th>";
+                echo "	  <th width='10%'>Tipo</th>";
+                echo "	  <th width='10%'>Nome</th>";
+                echo "	  <th width='10%'>Avatar</th>";
+                echo "	  <th width='10%'>E-mail</th>";
+                echo "	  <th width='10%'>Telefone</th>";
+                echo "	  <th width='10%'>CPF/CNPJ</th>";
+                echo "	  <th width='10%'>Senha</th>";
+                echo "	  <th width='10%'>Editar</th>";
+                echo "	  <th width='10%'>Excluir</th>";
                 echo "	</tr>";
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
@@ -55,6 +62,8 @@
                         echo "<tr>";
                         echo "<td>";
                         echo $cod;
+                        echo "</td><td>";
+                        echo $row["nome_tipo"];
                         echo "</td><td>";
                         echo $row["nome"];
                         if ($row['avatar']) {?>
@@ -73,7 +82,7 @@
                         echo "</td><td>";
                         echo $row["telefone"];
                         echo "</td><td>";
-                        echo $row["cpf"];
+                        echo $row["cpf_cnpj"];
                         echo "</td><td>";
                         echo $senhaMd5;
                         echo "</td><td>";
@@ -97,6 +106,6 @@
         ?>
     </div>
 </div>
-<script src="../script/script.js"></script>
+<script type="text/javascript" src="../script/script.js"></script>
 </body>
 </html>
