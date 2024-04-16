@@ -31,8 +31,8 @@
 	$md5Senha = md5($senha);
     $tipo_usuario = $conn->real_escape_string($_POST['tipo_usuario']); 
 
-    $sql = "INSERT INTO Usuario (nome, email, cpf, telefone, fk_TipoUsuario_id, senha, avatar) 
-    VALUES ('$nome','$email','$cpf', '$telefone','$tipo_usuario','$md5Senha', NULL)";
+    $sql = "INSERT INTO Usuario (nome, email, cpf, telefone, senha, avatar) 
+    VALUES ('$nome','$email','$cpf', '$telefone','$md5Senha', NULL)";
 
     if ($result = $conn->query($sql)) {
         $msg = "Registro cadastrado com sucesso! Você já pode realizar login.";
