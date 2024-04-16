@@ -17,12 +17,9 @@
           <a href="../../index.html"><img src="../../resources/logoNome-removebg-preview.png" class="logoNomeIndex"/></a>
         </div>
         <div>
-          <button type="submit" onclick="irParaHomeUsers()" class="botaoH">Home</button>
-          <button type="submit" onclick="irParaSobre()" class="botaoH">Sobre</button>
-          <button type="submit" onclick="irParaLocais()" class="botaoH">Locais</button>          
-          <img src="../../resources/perfilIcon.png" alt="Perfil" class="perfilIcon">
-        </div>
-        
+            <button type="submit" onclick="window.location.href='login.php'" class="botaoH">Login</button>
+            <button type="submit" onclick="window.location.href='criarConta.php'" class="botaoH">Criar Conta</button>          
+          </div>
         <div class="containerLocais">
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Locais" aria-label="Search">
@@ -31,7 +28,7 @@
               <div class="resultadoLocais">
                 <h5>Resultados</h5>
                 <br>
-                <button type="button" onclick="irParaLocal()" class="btn">ExemploA - Rua XXX, Descarte de Y</button>
+                <button type="button" class="btn">ExemploA - Rua XXX, Descarte de Y</button>
                 <br>
                 <button type="button" class="btn">ExemploB - Rua YYY, Descarte de X</button>
               </div>

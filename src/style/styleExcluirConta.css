@@ -1,0 +1,91 @@
+button {
+    border-radius: 12px;
+}
+
+.header {
+    background-color: whitesmoke;
+    height: 80px;
+    border-bottom: 1px solid #5ea5aeab;
+    color: #fff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.perfilIcon {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    left: 780px;
+    bottom: 45px;
+}
+
+.logoNomeIndex {
+    width: 171px;
+    height: 50px;
+    position: relative;
+    top: 45px;
+    left: 25px;
+}
+
+.logoNome {
+    width: 171px;
+    height: 50px;
+    position: relative;
+    bottom: 35px;
+    left: 25px;
+}
+.logo {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    left: 45px;
+    top: 40px;
+}
+
+.botaoH {
+    background-color: whitesmoke;
+    font-family: "Overpass", sans-serif;
+    border: none;
+    position: relative;
+    bottom: 40px;
+    left: 750px;
+    color: #0499AE;
+    padding: 15px 40px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 5px 10px;
+    cursor: pointer;
+    border-radius: 40px;
+} 
+
+#ch {
+    background-color: whitesmoke;
+    font-family: "Overpass", sans-serif;
+    color: #0499AE;
+    position: relative;
+    padding: 15px 70px;
+    top: 30px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: 1px solid #0499AE;
+}
+
+#cf {
+    background-color: whitesmoke;
+    font-family: "Overpass", sans-serif;
+    color: #0499AE;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding: 50px 50px;
+    top: 30px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 1px solid #0499AE;
+}
+
+#btns {
+    text-align: center;
+
+
+}

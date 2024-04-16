@@ -17,9 +17,12 @@
           <a href="../../index.html"><img src="../../resources/logoNome-removebg-preview.png" class="logoNomeIndex"/></a>
         </div>
         <div>
-            <button type="submit" onclick="irParaLogin()" class="botaoH">Login</button>
-            <button type="submit" onclick="irParaCriarConta()" class="botaoH">Criar Conta</button>          
-          </div>
+          <button type="submit" onclick="window.location.href='homeUsers.php'" class="botaoH">Home</button>
+          <button type="submit" onclick="window.location.href='sobre.php'" class="botaoH">Sobre</button>
+          <button type="submit" onclick="window.location.href='locais.php'" class="botaoH">Locais</button>          
+          <a href='editarConta.php'><img src='../../resources/perfilIcon.png' alt="Perfil" class="perfilIcon"></a>
+        </div>
+        
         <div class="containerLocais">
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Locais" aria-label="Search">
@@ -28,7 +31,7 @@
               <div class="resultadoLocais">
                 <h5>Resultados</h5>
                 <br>
-                <button type="button" class="btn">ExemploA - Rua XXX, Descarte de Y</button>
+                <button type="button" onclick="window.location.href='local.php'" class="btn">ExemploA - Rua XXX, Descarte de Y</button>
                 <br>
                 <button type="button" class="btn">ExemploB - Rua YYY, Descarte de X</button>
               </div>

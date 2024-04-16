@@ -12,15 +12,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
   <body> 
+  <?php
+            session_start();
+            if (isset($_SESSION['nome_tipo_user'])) {
+                if ($_SESSION['nome_tipo_user'] == 'Administrador'){
+                    $url = 'location: src/homeAdm.php';	             
+                    header($url);            
+                    exit();
+                }else if ($_SESSION['nome_tipo_user'] == 'Usuário'){
+                    $url = 'location: /src/homeUser.php';	 
+                    header($url);                                     
+                    exit();
+                }
+            }
+        ?>
       <div class="header">
           <div class="logoNome">
             <a href="../../index.html"><img src="../../resources/logoNome-removebg-preview.png" class="logoNomeIndex"/></a>
           </div>
           <div>
-            <button type="submit" onclick="irParaHomeUsers()" class="botaoH">Home</button>
-            <button type="submit" onclick="irParaSobre()" class="botaoH">Sobre</button>
-            <button type="submit" onclick="irParaLocais()" class="botaoH">Locais</button>          
-            <img src="../../resources/perfilIcon.png" alt="Perfil" class="perfilIcon">
+          <button onclick="window.location.href='homeUsers.php'" class="botaoH">Home</button>
+          <button onclick="window.location.href='sobre.php'" class="botaoH">Sobre</button>
+          <button onclick="window.location.href='locais.php'" class="botaoH">Locais</button>
+          <a href='editarConta.php'><img src='../../resources/perfilIcon.png' alt="Perfil" class="perfilIcon"></a>
+
+          <img src="../../resources/perfilIcon.png" alt="Perfil" class="perfilIcon">
           </div>
         </div>
       <div>
@@ -28,9 +44,9 @@
         <img src="../../resources/imgInicio.jpeg" class="imgInicio"/>
       </div>
         <div>
-          <button type="submit" onclick="irParaSobre()" class="botao">Sobre</button>
-          <button type="submit" onclick="irParaLocais()" class="botao">Locais</button>
-          <button type="submit" onclick="irParaMinhaConta()" class="botao">Minha Conta</button>
+          <button type="submit" onclick="window.location.href='sobre.php'" class="botao">Sobre</button>
+          <button type="submit" onclick="window.location.href='locais.php'" class="botao">Locais</button>
+          <button type="submit" onclick="window.location.href='editarConta.php'" class="botao">Minha Conta</button>
         </div>
         <br>
         <div class="sobreHome">
@@ -49,7 +65,7 @@
         <div class="locaisHome">
           <div class="containerLocais">
             <h1>Locais</h1>
-              <button type="button" onclick="irParaLocais()" class="btnHomeLocais">Veja os locais disponíveis</button>
+              <button type="button" onclick="window.location.href='locais.php'" class="btnHomeLocais">Veja os locais disponíveis</button>
           </div>
           <br>
           <br>

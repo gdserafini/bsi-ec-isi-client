@@ -1,0 +1,221 @@
+
+button {
+    border-radius: 12px;
+}
+
+.container0{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+#form {
+    position: relative;
+    top: 10px;
+}
+.container1{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.oauthImages {
+    display: flex;
+    justify-content: space-around;
+}
+
+.oauthImages img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.form-control {
+    margin-bottom: -15px;
+    height: 30px;
+}
+
+#btnAlt{
+    position: relative;
+    top: 70px;
+    left: 220px;
+}
+#btnCan{
+    position: relative;
+    top: 70px;   
+    left: 220px;
+
+}
+
+#file {
+    background-color: #0499AE;
+}
+.header {
+    background-color: whitesmoke;
+    border-bottom: 1px solid #5ea5aeab;
+    height: 80px;
+    color: #fff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.logoNome {
+    width: 171px;
+    height: 50px;
+    position: relative;
+    top: 10px;
+    left: 50px;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    left: 70px;
+    top: 30px;
+}
+
+
+.container0 {
+    width: 250px; 
+    height: 450px;
+    font-family: "Overpass", sans-serif;
+    border: 1px solid #5ea5ae;
+    background-color: #5ea5ae;
+    position: relative;
+    top: 70px;
+    right: 250px;
+    margin: 0 auto; 
+    padding: 20px; 
+}
+
+.container1 {
+    width: 450px; 
+    height: 450px;
+    color: #5ea5ae;
+    background-color: whitesmoke;
+    position: relative;
+    border: 1px solid #5ea5ae;
+    bottom: 380px;
+    left: 100px;
+    margin: 0 auto; 
+    padding: 20px; 
+}
+
+.btn {
+ color:#0499AE;
+ border: 1px solid #5ea5ae;
+ border-radius: 20px;
+ position: relative;
+ top: 0px;
+ left: 300px;
+ box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+ 
+@media screen and (max-width: 500px) {
+
+    button {
+        border-radius: 12px;
+    }
+    
+    .container0{
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .container1{
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .oauthImages {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #signup-title {
+        font-size: 20px;
+        color: #0499AE;
+    }
+    
+    .form-control {
+        margin-bottom: -15px;
+        height: 30px;
+    }
+    #form {
+        position: relative;
+        top: 0px;
+    }
+    #btnAlt{
+        position: relative;
+        top: 30px;
+    }
+    #btnCan{
+        position: relative;
+        top: 50px;    }
+    
+    .header {
+        background-color: whitesmoke;
+        height: 60px;
+        border-bottom: 1px solid #5ea5aeab;
+        color: #fff;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .logoNome {
+        width: 105px;
+        height: 31px;
+        position: relative;
+        top: 15px;
+        left: 30px;
+    }
+    .logo {
+        display: none;
+    }
+    
+    .botao {
+        display: none;
+    }
+    
+    .container0 {
+        width: 15px; 
+        height: 470px;
+        font-family: "Overpass", sans-serif;
+        border: 1px solid #5ea5ae;
+        background-color: #5ea5ae;
+        position: relative;
+        top: 40px;
+        left: -170px;
+        margin: 0 auto; 
+        padding: 20px; 
+    }
+    
+    .container1 {
+        width: 200px; 
+        height: 470px;
+        color: #5ea5ae;
+        background-color: whitesmoke;
+        position: relative;
+        border: 1px solid #5ea5ae;
+        bottom: 20px;
+        left: 20px;
+        margin: 0 auto; 
+        padding: 20px; 
+    }
+    
+    .btn {
+     color:#0499AE;
+     border: 1px solid #5ea5ae;
+     border-radius: 20px;
+     position: relative;
+     top: 0px;
+     left: 50px;
+     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+
+}

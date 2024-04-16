@@ -17,9 +17,9 @@
           <a><img src="../../resources/logoNome-removebg-preview.png" class="logoNomeIndex"/></a>
         </div>
         <div>
-          <button type="submit" onclick="irParaListarUsuarios()" class="botaoH">Usuários</button>
-          <button type="submit" onclick="irParaListarLocais()" class="botaoH">Locais</button>          
-          <img src="../../resources/perfilIcon.png" alt="Perfil" class="perfilIcon">
+          <button type="submit" onclick="window.location.href='listarContas.php'" class="botaoH">Usuários</button>
+          <button type="submit" onclick="window.location.href='listarLocais.php'" class="botaoH">Locais</button>          
+          <a href='editarConta.php'><img src='../../resources/perfilIcon.png' alt="Perfil" class="perfilIcon"></a>
         </div>
         </div>
         
@@ -27,7 +27,7 @@
             <div class="card-body">
               <h5 class="card-title">Usuários</h5>
               <p class="card-text">Relação de usuários cadastrados.</p>
-              <a href="#" id="btnUsuario" class="btn btn-primary">Ver usuários</a>
+              <a href="#" id="btnUsuario" class="btn btn-primary" onclick="window.location.href='listarContas.php'" >Ver usuários</a>
             </div>
         </div>
         <div class="card" id="cardLocal" style="width: 20rem;">

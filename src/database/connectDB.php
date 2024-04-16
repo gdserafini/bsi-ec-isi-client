@@ -8,8 +8,6 @@ global $database;
 $servername = "localhost:3306";
 $username = "root";
 $password = " ";
-$database = "ddl";
+$database = "green_path_db";
 ?>
-
-
 
