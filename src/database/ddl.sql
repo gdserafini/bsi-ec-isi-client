@@ -53,7 +53,7 @@ CREATE TABLE Usuario (
 CREATE TABLE TipoUsuario (
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     nome_tipo VARCHAR(50) UNIQUE NOT NULL,
-    nivel INT NOT NULL DEFAULT 1,
+    nivel INT NOT NULL UNIQUE,
     CONSTRAINT check_level_range CHECK(nivel >= 1 AND nivel <=3)
 );
 
