@@ -75,7 +75,7 @@
                             <td>
                                 <img id="imagemSelecionada" class="rounded-circle" src="../../resources/perfilIconListar.png" />
                             </td><td>
-                            <?php
+                            <?php 
                         }
                         echo $row["email"];
                         echo "</td><td>";
