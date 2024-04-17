@@ -16,9 +16,10 @@
 
 require '../database/connectDB.php';
 		
-    $conn = mysqli_connect($servername, $username, $password, $database);
 
     $id_usu = $_GET['id'];
+
+    $conn = mysqli_connect($servername, $username, $password, $database);
 
     if (!$conn) {
         die("<strong> Falha de conexão: </strong>" . mysqli_connect_error());
@@ -28,13 +29,13 @@ require '../database/connectDB.php';
             FROM Usuario WHERE id_usu = $id_usu";
 
     echo "<div class='container'>";
-    if ($result = mysqli_query($conn, $sql)) {
-        if (mysqli_num_rows($result) == 1) {
-            $row = mysqli_fetch_assoc($result);
-
+    if ($result = $conn->query($sql)) {
+        if ($result->num_rows == 1) {
+            $row        = $result->fetch_assoc(); 
             $id_usu  = $row['id_usu'];
             $nome = $row['nome'];
             $email = $row['email'];
+            $id_tipo_usu = $row['fk_TipoUsuario_id'];
             $cpf_cnpj = $row['cpf_cnpj'];
             $telefone = $row['telefone'];
             $senha = $row['senha'];
@@ -48,32 +49,11 @@ require '../database/connectDB.php';
                     </a>
                 </div>
                 <div class="container0">
-                    <form id="form" action="editarContaDB.php" method="POST">
-                        <td>
-                            <?php
-                            if ($avatar) {?>
-                                <p style="text-align:center">
-                                    <img id="imagemSelecionada" class="rounded-circle" src="data:image/png;base64,<?= base64_encode($avatar) ; ?>" />
-                                </p> 
-                                <?php
-                            } else {
-                                ?>
-                                <p style="text-align:center">
-                                    <img id="imagemSelecionada" class="rounded-circle" src="../../resources/perfilIconS.png" />
-                                </p>
-                                <?php
-                            }
-                            ?>
-                            <p>
-							<label>
-                            <input type="hidden" id="file" name="MAX_FILE_SIZE" value="16777215" />
-                            <input type="file" id="avatar" name="avatar" accept="imagem/*" onchange="validaImagem(this);" /></label>
-                            </p>
-                        </td>
-                    </tr>
+                    <form id="form" action="editarContaDB.php" method="POST">                    
+                        <h2 id="signup-title">Editar Conta <?php echo $nome; ?></h2>
+                        <img src="../../resources/logo-removebg.png" class="logo"/>
                 </div>
                 <div class="container1 p-3">
-                    <h2 id="signup-title">Editar Conta</h2>
                     <input type="hidden" id="id_usu" name="id_usu" value="<?php echo $id_usu; ?>">
 
                     <label for="nome" class="form-label"></label>
@@ -89,7 +69,7 @@ require '../database/connectDB.php';
                     pattern="^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$|^\d{2}\.?\d{3}\.?\d{3}\/?[0-9]{4}-?\d{2}$" 
                     title="Deve estar no formato 00000000000 ou 000.000.000-00" class="form-control" value="<?php echo $cpf_cnpj; ?>"required>
                     
-                            <label for="telefone" class="form-label"></label>
+                    <label for="telefone" class="form-label"></label>
                     <input type="text" name="telefone" maxlength="15" id="telefone" placeholder="Telefone" class="form-control" 
                     pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$" title="Deve estar no formato 00000000000 ou (00) 00000-0000" value="<?php echo $telefone; ?>"required>
 
@@ -105,6 +85,29 @@ require '../database/connectDB.php';
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,8}" title="Deve conter ao menos um número, uma letra maiúscula, uma letra minúscula, um caracter especial, e  8 caracteres" 
                     onkeyup="confirmaSenha()"
                     class="form-control" required>
+<br>
+                    <div class="mb-3">
+                    <td>
+                            <?php
+                            if ($avatar) {?>
+                                <p style="text-align:center">
+                                    <img id="imagemSelecionada" class="rounded-circle" src="data:image/png;base64,<?= base64_encode($avatar) ; ?>" />
+                                </p> 
+                                <?php
+                            } else {
+                                ?>
+                                <p style="text-align:center">
+                                    <img id="imagemSelecionada" class="rounded-circle" src="../../resources/perfilIconListar.png" />
+                                </p>
+                                <?php
+                            }
+                            ?>
+                            <p>
+							<label>
+                            <input type="hidden" id="file" name="MAX_FILE_SIZE" value="16777215" />
+                            <input type="file" id="avatar" name="avatar" accept="imagem/*" onchange="validaImagem(this);" /></label>
+                            </p>
+                        </td>
 
                     <div>
                         <input class="btn btn-light" type="submit" id="btnAlt" value="Alterar">
