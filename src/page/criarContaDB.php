@@ -32,7 +32,7 @@
     //$tipo_usuario = $conn->real_escape_string($_POST['tipo_usuario']); 
 
     $sql = "INSERT INTO Usuario (nome, email, cpf_cnpj, telefone, senha, avatar, fk_TipoUsuario_id) 
-    VALUES ('$nome','$email','$cpf_cnpj', '$telefone','$md5Senha', NULL, 1)";
+    VALUES ('$nome','$email','$cpf_cnpj', '$telefone','$md5Senha', NULL, 2)";
 
     if ($result = $conn->query($sql)) {
         $msg = "Registro cadastrado com sucesso! Você já pode realizar login.";
