@@ -19,7 +19,7 @@
                   header($url);            
                     exit();
                 }else if ($_SESSION['id_tipo_usu'] == 2){
-                  $url = 'location: /bsi-ec-isi-client/src/page/homeUser.php';	 
+                  $url = 'location: /bsi-ec-isi-client/src/page/homeUsers.php';	 
                   header($url);                                     
                     exit();
                 }

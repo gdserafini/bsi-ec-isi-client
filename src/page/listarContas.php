@@ -16,7 +16,7 @@
 
   <div class="header">
     <div class="logoNome">
-      <a><img src="../../resources/logoNome-removebg-preview.png" class="logoNomeIndex"/></a>
+      <a href="../../index.php"><img src="../../resources/logoNome-removebg-preview.png" class="logoNomeIndex"/></a>
     </div>
     <div>
       <button type="submit" onclick="window.location.href='listarContas.php'" class="botaoH">Usuários</button>
