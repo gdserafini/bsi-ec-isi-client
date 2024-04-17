@@ -82,9 +82,10 @@
                         echo $row["cpf_cnpj"];
                         echo "</td><td>";
         ?>      
-                        <button class="btn btn-info" onclick="window.location.href='editarConta.php?id=<?php echo $cod; ?>'">Editar</button>
+                        <button class="btn btn-info" onclick="window.location.href='editarConta.php?id_usu=<?php echo $id_usu; ?>'">Editar</button>
                         </td><td>
-                        <button class="btn btn-info" onclick="window.location.href='excluirConta.php?id=<?php echo $cod; ?>'">Excluir</button>
+                        
+                        <button class="btn btn-info" onclick="window.location.href='excluirConta.php?id_usu=<?php echo $id_usu; ?>'">Excluir</button>
                         </td>
                         </tr>
         <?php
