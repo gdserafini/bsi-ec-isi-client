@@ -17,7 +17,7 @@
           <a href="../../index.php"><img src="../../resources/logoNome-removebg-preview.png" class="logoNomeIndex"/></a>
         </div>
         <div>
-          <button type="submit" onclick="window.location.href='homeUsers.php'" class="botaoH">Home</button>
+          <button type="submit" onclick="window.location.href='../../index.php'" class="botaoH">Home</button>
           <button type="submit" onclick="window.location.href='sobre.php'" class="botaoH">Sobre</button>
           <button type="submit" onclick="window.location.href='locais.php'" class="botaoH">Locais</button>          
           <a href='editarConta.php'><img src='../../resources/perfilIcon.png' alt="Perfil" class="perfilIcon"></a>
