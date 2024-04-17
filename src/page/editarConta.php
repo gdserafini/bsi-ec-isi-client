@@ -48,7 +48,7 @@ require '../database/connectDB.php';
                     </a>
                 </div>
                 <div class="container0">
-                    <form id="form" action="editarContaDB.php" method="POST">                    
+                    <form id="form" action="editarContaDB.php" method="POST" enctype="multipart/form-data">                    
                         <h2 id="signup-title">Editar Conta <?php echo $nome; ?></h2>
                         <img src="../../resources/logo-removebg.png" class="logo"/>
                 </div>
