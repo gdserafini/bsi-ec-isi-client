@@ -14,7 +14,7 @@
 <body>
 	<?php require '../database/connectDB.php'; ?>
 
-				<div class="container">
+				<div id="ch" class="container">
 				<h2>Editar Conta</h2>
 				</div>
 
@@ -46,13 +46,16 @@
                     WHERE id_usu = $id_usu";
 				}
 				
-				echo "<div class='container'>";
+				echo "<div id='cf' class='container'>";
 				if ($result = $conn->query($sql)){
 					echo "<p>&nbsp;Registro alterado com sucesso! </p>";
 				} else {
 					echo "<p>&nbsp;Erro executando UPDATE: " . $conn-> error . "</p>";
 				}
 				echo "</div>";
+				?>
+				<button type="submit" id="btnOk" class="btn btn-info" onclick="window.location.href='listarContas.php'">Ok</button>
+				<?php
 				$conn->close();
 
 				?>

@@ -16,7 +16,6 @@
 
 require '../database/connectDB.php';
 		
-
     $id_usu = $_GET['id'];
 
     $conn = mysqli_connect($servername, $username, $password, $database);
@@ -29,9 +28,9 @@ require '../database/connectDB.php';
             FROM Usuario WHERE id_usu = $id_usu";
 
     echo "<div class='container'>";
-    if ($result = $conn->query($sql)) {
-        if ($result->num_rows == 1) {
-            $row        = $result->fetch_assoc(); 
+    if ($result = mysqli_query($conn, $sql)) {
+        if(mysqli_num_rows($result) == 1){
+            $row = mysqli_fetch_assoc($result); 
             $id_usu  = $row['id_usu'];
             $nome = $row['nome'];
             $email = $row['email'];
@@ -104,8 +103,8 @@ require '../database/connectDB.php';
                             ?>
                             <p>
 							<label>
-                            <input type="hidden" id="file" name="MAX_FILE_SIZE" value="16777215" />
-                            <input type="file" id="avatar" name="avatar" accept="imagem/*" onchange="validaImagem(this);" /></label>
+                            <input type="hidden" name="MAX_FILE_SIZE" value="16777215" />
+                            <input type="file" id="avatar" name="avatar" onchange="validaImagem(this);" /></label>
                             </p>
                         </td>
 
