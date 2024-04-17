@@ -14,13 +14,13 @@
   <body>
       <div class="header">
         <div class="logoNome">
-          <a href="../../index.html"><img src="../../resources/logoNome-removebg-preview.png" class="logoNomeIndex"/></a>
+          <a href="../../index.php"><img src="../../resources/logoNome-removebg-preview.png" class="logoNomeIndex"/></a>
         </div>
         <div>
-          <button type="submit" onclick="irParaHomeUsers()" class="botaoH">Home</button>
-          <button type="submit" onclick="irParaSobre()" class="botaoH">Sobre</button>
-          <button type="submit" onclick="irParaLocais()" class="botaoH">Locais</button>          
-          <img src="../../resources/perfilIcon.png" alt="Perfil" class="perfilIcon">
+          <button type="submit" onclick="window.location.href='../../index.php'" class="botaoH">Home</button>
+          <button type="submit" onclick="window.location.href='sobre.php'" class="botaoH">Sobre</button>
+          <button type="submit" onclick="window.location.href='locais.php'" class="botaoH">Locais</button>          
+          <a href='editarConta.php'><img src='../../resources/perfilIcon.png' alt="Perfil" class="perfilIcon"></a>
         </div>
         
         <div class="containerLocais">
@@ -31,11 +31,11 @@
               <div class="resultadoLocais">
                 <h5>Resultados</h5>
                 <br>
-                <button type="button" onclick="irParaLocal()" class="btn">ExemploA - Rua XXX, Descarte de Y</button>
+                <button type="button" onclick="window.location.href='local.php'" class="btn">ExemploA - Rua XXX, Descarte de Y</button>
                 <br>
                 <button type="button" class="btn">ExemploB - Rua YYY, Descarte de X</button>
               </div>
           </div>
-          <script src="../script/script.js"></script>
+          <script type="text/javascript" src="../script/script.js"></script>
         </body>
 </html>

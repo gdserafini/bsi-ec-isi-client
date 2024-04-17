@@ -14,13 +14,18 @@
   <body>
       <div class="header">
         <div class="logoNome">
-          <a href="../../index.html"><img src="../../resources/logoNome-removebg-preview.png" class="logoNomeIndex"/></a>
+          <a href="../../index.php">
+            <img src="../../resources/logoNome-removebg-preview.png" class="logoNome"/>
+          </a>
         </div>
         <div>
-            <button type="submit" onclick="irParaLogin()" class="botaoH">Login</button>
-            <button type="submit" onclick="irParaCriarConta()" class="botaoH">Criar Conta</button>          
-          </div>
+          <button type="submit" onclick="window.location.href='homeUsers.php'" class="botaoH">Home</button>
+          <button type="submit" onclick="window.location.href='sobre.php'" class="botaoH">Sobre</button>
+          <button type="submit" onclick="window.location.href='locais.php'" class="botaoH">Locais</button>          
+          <a href='editarConta.php'><img src='../../resources/perfilIcon.png' alt="Perfil" class="perfilIcon"></a>
         </div>
+        </div>
+        
       <div class="containerSobre">
         <div>
           <img src="../../resources/imgGreen.png" class="imgInicio"/>
@@ -64,7 +69,7 @@
             <a href="#">Privacidade</a> | 
             <a href="#">Configuração de Cookies</a>
             <p style="margin-left: 10px;">Copyright ©2024 GreenPath Inc. Todos Direitos Reservados.</p>
-
-      <script src="../script/script.js"></script>
+        </div>
+        <script type="text/javascript" src="../script/script.js"></script>
   </body>
 </html> 

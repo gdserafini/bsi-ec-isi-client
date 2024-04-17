@@ -17,10 +17,12 @@
             <a href="../../index.html"><img src="../../resources/logoNome-removebg-preview.png" class="logoNomeIndex"/></a>
           </div>
           <div>
-            <button type="submit" onclick="irParaHomeUsers()" class="botaoH">Home</button>
-            <button type="submit" onclick="irParaSobre()" class="botaoH">Sobre</button>
-            <button type="submit" onclick="irParaLocais()" class="botaoH">Locais</button>          
-            <img src="../../resources/perfilIcon.png" alt="Perfil" class="perfilIcon">
+          <button onclick="window.location.href='homeUsers.php'" class="botaoH">Home</button>
+          <button onclick="window.location.href='sobre.php'" class="botaoH">Sobre</button>
+          <button onclick="window.location.href='locais.php'" class="botaoH">Locais</button>
+          <a href='editarConta.php'><img src='../../resources/perfilIcon.png' alt="Perfil" class="perfilIcon"></a>
+
+          <!--<img src="../../resources/perfilIcon.png" alt="Perfil" class="perfilIcon">-->
           </div>
         </div>
       <div>
@@ -28,9 +30,9 @@
         <img src="../../resources/imgInicio.jpeg" class="imgInicio"/>
       </div>
         <div>
-          <button type="submit" onclick="irParaSobre()" class="botao">Sobre</button>
-          <button type="submit" onclick="irParaLocais()" class="botao">Locais</button>
-          <button type="submit" onclick="irParaMinhaConta()" class="botao">Minha Conta</button>
+          <button type="submit" onclick="window.location.href='sobre.php'" class="botao">Sobre</button>
+          <button type="submit" onclick="window.location.href='locais.php'" class="botao">Locais</button>
+          <button type="submit" onclick="window.location.href='logout.php'" class="botao">Logout</button>
         </div>
         <br>
         <div class="sobreHome">
@@ -49,7 +51,7 @@
         <div class="locaisHome">
           <div class="containerLocais">
             <h1>Locais</h1>
-              <button type="button" onclick="irParaLocais()" class="btnHomeLocais">Veja os locais disponíveis</button>
+              <button type="button" onclick="window.location.href='locais.php'" class="btnHomeLocais">Veja os locais disponíveis</button>
           </div>
           <br>
           <br>
@@ -87,6 +89,6 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="../script/script.js"></script>
+  <script type="text/javascript" src="../script/script.js"></script>
 </body>
 </html>

@@ -14,18 +14,13 @@
   <body>
       <div class="header">
         <div class="logoNome">
-          <a href="../../index.html">
-            <img src="../../resources/logoNome-removebg-preview.png" class="logoNome"/>
-          </a>
+          <a href="../../index.php"><img src="../../resources/logoNome-removebg-preview.png" class="logoNomeIndex"/></a>
         </div>
         <div>
-          <button type="submit" onclick="irParaHomeUsers()" class="botaoH">Home</button>
-          <button type="submit" onclick="irParaSobre()" class="botaoH">Sobre</button>
-          <button type="submit" onclick="irParaLocais()" class="botaoH">Locais</button>          
-          <img src="../../resources/perfilIcon.png" alt="Perfil" class="perfilIcon">
+            <button type="submit" onclick="window.location.href='login.php'" class="botaoH">Login</button>
+            <button type="submit" onclick="window.location.href='criarConta.php'" class="botaoH">Criar Conta</button>          
+          </div>
         </div>
-        </div>
-        
       <div class="containerSobre">
         <div>
           <img src="../../resources/imgGreen.png" class="imgInicio"/>
@@ -69,7 +64,7 @@
             <a href="#">Privacidade</a> | 
             <a href="#">Configuração de Cookies</a>
             <p style="margin-left: 10px;">Copyright ©2024 GreenPath Inc. Todos Direitos Reservados.</p>
-        </div>
-      <script src="../script/script.js"></script>
+
+            <script type="text/javascript" src="../script/script.js"></script>
   </body>
 </html> 

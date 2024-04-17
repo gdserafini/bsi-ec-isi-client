@@ -14,11 +14,11 @@
   <body>
       <div class="header">
         <div class="logoNome">
-          <a href="../../index.html"><img src="../../resources/logoNome-removebg-preview.png" class="logoNomeIndex"/></a>
+          <a href="../../index.php"><img src="../../resources/logoNome-removebg-preview.png" class="logoNomeIndex"/></a>
         </div>
         <div>
-            <button type="submit" onclick="irParaLogin()" class="botaoH">Login</button>
-            <button type="submit" onclick="irParaCriarConta()" class="botaoH">Criar Conta</button>          
+            <button type="submit" onclick="window.location.href='login.php'" class="botaoH">Login</button>
+            <button type="submit" onclick="window.location.href='criarConta.php'" class="botaoH">Criar Conta</button>          
           </div>
         <div class="containerLocais">
             <form class="d-flex" role="search">
@@ -33,6 +33,6 @@
                 <button type="button" class="btn">ExemploB - Rua YYY, Descarte de X</button>
               </div>
           </div>
-          <script src="../script/script.js"></script>
+          <script type="text/javascript" src="../script/script.js"></script>
         </body>
 </html>
