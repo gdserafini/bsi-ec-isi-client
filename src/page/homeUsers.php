@@ -32,7 +32,7 @@
         <div>
           <button type="submit" onclick="window.location.href='sobre.php'" class="botao">Sobre</button>
           <button type="submit" onclick="window.location.href='locais.php'" class="botao">Locais</button>
-          <button type="submit" onclick="window.location.href='editarConta.php'" class="botao">Minha Conta</button>
+          <button type="submit" onclick="window.location.href='logout.php'" class="botao">Logout</button>
         </div>
         <br>
         <div class="sobreHome">

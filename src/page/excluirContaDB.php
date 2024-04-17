@@ -14,7 +14,7 @@
 
 <?php require '../database/connectDB.php'; ?>
 
-	<div class="container">
+<div id="ch" class="container">
 	<h2>Exclusão de Usuário</h2>
 	</div>
 
@@ -29,13 +29,15 @@
 
 		$sql = "DELETE FROM Usuario WHERE id_usu = $id_usu";
 
-		echo "<div class='container'>";
+		echo "<div id='cf' class='container'>";
 		if ($result = $conn->query($sql)) {
 			echo "<p>&nbsp;Registro excluído com sucesso! </p>";
 		} else {
 			echo "<p>&nbsp;Erro executando DELETE: " .  $conn->connect_error . "</p>";
-		}
-        echo "</div>";
+		}?>
+		<button type="submit" class="btn btn-info" onclick="window.location.href='listarContas.php'" class="c">Ok</button>
+        <?php
+		echo "</div>";
 		$conn->close();
 
 		?>

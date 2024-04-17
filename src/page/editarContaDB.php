@@ -22,11 +22,19 @@
 				$id_usu      = $_POST['id_usu'];
                 $nome    = $_POST['nome'];   
                 $email   = $_POST['email'];   
-                $cpf_cnpj   = $_POST['cpf_cnpj'];  
+                $cpf_cnpj   = $_POST['cpf_cnpj']; 
                 $telefone = $_POST['telefone'];
                 $senha   = $_POST['senha'];  
                 $md5Senha = md5($senha);
 
+				$conn = new mysqli($servername, $username, $password, $database);
+
+				if ($conn->connect_error) {
+					die("<strong> Falha de conexão: </strong>" . $conn->connect_error);
+				}
+
+				?>
+				<?php
 				if ($_FILES['avatar']['size'] == 0) {
 					$sql = "UPDATE Usuario SET nome = '$nome', email = '$email', cpf_cnpj = '$cpf_cnpj', 
                     telefone = '$telefone', senha = '$md5Senha'
@@ -38,13 +46,6 @@
                     WHERE id_usu = $id_usu";
 				}
 				
-
-				$conn = new mysqli($servername, $username, $password, $database);
-
-				if ($conn->connect_error) {
-					die("<strong> Falha de conexão: </strong>" . $conn->connect_error);
-				}
-
 				echo "<div class='container'>";
 				if ($result = $conn->query($sql)){
 					echo "<p>&nbsp;Registro alterado com sucesso! </p>";
