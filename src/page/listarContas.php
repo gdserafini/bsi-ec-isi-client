@@ -25,7 +25,6 @@
     </div>
     </div>
     <?php
-
       $conn = new mysqli($servername, $username, $password, $database);
 
       if ($conn->connect_error) {
@@ -51,7 +50,7 @@
                 echo "	  <th width='10%'>E-mail</th>";
                 echo "	  <th width='7%'>Telefone</th>";
                 echo "	  <th width='7%'>CPF/CNPJ</th>";
-                echo "	  <th width='10%'>Senha</th>";
+                echo "	  <th width='5%'>Senha</th>";
                 echo "	  <th width='7%'>Editar</th>";
                 echo "	  <th width='7%'>Excluir</th>";
                 echo "	</tr>";
@@ -85,10 +84,10 @@
                         echo "</td><td>";
                         echo $row["senha"];
                         echo "</td><td>";
-        ?>              <td>       
-                        <button onclick="window.location.href='editarConta.php'">Editar</button>
+        ?>      
+                        <button class="btn btn-info" onclick="window.location.href='editarConta.php?id=<?php echo $cod; ?>'">Editar</button>
                         </td><td>
-                        <button onclick="window.location.href='excluirConta.php?id=<?php echo $cod; ?>'">Excluir</button>
+                        <button class="btn btn-info" onclick="window.location.href='excluirConta.php?id=<?php echo $cod; ?>'">Excluir</button>
                         </td>
                         </tr>
         <?php

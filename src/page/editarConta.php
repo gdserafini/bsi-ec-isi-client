@@ -132,7 +132,7 @@
 
                             <div>
                                 <input class="btn btn-light" type="submit" id="btnAlt" value="Alterar">
-                                <input class="btn btn-light" type="button" id="btnCan" value="Cancelar" onclick="window.location.href='homeUsers.php'">
+                                <input class="btn btn-light" type="button" id="btnCan" value="Cancelar" onclick="window.location.href='listarContas.php'">
                             </div>
                             </form>
 								<?php
