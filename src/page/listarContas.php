@@ -50,7 +50,6 @@
                 echo "	  <th width='10%'>E-mail</th>";
                 echo "	  <th width='7%'>Telefone</th>";
                 echo "	  <th width='7%'>CPF/CNPJ</th>";
-                echo "	  <th width='5%'>Senha</th>";
                 echo "	  <th width='7%'>Editar</th>";
                 echo "	  <th width='7%'>Excluir</th>";
                 echo "	</tr>";
@@ -81,8 +80,6 @@
                         echo $row["telefone"];
                         echo "</td><td>";
                         echo $row["cpf_cnpj"];
-                        echo "</td><td>";
-                        echo $row["senha"];
                         echo "</td><td>";
         ?>      
                         <button class="btn btn-info" onclick="window.location.href='editarConta.php?id=<?php echo $cod; ?>'">Editar</button>

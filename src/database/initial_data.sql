@@ -1,4 +1,4 @@
-INSERT INTO TipoUsuario(id_nome_tipo, nome_tipo, nivel)
+INSERT INTO TipoUsuario(nome_tipo, nivel)
 VALUES ('Administrador', 1), ('Usuário', 2);
 
 INSERT INTO TipoResiduo(nome, classificacao, toxico)
