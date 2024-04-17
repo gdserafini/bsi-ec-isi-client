@@ -139,6 +139,133 @@ button {
 
 }
 
+@media screen and (max-width: 768px) {
+
+    button {
+        border-radius: 12px;
+    }
+    
+    .container0{
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .container1{
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .oauthImages {
+        display: flex;
+        justify-content: space-around;
+    } 
+    
+    .oauthImages img {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+     
+    .form-control {
+        margin-bottom: -15px;
+        height: 30px;
+    }
+    
+    #btndiv{
+        margin-top: -25px;
+        left: 20rem;
+    }
+    
+    .btn btn-light{
+        margin-top: 50px;
+    }
+    
+    .header {
+        background-color: whitesmoke;
+        height: 70px;
+        border-bottom: 1px solid #5ea5aeab;
+        color: #fff;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .logoNomeIndex {
+        width: 105px;
+        height: 31px;
+        position: relative;
+        top: 7px;
+        left: 15px;
+    }
+    
+    .logoNome {
+        width: 162px;
+        height: auto;
+        position: relative;
+        top: 7px;
+        left: 15px;
+    }
+    .logo {
+        display: none;
+    }
+    
+    .botao {
+        display: none;
+    }
+     
+    .botaoH {
+        display: none;
+    }
+    .container0 {
+        width: 7px; 
+        height: 400px;
+        font-family: "Overpass", sans-serif;
+        border: 1px solid #5ea5ae;
+        background-color: #5ea5ae;
+        position: relative;
+        top: 6rem;
+        left: -14rem;
+        margin: 0 auto; 
+        padding: 20px; 
+    }
+    .container1 {
+        width: 28rem; 
+        height: 25rem;
+        color: #5ea5ae;
+        background-color: whitesmoke;
+        position: relative;
+        border: 1px solid #5ea5ae;
+        bottom: 21px;
+        left: 10px;
+        margin: 0 auto; 
+        padding: 20px; 
+    }
+    
+    #signup-title {
+        font-size: 25px;
+    }
+    .btn {
+     color:#0499AE;
+     border: 1px solid #5ea5ae;
+     border-radius: 20px;
+     position: relative;
+     top: 10px;
+     left: 70px;
+     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .jpuc {
+        display: none;
+    }
+    
+    .jpuc-btn{
+        display: none;
+    }
+    
+}
+
 @media screen and (max-width: 500px) {
 
     button {
@@ -177,6 +304,7 @@ button {
     
     #btndiv{
         margin-top: -25px;
+        left: 15rem;
     }
     
     .btn btn-light{
@@ -185,7 +313,7 @@ button {
     
     .header {
         background-color: whitesmoke;
-        height: 60px;
+        height: 70px;
         border-bottom: 1px solid #5ea5aeab;
         color: #fff;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
@@ -200,8 +328,8 @@ button {
     }
     
     .logoNome {
-        width: 105px;
-        height: 31px;
+        width: 162px;
+        height: auto;
         position: relative;
         top: 7px;
         left: 15px;
@@ -218,26 +346,26 @@ button {
         display: none;
     }
     .container0 {
-        width: 7px; 
+        width: 7px;
         height: 400px;
         font-family: "Overpass", sans-serif;
         border: 1px solid #5ea5ae;
         background-color: #5ea5ae;
         position: relative;
-        top: 50px;
-        left: -175px;
-        margin: 0 auto; 
-        padding: 20px; 
+        top: 5rem;
+        left: -11rem;
+        margin: 0 auto;
+        padding: 20px;
     }
     .container1 {
-        width: 190px; 
+        width: 350px; 
         height: 400px;
         color: #5ea5ae;
         background-color: whitesmoke;
         position: relative;
         border: 1px solid #5ea5ae;
         bottom: 21px;
-        left: 10px;
+        left: 20px;
         margin: 0 auto; 
         padding: 20px; 
     }

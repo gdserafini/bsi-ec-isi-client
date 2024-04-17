@@ -34,11 +34,11 @@
           <button type="submit" onclick="window.location.href='criarConta.php'" class="botaoH">Criar Conta</button>          
         </div>
       </div>
-      <div>
+      <div class="viewport">
         <h2 class="titulo">Conheça o<br>GreenPath</h2>
         <img src="../../resources/imgInicio.jpeg" class="imgInicio"/>
       </div>
-        <div>
+        <div class="botaocontainer">
           <button type="submit" onclick="window.location.href='sobreIndex.php'" class="botao">Sobre</button>
           <button type="submit" onclick="window.location.href='locaisIndex.php'" class="botao">Locais</button>
         </div>
