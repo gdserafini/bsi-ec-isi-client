@@ -21,7 +21,7 @@
 					die("<strong> Falha de conexão: </strong>" . $conn->connect_error);
 				}
 
-				$id_usu=$_GET['id_usu'];
+				$id_usu= $_GET['id'];
 				
 				$sql = "SELECT id_usu, nome, email, telefone, cpf_cnpj, senha FROM Usuario 
 				WHERE id_usu = $id_usu;";
@@ -55,7 +55,7 @@
 							<p>
 							<label><b>CPF/CNPJ: </b><?php echo $row['cpf_cnpj']; ?></label></p>
 							<p>
-							<label><b>Senha: </b><?php echo $row['senha']; ?></label></p>
+							<!--<label><b>Senha: </b><?php echo $row['senha']; ?></label></p>  -->
 							<p id="btns">
 							<input type="submit" value="Excluir Conta" class="btn btn-info" >
 							<input type="button" value="Cancelar" class="btn btn-danger" onclick="window.location.href='homeUsers.php'"></p>
