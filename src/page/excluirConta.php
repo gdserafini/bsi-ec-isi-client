@@ -42,7 +42,7 @@
 							</div>
 						  </div>
 						<div id="ch" class="container">
-							<h2>Exclusão de [<?php echo $row['nome']; ?>]</h2>
+							<h2>Exclusão de <?php echo $row['nome']; ?></h2>
 						</div>
 						<form id="cf" class="container" action="excluirContaDB.php" method="post" onsubmit="return check(this.form)">
 							<input type="hidden" id="id_usu" name="id_usu" value="<?php echo $row['id_usu']; ?>">
@@ -58,7 +58,7 @@
 							<!--<label><b>Senha: </b><?php echo $row['senha']; ?></label></p>  -->
 							<p id="btns">
 							<input type="submit" value="Excluir Conta" class="btn btn-info" >
-							<input type="button" value="Cancelar" class="btn btn-danger" onclick="window.location.href='homeUsers.php'"></p>
+							<input type="button" value="Cancelar" class="btn btn-danger" onclick="window.location.href='listarContas.php'"></p>
 						</form>
 			<?php 
 					}else{?>

@@ -26,18 +26,16 @@
                 $telefone = $_POST['telefone'];
                 $senha   = $_POST['senha'];  
                 $md5Senha = md5($senha);
-                $avatar   = $_POST['avatar'];  
-                $tipo_usuario = $_POST['tipo_usuario'];
 
 				if ($_FILES['avatar']['size'] == 0) {
 					$sql = "UPDATE Usuario SET nome = '$nome', email = '$email', cpf_cnpj = '$cpf_cnpj', 
-                    telefone = '$telefone', senha = '$md5Senha', tipo_usuario = '$tipo_usuario'
-                     WHERE id_usu = $id_usu";
+                    telefone = '$telefone', senha = '$md5Senha'
+                    WHERE id_usu = $id_usu";
 				} else {  
 					$avatar = addslashes(file_get_contents($_FILES['avatar']['tmp_name']));
 					$sql = "UPDATE Usuario SET nome = '$nome', email = '$email', cpf_cnpj = '$cpf_cnpj', 
-                    telefone = '$telefone', senha = '$md5Senha', tipo_usuario = '$tipo_usuario'
-                     WHERE id_usu = $id_usu";
+                    telefone = '$telefone', senha = '$md5Senha', avatar = '$avatar'
+                    WHERE id_usu = $id_usu";
 				}
 				
 

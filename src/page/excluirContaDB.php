@@ -29,7 +29,7 @@
 
 		$sql = "DELETE FROM Usuario WHERE id_usu = $id_usu";
 
-		echo "<div class='w3-responsive w3-card-4'>";
+		echo "<div class='container'>";
 		if ($result = $conn->query($sql)) {
 			echo "<p>&nbsp;Registro excluído com sucesso! </p>";
 		} else {

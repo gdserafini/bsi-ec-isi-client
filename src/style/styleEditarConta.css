@@ -12,6 +12,8 @@ button {
     position: relative;
     top: 10px;
 }
+
+
 .container1{
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -39,14 +41,19 @@ button {
 #btnAlt{
     position: relative;
     top: 70px;
-    left: 220px;
+    left: 150px;
 }
 #btnCan{
     position: relative;
     top: 70px;   
-    left: 220px;
+    left: 150px;
 
 }
+#btnLogout {
+    position: relative;
+    top: 70px;
+    left: 150px;
+} 
 
 #file {
     background-color: #0499AE;

@@ -19,19 +19,15 @@
             <a href="../../index.php">
                 <img src="../../resources/logoNome-removebg-preview.png" class="logoNome"/>
             </a>
-            
-            <h2 class="w3-center">Fechando a sessão ...</h2>
-                            <img src="../../resources/processando.gif" class="w3-round-xxlarge"  style="max-width:300px">
-                        </div>
-                    </div>
-                </div>
+        </div>
+            <h2>Fechando a sessão ...</h2>
+            <img src="../../resources/processando.gif" style="max-width:300px">
                 
                 <?php
                     session_destroy();
-                    $url = "Location: ../../,,index.php";
+                    $url = "Location: ../../index.php";
                     header($url);
                     exit();
                 ?>
-        </div>
 	</body>
 </html>
