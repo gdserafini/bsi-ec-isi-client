@@ -22,7 +22,7 @@
           <button onclick="window.location.href='locais.php'" class="botaoH">Locais</button>
           <a href='editarConta.php'><img src='../../resources/perfilIcon.png' alt="Perfil" class="perfilIcon"></a>
 
-          <img src="../../resources/perfilIcon.png" alt="Perfil" class="perfilIcon">
+          <!--<img src="../../resources/perfilIcon.png" alt="Perfil" class="perfilIcon">-->
           </div>
         </div>
       <div>
