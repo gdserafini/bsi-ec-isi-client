@@ -60,32 +60,13 @@
                             <label for="email" class="form-label"></label>
                             <input type="email" name="email" id="email" placeholder="E-mail" pattern="^[\w.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
                             title="Informe um email válido" class="form-control" required>    
-                            <div class="row g-3">
-                                <div class="col-md-4">
-                                    <label class="form-label"></label>
-                                        <select name="tipo_usuario" id="tipo_usuario" placeholder="Tipo de usuário" required>
-                                            <option value=""></option>
-                                        <?php
-                                            foreach($optionsUser as $key => $value){
-                                                echo $value;
-                                            }
-                                        ?>
-                                        </select>
-                                </div>
-                            <div class="col-md-8">
-                                <label for="cpf_cnpj" class="form-label"></label>
-                                <input type="text" name="cpf_cnpj" maxlength="18" id="cpf_cnpj" placeholder="CPF/CNPJ" 
-                                pattern="^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$|^\d{2}\.?\d{3}\.?\d{3}\/?[0-9]{4}-?\d{2}$" 
-                                title="Deve estar no formato 00000000000 ou 000.000.000-00" class="form-control" required>
-                            </div>
-                            </div>
-                            <!--
+                            
                             <label for="cpf_cnpj" class="form-label"></label>
-                                <input type="text" name="cpf_cnpj" maxlength="18" id="cpf_cnpj" placeholder="CPF/CNPJ" 
-                                pattern="^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$|^\d{2}\.?\d{3}\.?\d{3}\/?[0-9]{4}-?\d{2}$" 
-                                title="Deve estar no formato 00000000000 ou 000.000.000-00" class="form-control" required>
-                                        -->
-                                <label for="telefone" class="form-label"></label>
+                            <input type="text" name="cpf_cnpj" maxlength="18" id="cpf_cnpj" placeholder="CPF/CNPJ" 
+                            pattern="^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$|^\d{2}\.?\d{3}\.?\d{3}\/?[0-9]{4}-?\d{2}$" 
+                            title="Deve estar no formato 00000000000 ou 000.000.000-00" class="form-control" required>
+                            
+                            <label for="telefone" class="form-label"></label>
                             <input type="text" name="telefone" maxlength="15" id="telefone" placeholder="Telefone" class="form-control" 
                             pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$" title="Deve estar no formato 00000000000 ou (00) 00000-0000" required>
                              

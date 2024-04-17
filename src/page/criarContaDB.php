@@ -29,10 +29,10 @@
     $telefone = $conn->real_escape_string($_POST['telefone']);
     $senha   = $conn->real_escape_string($_POST['senha']);  
 	$md5Senha = md5($senha);
-    $tipo_usuario = $conn->real_escape_string($_POST['tipo_usuario']); 
+    //$tipo_usuario = $conn->real_escape_string($_POST['tipo_usuario']); 
 
     $sql = "INSERT INTO Usuario (nome, email, cpf_cnpj, telefone, senha, avatar, fk_TipoUsuario_id) 
-    VALUES ('$nome','$email','$cpf_cnpj', '$telefone','$md5Senha', NULL, $tipo_usuario)";
+    VALUES ('$nome','$email','$cpf_cnpj', '$telefone','$md5Senha', NULL, 1)";
 
     if ($result = $conn->query($sql)) {
         $msg = "Registro cadastrado com sucesso! Você já pode realizar login.";
