@@ -1,63 +1,84 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="utf-8">
+    <head>
+        <title>Home</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../style/styleIndex.css">
         <link rel="icon" type="image/x-icon" href="../../resources/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../style/styleHomeUsers.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  </head>
-  <body> 
-      <div class="header">
-          <div class="logoNome">
-            <a href="../../index.html"><img src="../../resources/logoNome-removebg-preview.png" class="logoNomeIndex"/></a>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+    <body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary shadow p-2 mb-5 rounded border-bottom border-primary-subtle">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="../../resources/logoNome-removebg-preview.png" alt="GreenPath" width="171" height="50">
+            </a>          
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link text-secondary fs-5 p-3" href="#" onclick="window.location.href='homeUsers.php'">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-secondary fs-5 p-3" href="#" onclick="window.location.href='sobre.php'">Sobre</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-secondary fs-5 p-3" href="#" onclick="window.location.href='locaisUser.php'">Locais</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-secondary fs-5 p-3" href="#" onclick="window.location.href='logout.php'">Logout</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link p-3" href="#" onclick="window.location.href='editarConta.php'">
+                  <img src="../../resources/perfilIcon.png" alt="GreenPath" style="max-width: 35px;"></a>                 
+                </li>
+              </ul>
+            </div>
           </div>
-          <div>
-          <button onclick="window.location.href='homeUsers.php'" class="botaoH">Home</button>
-          <button onclick="window.location.href='sobre.php'" class="botaoH">Sobre</button>
-          <button onclick="window.location.href='locais.php'" class="botaoH">Locais</button>
-          <a href='editarConta.php'><img src='../../resources/perfilIcon.png' alt="Perfil" class="perfilIcon"></a>
-
-          <!--<img src="../../resources/perfilIcon.png" alt="Perfil" class="perfilIcon">-->
+        </nav>
+        <div class="row g-1 mx-auto p-2">
+        <div id="titulo" class="col-md-4 p-4 text-center text-secondary ">
+            <h1>Bem-vindo ao Greenpath</h1><br>
+            <button type="button" onclick="window.location.href='sobre.php'"
+            class="btn btn-light text-info m-3 shadow-sm p-2 mb-5 rounded">Sobre</button>
+            <button type="button" onclick="window.location.href='locaisUser.php'"
+            class="btn btn-light text-info m-3 shadow-sm p-2 mb-5 rounded">Locais</button>
+            <button type="button" onclick="window.location.href='logout.php'"
+            class="btn btn-light text-info m-3 shadow-sm p-2 mb-5 rounded">Logout</button>
           </div>
-        </div>
-      <div>
-        <h2 class="titulo">Bem-vindo ao<br>GreenPath</h2>
-        <img src="../../resources/imgInicio.jpeg" class="imgInicio"/>
-      </div>
-        <div>
-          <button type="submit" onclick="window.location.href='sobre.php'" class="botao">Sobre</button>
-          <button type="submit" onclick="window.location.href='locais.php'" class="botao">Locais</button>
-          <button type="submit" onclick="window.location.href='logout.php'" class="botao">Logout</button>
+          <div class="col-md-6 mx-auto">
+            <img src="../../resources/imgInicio.jpeg" class="img-fluid" alt="Imagem Inicio" style="max-width: 600px;">
+          </div>
         </div>
         <br>
-        <div class="sobreHome">
-          <h1 id="titSobre">Sobre</h1>
-          <h5 id="txtSobre"> GreenPath é um aplicativo que ajuda <br>
-                            os usuários a localizar pontos de <br>
-                            descarte de lixo correto de forma<br>
-                            rápida e conveniente.<br>
-                            Estabelecimentos podem cadastrar, <br>
-                            e fornecer informações sobre a <br>
-                            reciclagem de diferentes tipos de<br>
-                             resíduos, promovendo práticas <br>
-                             de descarte sustentáveis.</h5> <br>
-                <button type="button" onclick="irParaSobre()" class="btnHomeSobre">Saiba Mais</button>
+        <div class="container-fluid text-bg-secondary">
+          <br>
+          <h1 class="text-center">Sobre</h1>
+          <h5 class="text-center"> GreenPath é um aplicativo que ajuda os usuários a <br>
+                                  localizar pontos de descarte de lixo correto de forma<br>
+                                  rápida e conveniente.<br>
+                                  Estabelecimentos podem cadastrar, e fornecer informações sobre a<br>
+                                  reciclagem de diferentes tipos de resíduos, promovendo práticas<br>
+                                  de descarte sustentáveis.</h5>
+                             <button type="button" onclick="window.location.href='sobre.php'"
+                            class="btn btn-light text-info shadow-sm p-2 mb-5 rounded">Saiba Mais</button>
         </div>
-        <div class="locaisHome">
-          <div class="containerLocais">
-            <h1>Locais</h1>
-              <button type="button" onclick="window.location.href='locais.php'" class="btnHomeLocais">Veja os locais disponíveis</button>
+        <br>
+        <div class="card text-center text-info mx-auto rounded shadow-sm p-2 mb-5" style="max-width: 500px;">
+          <div class="card-header">
           </div>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
+          <div class="card-body">
+            <h5 class="card-title">Locais Cadastrados</h5>
+            <p class="card-text">Veja os melhores lugares para descartar resíduos corretamente.</p>
+            <button type="button" onclick="window.location.href='locaisUser.php'"
+            class="btn btn-light text-info rounded">Ver Locais</button>
+          </div>
+          <div class="card-footer text-body-secondary">
+          </div>
+        </div>
         </div>
         <footer>
           <div class="footer-section">

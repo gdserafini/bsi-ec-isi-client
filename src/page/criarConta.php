@@ -3,14 +3,10 @@
     <head>
         <title>Criar Conta</title>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/x-icon" href="../../resources/favicon.ico">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="../style/styleCriarConta.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    </head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
     <body>
     <?php
     session_start();
@@ -32,50 +28,55 @@
 				}
 
 				?>
-        <div class="header">
-            <div>
-                <a href="../../index.php">
-                    <img src="../../resources/logoNome-removebg-preview.png" class="logoNome"/>
-                </a>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary shadow p-2 mb-5 rounded border-bottom border-primary-subtle">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="../../resources/logoNome-removebg-preview.png" alt="GreenPath" width="171" height="50">
+            </a>          
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+              </ul>
             </div>
-            <div class="container0">
-                <img src="../../resources/logo-removebg.png" class="logo"/>
-                <div class="jpuc">
-                    <h3>Já Possui uma Conta?</h3>
-                    <button onclick="window.location.href='login.php'" class="jpuc-btn" >Entrar</button>
-                </div>
-                <div class="container1 p-3">
-                    <h2 id="signup-title">Criar Conta</h2>
-                    <div class="oauthImages">
-                        <img src="../../resources/github_logo.png" alt="">
-                        <img src="../../resources/google_logo.png" alt="">
-                        <img src="../../resources/linkedin_logo.webp" alt="">
-                    </div>
-                    <form id="form" action="criarContaDB.php" method="POST">
-                        Ou crie conta com seu email:
-                            <label for="nome" class="form-label"></label>
-                            <input type="text" name="nome" minlength="3" id="nome" placeholder="Nome/Nome fantasia" 
+          </div>
+        </nav>
+        <div class="card mb-3 mx-auto rounded shadow-sm p-2 mb-5" style="max-width: 800px;">
+        <div class="row g-0">
+            <div class="col-md-4 text-bg-secondary text-center rounded-start">
+            <p><br><img src="../../resources/logo-removebg.png" class="img-fluid rounded-start" alt="logo" style="max-width: 100px;"></p>
+            <p class="text-center fs-2 text">Já Possui uma Conta?</p>
+            <p><button type="button" onclick="window.location.href='login.php'" class="btn btn-light text-info shadow-sm p-2 mb-5 rounded">Login</button></p>
+        </div>
+            <div class="col-md-8">
+            <div class="card-body text-bg-light rounded-end">
+                <h5 class="card-title">Criar Conta</h5>
+                <br>
+                <form id="form" action="criarContaDB.php" method="POST">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" name="nome" minlength="3" id="nome" placeholder="Nome" 
                             class="form-control" title="Informe um nome válido. Minimo 3 digitos" required>                        
                             
-                            <label for="email" class="form-label"></label>
+                            <label for="email" class="form-label">E-mail</label>
                             <input type="email" name="email" id="email" placeholder="E-mail" pattern="^[\w.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
                             title="Informe um email válido" class="form-control" required>    
                             
-                            <label for="cpf_cnpj" class="form-label"></label>
+                            <label for="cpf_cnpj" class="form-label">CPF/CNPJ</label>
                             <input type="text" name="cpf_cnpj" maxlength="18" id="cpf_cnpj" placeholder="CPF/CNPJ" 
                             pattern="^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$|^\d{2}\.?\d{3}\.?\d{3}\/?[0-9]{4}-?\d{2}$" 
                             title="Deve estar no formato 00000000000 ou 000.000.000-00" class="form-control" required>
                             
-                            <label for="telefone" class="form-label"></label>
+                            <label for="telefone" class="form-label">Telefone</label>
                             <input type="text" name="telefone" maxlength="15" id="telefone" placeholder="Telefone" class="form-control" 
                             pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$" title="Deve estar no formato 00000000000 ou (00) 00000-0000" required>
                              
-                            <label for="senha"  class="form-label"></label>
+                            <label for="senha"  class="form-label">Senha</label>
                             <input type="password" name="senha" minlength="8" id="senha" placeholder="Senha" onchange="confirmaSenha()"
                             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,8}" 
                             title="Deve conter ao menos um número, uma letra maiúscula, uma letra minúscula, um caracter especial, e 8 caracteres" class="form-control" required>
 
-                            <label for="confirmaSenha" class="form-label"></label>
+                            <label for="confirmaSenha" class="form-label">Confirmar senha</label>
                             <input type="password" name="confirmaSenha" minlength="8" id="confirmaSenha" placeholder="Confirmar senha" 
                             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,8}" title="Deve conter ao menos um número, uma letra maiúscula, uma letra minúscula, um caracter especial, e 8 caracteres" onkeyup="confirmaSenha()"
                             class="form-control" required>
@@ -83,12 +84,14 @@
                             <br><label for="type" class="form-label"></label>
                             <input type="checkbox" name="use-term" id="use-term" checked required>  Aceito os termos de uso 
                             <div>
-                                <input  class="btn btn-light" type="submit" id="btndiv" value="Criar conta">
+                            <br>  
+                                <input  class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" type="submit" value="Criar conta">
                             </div>
                     </form>
                 </div>
             </div>
-            </div>
+        </div>
             <script type="text/javascript" src="../script/script.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         </body>
-</html> 
+</html>

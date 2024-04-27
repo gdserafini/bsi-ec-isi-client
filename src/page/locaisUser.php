@@ -40,23 +40,49 @@
             </div>
           </div>
         </nav>
-        
-        <div class="card mb-3 mx-auto rounded shadow-sm p-2 mb-5" style="max-width: 800px;">
-          <div class="row g-0">
-            <div class="col-md-4 rounded-start">
-              <img src="../../resources/pilhas.jpg" class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body text-bg-light rounded-end">
-                <h5 class="card-title">Descarte de Pilhas</h5>
-                <p class="card-text">Rua xxxxxxxxxxx, n°YY<br>
-                Localizado no Supermercado lalalala<br>
-                Descarte de pilhas e baterias</p>
-                <a href="https://maps.app.goo.gl/RNBqk3EotrCasKXe7" target="_blank">Ir até o Local</a>
-              </div>
-            </div>
-          </div>
+        <div class="container text-bg-light rounded shadow-sm p-2 mb-5">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-info" type="submit">Search</button>
+        </form>
+        <br>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card">
+      <img src="../../resources/pilhas.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Descarte de Pilhas</h5>
+        <p class="card-text">Descarte de pilhas e baterias</p>
+        <a href="#" class="btn btn-secondary" onclick="window.location.href='local.php'">Ver mais</a>
+
+    </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <a href="#" class="btn btn-secondary" onclick="window.location.href='local.php'">Go somewhere</a>
+
+    </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-secondary" onclick="window.location.href='local.php'">Go somewhere</a>
+
+    </div>
+    </div>
+  </div>
+</div>
         </div>
-        <script type="text/javascript" src="../script/script.js"></script>
-      </body>
-</html> 
+          <script type="text/javascript" src="../script/script.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        </body>
+</html>

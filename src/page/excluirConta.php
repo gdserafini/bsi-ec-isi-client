@@ -3,14 +3,12 @@
     <head>
         <title>Excluir Conta</title>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../style/styleIndex.css">
         <link rel="icon" type="image/x-icon" href="../../resources/favicon.ico">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="../style/styleExcluirConta.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    </head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+    <body>
 	<?php require '../database/connectDB.php'; ?>
 
 				<?php
@@ -30,21 +28,62 @@
 					if ($result->num_rows == 1) {
 						$row   = $result->fetch_assoc(); ?>
 
-						<div class="header">
-							<div class="logoNome">
-							  <a href="../../index.html"><img src="../../resources/logoNome-removebg-preview.png" class="logoNomeIndex"/></a>
-							</div>
-							<div>
-							<button onclick="window.location.href='homeUsers.php'" class="botaoH">Home</button>
-							<button onclick="window.location.href='sobre.php'" class="botaoH">Sobre</button>
-							<button onclick="window.location.href='locais.php'" class="botaoH">Locais</button>
-							<a href='editarConta.php'><img src='../../resources/perfilIcon.png' alt="Perfil" class="perfilIcon"></a>
-							</div>
-						  </div>
-						<div id="ch" class="container">
-							<h2>Exclusão de <?php echo $row['nome']; ?></h2>
-						</div>
-						<form id="cf" class="container" action="excluirContaDB.php" method="post" onsubmit="return check(this.form)">
+<nav class="navbar navbar-expand-lg bg-body-tertiary shadow p-2 mb-5 rounded border-bottom border-primary-subtle">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="../../resources/logoNome-removebg-preview.png" alt="GreenPath" width="171" height="50">
+            </a>          
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                  <a class="nav-link text-secondary fs-5 p-3" href="#" onclick="window.location.href='homeAdm.php'">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-secondary fs-5 p-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Usuários</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" onclick="window.location.href='listarContas.php'">Usuários Cadastrados</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="window.location.href='listarContas.php'">Cadastrar Usuário</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-secondary fs-5 p-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Locais</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" onclick="window.location.href='listarContas.php'">Locais Cadastrados</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="window.location.href='listarContas.php'">Cadastrar Local</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-secondary fs-5 p-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Empresas</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" onclick="window.location.href='listarContas.php'">Empresas Cadastradas</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="window.location.href='listarContas.php'">Cadastrar Empresa</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-secondary fs-5 p-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resíduos</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" onclick="window.location.href='listarContas.php'">Resíduos Cadastrados</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="window.location.href='listarContas.php'">Cadastrar Resíduo</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-secondary fs-5 p-3" href="#" onclick="window.location.href='logout.php'">Logout</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link p-3" href="#" onclick="window.location.href='editarConta.php'">
+                  <img src="../../resources/perfilIcon.png" alt="GreenPath" style="max-width: 35px;"></a>                 
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+		
+						<form class="container text-bg-light rounded shadow-sm p-2 mb-5" style="max-width: 800px;" action="excluirContaDB.php" method="post" onsubmit="return check(this.form)">
+						<h2>Exclusão de <?php echo $row['nome']; ?></h2>
+							<br>
 							<input type="hidden" id="id_usu" name="id_usu" value="<?php echo $row['id_usu']; ?>">
 							<p>
 							<label><b>Nome: </b> <?php echo $row['nome']; ?> </label></p>
@@ -55,10 +94,9 @@
 							<p>
 							<label><b>CPF/CNPJ: </b><?php echo $row['cpf_cnpj']; ?></label></p>
 							<p>
-							<!--<label><b>Senha: </b><?php echo $row['senha']; ?></label></p>  -->
-							<p id="btns">
-							<input type="submit" value="Excluir Conta" class="btn btn-info" >
-							<input type="button" value="Cancelar" class="btn btn-danger" onclick="window.location.href='listarContas.php'"></p>
+								<br>
+							<input type="submit" value="Excluir Conta" class="btn btn-secondary shadow-sm p-2 mb-5" >
+							<input type="button" value="Cancelar" class="btn btn-danger shadow-sm p-2 mb-5" onclick="window.location.href='listarContas.php'"></p>
 						</form>
 			<?php 
 					}else{?>
@@ -72,7 +110,6 @@
 				}
 				echo "</div>";
 				$conn->close();
-
 			?>
 			</div>
 		</p>

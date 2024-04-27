@@ -1,48 +1,60 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Sobre</title>
-    <meta charset="utf-8">
-    <link rel="icon" type="image/x-icon" href="../../resources/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../style/styleSobre.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  </head>
-  <body>
-      <div class="header">
-        <div class="logoNome">
-          <a href="../../index.php">
-            <img src="../../resources/logoNome-removebg-preview.png" class="logoNome"/>
-          </a>
-        </div>
-        <div>
-          <button type="submit" onclick="window.location.href='homeUsers.php'" class="botaoH">Home</button>
-          <button type="submit" onclick="window.location.href='sobre.php'" class="botaoH">Sobre</button>
-          <button type="submit" onclick="window.location.href='locais.php'" class="botaoH">Locais</button>          
-          <a href='editarConta.php'><img src='../../resources/perfilIcon.png' alt="Perfil" class="perfilIcon"></a>
-        </div>
-        </div>
-        
-      <div class="containerSobre">
-        <div>
-          <img src="../../resources/imgGreen.png" class="imgInicio"/>
-        </div>
-        <div class="textoSobre">
-            <h1 id="titSobre">Sobre</h1>
-            <h5 id="txtSobre"> GreenPath é um aplicativo que ajuda os usuários 
-              a localizar pontos de descarte de lixo correto
-              de forma rápida e conveniente.<br>
-              Estabelecimentos podem cadastrar, e fornecer informações 
-              sobre a reciclagem de diferentes tipos de resíduos,
-              promovendo práticas de descarte sustentáveis.
-             </h5>
-             <br>
+    <head>
+        <title>Sobre</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../style/styleIndex.css">
+        <link rel="icon" type="image/x-icon" href="../../resources/favicon.ico">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+    <body>
+  <nav class="navbar navbar-brand navbar-expand-lg bg-body-tertiary shadow p-2 mb-5 rounded border-bottom border-primary-subtle">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="../../resources/logoNome-removebg-preview.png" alt="GreenPath" style="max-width: 171px;">
+            </a>          
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link text-secondary fs-5 p-3" href="#" onclick="window.location.href='homeUsers.php'">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-secondary fs-5 p-3" href="#" onclick="window.location.href='sobre.php'">Sobre</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-secondary fs-5 p-3" href="#" onclick="window.location.href='locaisUser.php'">Locais</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-secondary fs-5 p-3" href="#" onclick="window.location.href='logout.php'">Logout</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link p-3" href="#" onclick="window.location.href='editarConta.php'">
+                  <img src="../../resources/perfilIcon.png" alt="GreenPath" style="max-width: 35px;"></a>                 
+                </li>
+              </ul>
+            </div>
           </div>
-      </div>
-
+        </nav>
+        <div class="row g-1 mx-auto p-2">
+          <div class="col-md-6 mx-auto">
+            <img src="../../resources/imgGreen.png" class="img-fluid" alt="Imagem Sobre" style="max-width: 400px">
+          </div>
+          <div class="card ml-3 text-bg-light mx-auto rounded shadow-sm p-2 mb-5" style="max-width: 650px; max-height: 300px;">
+          <div class="card-body">
+            <h5 class="card-title fs-2 text-secondary">Sobre</h5>
+            <p class="card-text fs-5 text-secondary"> GreenPath é um aplicativo que ajuda os usuários a <br>
+                                  localizar pontos de descarte de lixo correto de forma<br>
+                                  rápida e conveniente.<br>
+                                  Estabelecimentos podem cadastrar, e fornecer informações sobre a<br>
+                                  reciclagem de diferentes tipos de resíduos, promovendo práticas<br>
+                                  de descarte sustentáveis.</p>
+          </div>
+        </div>
+        </div>
       <footer>
         <div class="footer-section">
             <h3>Este Site</h3>
@@ -71,5 +83,6 @@
             <p style="margin-left: 10px;">Copyright ©2024 GreenPath Inc. Todos Direitos Reservados.</p>
         </div>
         <script type="text/javascript" src="../script/script.js"></script>
-  </body>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        </body>
 </html> 

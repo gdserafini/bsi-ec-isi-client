@@ -1,19 +1,14 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <title>Editar Conta</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" type="image/x-icon" href="../../resources/favicon.ico">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../style/styleEditarConta.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <head>
+        <title>Editar Conta</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="../../resources/favicon.ico">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-<body>
-<?php 
-
+    <body>
+    <?php
 require '../database/connectDB.php';
 		
     $id_usu = $_GET['id'];
@@ -41,18 +36,48 @@ require '../database/connectDB.php';
             $avatar = $row['avatar'];
 
             ?>
-            <div class="header">
-                <div>
-                    <a href="../../index.php">
-                        <img src="../../resources/logoNome-removebg-preview.png" class="logoNome"/>
-                    </a>
-                </div>
-                <div class="container0">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary shadow p-2 mb-5 rounded border-bottom border-primary-subtle">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="../../resources/logoNome-removebg-preview.png" alt="GreenPath" width="171" height="50">
+            </a>          
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link text-secondary fs-5 p-3" href="#" onclick="window.location.href='homeUsers.php'">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-secondary fs-5 p-3" href="#" onclick="window.location.href='sobre.php'">Sobre</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-secondary fs-5 p-3" href="#" onclick="window.location.href='locais.php'">Locais</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-secondary fs-5 p-3" href="#" onclick="window.location.href='logout.php'">Logout</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link p-3" href="#" onclick="window.location.href='editarConta.php'">
+                  <img src="../../resources/perfilIcon.png" alt="GreenPath" style="max-width: 35px;"></a>                 
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="card mb-3 mx-auto rounded shadow-sm p-2 mb-5" style="max-width: 800px;">
+        <div class="row g-0">
+            <div class="col-md-4 text-bg-secondary text-center rounded-start">
+            <p><br><img src="../../resources/logo-removebg.png" class="img-fluid rounded-start" alt="logo" style="max-width: 100px;"></p>
+            <p class="text-center fs-2 text">Deseja Sair?</p>
+            <p><button type="button" onclick="window.location.href='logout.php'" class="btn btn-light text-info shadow-sm p-2 mb-5 rounded">Logout</button></p>
+        </div>
+            <div class="col-md-8">
+            <div class="card-body text-bg-light rounded-end">
                     <form id="form" action="editarContaDB.php" method="POST" enctype="multipart/form-data">                    
-                        <h2 id="signup-title">Editar Conta <?php echo $nome; ?></h2>
-                        <img src="../../resources/logo-removebg.png" class="logo"/>
-                </div>
-                <div class="container1 p-3">
+                    <h2 id="signup-title">Editar Conta de <?php echo $nome; ?></h2>
                     <input type="hidden" id="id_usu" name="id_usu" value="<?php echo $id_usu; ?>">
 
                     <label for="nome" class="form-label"></label>
@@ -109,9 +134,8 @@ require '../database/connectDB.php';
                         </td>
 
                     <div>
-                        <input class="btn btn-light" type="submit" id="btnAlt" value="Alterar">
-                        <input class="btn btn-light" type="button" id="btnCan" value="Cancelar" onclick="window.location.href='listarContas.php'">
-                        <input class="btn btn-light" type="button" id="btnLogout" value="Logout" onclick="window.location.href='logout.php'">
+                    <input class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" type="submit" value="Alterar">
+                    <input class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" type="button" value="Cancelar" onclick="window.location.href='listarContas.php'">
                     </div>
                 </form>
             <?php
@@ -128,12 +152,11 @@ require '../database/connectDB.php';
 				}
 				echo "</div>";
 				$conn->close();
-
 				?>
 </div>
 </p>
 </div>
 <script type="text/javascript" src="../script/script.js"></script>
-</body>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        </body>
 </html>
-
