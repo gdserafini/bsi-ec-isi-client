@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Listagem de Locais</title>
+        <title>Listagem de Tipos de Resíduos</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../style/styleIndex.css">
@@ -33,7 +33,7 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-secondary fs-5 p-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Locais</a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#" onclick="window.location.href='listarContas.php'">Locais Cadastrados</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="window.location.href='locais.php'">Locais Cadastrados</a></li>
                     <li><a class="dropdown-item" href="#" onclick="window.location.href='listarContas.php'">Cadastrar Local</a></li>
                   </ul>
                 </li>
@@ -62,7 +62,7 @@
             </div>
           </div>
         </nav>
-        <?php
+    <?php
       $conn = new mysqli($servername, $username, $password, $database);
 
       if ($conn->connect_error) {
@@ -70,8 +70,8 @@
       }
       ?>
 <?php
-            $sql = "SELECT id_local_descarte, nome, endereco, referencia, horario_abertura, horario_fechamento, tipo
-            FROM LocalDescarte ORDER BY nome";
+            $sql = "SELECT id_tipo_residuo, nome, classificacao, toxico
+            FROM TipoResiduo ORDER BY nome";
             echo "<div class='container text-bg-light rounded shadow-sm p-2 mb-5'>";
             echo "<form class='d-flex' role='search'>
               <input class='form-control me-2' type='search' placeholder='Search' aria-label='Search'>
@@ -81,39 +81,29 @@
                 echo "<table class='table'>";
                 echo "	<tr>";
                 echo "	  <th width='5%'>Código</th>";
-                echo "	  <th width='10%'>Nome</th>";
-                echo "	  <th width='10%'>Endereço</th>";
-                echo "	  <th width='5%'>Referência</th>";
-                echo "	  <th width='7%'>Abertura</th>";
-                echo "	  <th width='7%'>Fechamento</th>";
-                echo "	  <th width='7%'>Tipo</th>";
+                echo "	  <th width='10%'>Tipo</th>";
+                echo "	  <th width='10%'>Classificação</th>";
+                echo "	  <th width='5%'>Tóxico</th>";
                 echo "	  <th width='7%'>Editar</th>";
                 echo "	  <th width='7%'>Excluir</th>";
-
                 echo "	</tr>";
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
-                        $cod = $row["id_local_descarte"];
+                        $cod = $row["id_tipo_residuo"];
                         echo "<tr>";
                         echo "<td>";
                         echo $cod;
                         echo "</td><td>";
                         echo $row["nome"];
                         echo "</td><td>";
-                        echo $row["endereco"];
+                        echo $row["classificacao"];
                         echo "</td><td>";
-                        echo $row["referencia"];
-                        echo "</td><td>";
-                        echo $row["horario_abertura"];
-                        echo "</td><td>";
-                        echo $row["horario_fechamento"];
-                        echo "</td><td>";
-                        echo $row["tipo"];
+                        echo $row["toxico"];
                         echo "</td><td>";
         ?>      
-                        <a class="btn btn-secondary" href='editarLocal.php?id=<?php echo $cod; ?>'>Editar</a>
+                        <a class="btn btn-secondary" href='editarResiduo.php?id=<?php echo $cod; ?>'>Editar</a>
                         </td><td>
-                        <a class="btn btn-danger" href='excluirLocal.php?id=<?php echo $cod; ?>'>Excluir</a>
+                        <a class="btn btn-danger" href='excluirResiduo.php?id=<?php echo $cod; ?>'>Excluir</a>
                         </td>
                         </tr>
         <?php

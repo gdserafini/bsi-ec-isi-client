@@ -42,10 +42,8 @@
         <div class="row g-1 mx-auto p-2">
         <div id="titulo" class="col-md-4 p-4 text-center text-secondary ">
             <h1>Bem-vindo ao Greenpath</h1><br>
-            <button type="button" onclick="window.location.href='sobre.php'"
-            class="btn btn-light text-info m-3 shadow-sm p-2 mb-5 rounded">Sobre</button>
-            <button type="button" onclick="window.location.href='locaisUser.php'"
-            class="btn btn-light text-info m-3 shadow-sm p-2 mb-5 rounded">Locais</button>
+            <button type="button" onclick="window.location.href='cadEmpresa.php'"
+            class="btn btn-light text-info m-3 shadow-sm p-2 mb-5 rounded">Cadastrar Empresa</button>
             <button type="button" onclick="window.location.href='logout.php'"
             class="btn btn-light text-info m-3 shadow-sm p-2 mb-5 rounded">Logout</button>
           </div>

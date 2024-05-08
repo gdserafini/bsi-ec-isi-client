@@ -7,7 +7,7 @@ global $database;
 
 $servername = "localhost:3306";
 $username = "root";
-$password = "";
+$password = "chowchow";
 $database = "green_path_db";
 ?>
 

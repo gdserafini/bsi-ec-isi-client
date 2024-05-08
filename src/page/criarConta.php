@@ -85,6 +85,7 @@
                             <input type="checkbox" name="use-term" id="use-term" checked required>  Aceito os termos de uso 
                             <div>
                             <br>  
+                            <input type="button" value="Cancelar" class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" onclick="window.location.href='homePage.php'">
                                 <input  class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" type="submit" value="Criar conta">
                             </div>
                     </form>

@@ -14,37 +14,30 @@
 <body>
 
     <?php
-    session_start();
     require '../database/connectDB.php';
 
+    $nome = ($_POST['nome']);    
+    $endereco   = ($_POST['endereco']);  
+    $referencia = ($_POST['referencia']);
+    $horario_abertura   = ($_POST['horario_abertura']); 
+    $horario_fechamento   = ($_POST['horario_fechamento']);  
+    $tipo   = ($_POST['tipo']);
+
+    $sql = "INSERT INTO LocalDescarte (nome, endereco, referencia, horario_abertura, horario_fechamento, tipo) 
+    VALUES ('$nome','$endereco', '$referencia','$horario_abertura','$horario_fechamento','$tipo')";
+    
+    
     $conn = new mysqli($servername, $username, $password, $database);
 
     if ($conn->connect_error) {
         die("<strong> Falha de conexão: </strong>" . $conn->connect_error);
     }
 
-    $nome    = $conn->real_escape_string($_POST['nome']);   
-    $email   = $conn->real_escape_string($_POST['email']);   
-    $cpf_cnpj   = $conn->real_escape_string($_POST['cpf_cnpj']);  
-    $telefone = $conn->real_escape_string($_POST['telefone']);
-    $senha   = $conn->real_escape_string($_POST['senha']);  
-	$md5Senha = md5($senha);
-
-    $sql = "INSERT INTO Usuario (nome, email, cpf_cnpj, telefone, senha, avatar, fk_TipoUsuario_id) 
-    VALUES ('$nome','$email','$cpf_cnpj', '$telefone','$md5Senha', NULL, 2)";
-
     if ($result = $conn->query($sql)) {
-        $msg = "Registro cadastrado com sucesso! Você já pode realizar login.";
+        $msg = "Registro cadastrado com sucesso!";
     } else {
         $msg = "Erro executando INSERT: " . $conn-> error . " Tente novo cadastro.";
     }
-
-    // primeira coisa a fazer, se não autenticar o login, encerra a conexao com bd
-    $_SESSION['nao_autenticado'] = true;
-    $_SESSION['mensagem_header'] = "Cadastro";
-    $_SESSION['mensagem']        = $msg;
-    $conn->close();
-    header('location: ../../index.php'); 
     ?>
 </body>
 </html>
