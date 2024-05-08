@@ -70,3 +70,35 @@ footer {
     color: #416368;
     text-align:left;
 }
+
+.fa-eye, .fa-eye-slash {
+  margin-left: -30px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.input-group {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;  /* Centraliza verticalmente */
+  transform: translateY(-50%); /* Ajuste fino da centralização */
+  cursor: pointer;
+  z-index: 10; /* Z-index elevado para garantir visibilidade */
+  background: white; /* ou qualquer outra cor que se destaque contra o campo de entrada */
+  padding: 0 5px; /* Pequeno padding para não ficar sobre o texto */
+  border-radius: 50%;
+}
+
+.form-control {
+  position: relative;
+  z-index: 1;
+}
+
+.form-control:focus {
+  z-index: 1;
+}

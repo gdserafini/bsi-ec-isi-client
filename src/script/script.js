@@ -51,7 +51,19 @@ function confirmaSenha() {
     } else{
         document.getElementById('imagemSelecionada').setAttribute('src', '#');
     }
-  }
+}
   
-  
-  
+function togglePasswordVisibility(fieldId) {
+    var passwordField = document.getElementById(fieldId);
+    var toggleIcon = passwordField.nextElementSibling; 
+
+    if (passwordField.type === 'password') {
+        passwordField.type = 'text';
+        toggleIcon.classList.remove('fa-eye-slash');
+        toggleIcon.classList.add('fa-eye');
+    } else {
+        passwordField.type = 'password';
+        toggleIcon.classList.remove('fa-eye');
+        toggleIcon.classList.add('fa-eye-slash');
+    }
+}
