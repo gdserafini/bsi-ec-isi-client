@@ -70,7 +70,7 @@
       }
       ?>
 <?php
-            $sql = "SELECT id_local_descarte, nome, endereco, referencia, horario_abertura, horario_fechamento, tipo
+            $sql = "SELECT id_local_descarte, nome, imagem, endereco, referencia, horario_abertura, horario_fechamento, tipo
             FROM LocalDescarte ORDER BY nome";
             echo "<div class='container text-bg-light rounded shadow-sm p-2 mb-5'>";
             echo "<form class='d-flex' role='search'>
@@ -81,8 +81,9 @@
                 echo "<table class='table'>";
                 echo "	<tr>";
                 echo "	  <th width='5%'>Código</th>";
-                echo "	  <th width='10%'>Nome</th>";
-                echo "	  <th width='10%'>Endereço</th>";
+                echo "	  <th width='7%'>Nome</th>";
+                echo "	  <th width='7%'>Imagem</th>";
+                echo "	  <th width='7%'>Endereço</th>";
                 echo "	  <th width='5%'>Referência</th>";
                 echo "	  <th width='7%'>Abertura</th>";
                 echo "	  <th width='7%'>Fechamento</th>";
@@ -99,7 +100,18 @@
                         echo $cod;
                         echo "</td><td>";
                         echo $row["nome"];
-                        echo "</td><td>";
+                        if ($row['imagem']) {?>
+                          <td>
+                              <img id="imagemSelecionada" class="rounded-circle" src="data:image/png;base64,<?= base64_encode($row['imagem']) ?>" />
+                          </td><td>
+                          <?php
+                      } else {
+                          ?>
+                          <td>
+                              <img id="imagemSelecionada" class="rounded-circle" src="../../resources/ImagemS.png" />
+                          </td><td>
+                          <?php 
+                      }
                         echo $row["endereco"];
                         echo "</td><td>";
                         echo $row["referencia"];

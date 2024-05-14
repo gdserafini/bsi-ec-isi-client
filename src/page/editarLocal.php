@@ -20,7 +20,7 @@
 					die("<strong> Falha de conexão: </strong>" . mysqli_connect_error());
 				}
 
-        $sql = "SELECT id_local_descarte, endereco, nome, referencia, horario_abertura, horario_fechamento, tipo
+        $sql = "SELECT id_local_descarte, endereco, nome, link, imagem, referencia, horario_abertura, horario_fechamento, tipo
                 FROM LocalDescarte WHERE id_local_descarte = $id_local_descarte";
 
         echo "<div class='container'>";
@@ -29,6 +29,8 @@
                     $row = mysqli_fetch_assoc($result); 
                     $id_local_descarte  = $row['id_local_descarte'];
                     $nome = $row['nome'];
+                    $link = $row['link'];
+                    $imagem = $row['imagem'];
                     $endereco = $row['endereco'];
                     $referencia = $row['referencia'];
                     $horario_abertura = $row['horario_abertura'];
@@ -58,7 +60,7 @@
         </div>
             <div class="col-md-8">
             <div class="card-body text-bg-light rounded-end">
-                <form id="form" action="editarLocalDB.php" method="POST">
+                <form id="form" action="editarLocalDB.php" method="POST" enctype="multipart/form-data">
                 <h2 id="signup-title">Editar <?php echo $nome; ?></h2>
                 <input type="hidden" id="id_local_descarte" name="id_local_descarte" value="<?php echo $id_local_descarte; ?>">
                 <label for="nome" class="form-label">Nome do Local</label>
@@ -69,6 +71,11 @@
                             <input type="text" name="endereco" minlength="3" id="endereco" placeholder="Endereço" 
                             title="Informe um endereço válido. Minimo 3 digitos" class="form-control" value="<?php echo $endereco; ?>" required>
                             
+                            
+                            <label for="link" class="form-label">Link do Mapa</label>
+                            <input type="text" name="link" minlength="3" id="link" placeholder="Link do Mapa" class="form-control" 
+                            title="Informe um link válido. Minimo 3 digitos" value="<?php echo $link; ?>" required> 
+
                             <label for="referencia" class="form-label">Referência</label>
                             <input type="text" name="referencia" minlength="3" id="referencia" placeholder="Referência" class="form-control" 
                             title="Informe uma referência válido. Minimo 3 digitos" value="<?php echo $referencia; ?>" required> 
@@ -87,17 +94,38 @@
                             <input type="text" name="tipo" minlength="3" id="tipo" placeholder="Tipo" 
                             class="form-control" title="Informe um tipo válido. Minimo 3 digitos" value="<?php echo $tipo; ?>" required>
                             <br>  
+                            <div class="mb-3">
+                    <td>
+                            <?php
+                            if ($imagem) {?>
+                                <p style="text-align:center">
+                                    <img id="imagemSelecionada" class="rounded-circle" src="data:image/png;base64,<?= base64_encode($imagem) ; ?>" />
+                                </p> 
+                                <?php
+                            } else {
+                                ?>
+                                <p style="text-align:center">
+                                    <img id="imagemSelecionada" class="rounded-circle" src="../../resources/ImagemS.png" />
+                                </p>
+                                <?php
+                            }
+                            ?>
+                            <p>
+							<label>
+                            <input type="hidden" name="MAX_FILE_SIZE" value="16777215" />
+                            <input type="file" id="imagem" name="imagem" onchange="validaImagem(this);" /></label>
+                            </p>
+                        </td>
                             <div>
                               <br>
-                              <input type="button" value="Cancelar" class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" onclick="window.location.href='locais.php'">
-                              <input  class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" type="submit" value="Cadastrar Local">
+                              <input type="button" value="Cancelar" class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" onclick="window.location.href='listarEmpresas.php'">
+                              <input  class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" type="submit" value="Editar Empresa">
                             </div>
-                    </form>
                     <?php
         } else {
             ?>
             <div class="container">
-                <h2>Conta inexistente</h2>
+                <h2>Local inexistente</h2>
                 </div>
 						<br>
 					<?php

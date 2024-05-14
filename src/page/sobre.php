@@ -9,6 +9,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
     <body>
+    <?php require '../database/connectDB.php'; ?>
   <nav class="navbar navbar-brand navbar-expand-lg bg-body-tertiary shadow p-2 mb-5 rounded border-bottom border-primary-subtle">
           <div class="container-fluid">
             <a class="navbar-brand" href="#">
@@ -39,6 +40,15 @@
             </div>
           </div>
         </nav>
+        <?php
+          $conn = new mysqli($servername, $username, $password, $database);
+
+          if ($conn->connect_error) {
+              die("<strong>Falha de conexão:</strong> " . $conn->connect_error);
+          }
+
+          $sql = "SELECT id_tipo_residuo, nome, imagem, descricao, toxico FROM TipoResiduo ORDER BY nome";
+          ?>
         <div class="row g-1 mx-auto p-2">
           <div class="col-md-6 mx-auto">
             <img src="../../resources/imgGreen.png" class="img-fluid" alt="Imagem Sobre" style="max-width: 400px">
@@ -55,6 +65,26 @@
           </div>
         </div>
         </div>
+        <div class="container text-secondary">
+            <h2>Descarte apropriado para cada tipo de resíduo</h2><br>
+            <?php
+    if ($result = mysqli_query($conn, $sql)) {
+        echo "<div class='row row-cols-1 row-cols-md-3 g-4'>";
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<div class='col'>";
+            echo "  <div class='card'>";
+            echo "    <img src='" . ($row['imagem'] ? "data:image/png;base64," . base64_encode($row['imagem']) : "../../resources/ImagemS.png") . "' class='card-img-top' alt='...'>";
+            echo "    <div class='card-body'>";
+            echo "      <h5 class='card-title'>Descarte de " . $row['nome'] . "</h5>";
+            echo "      <p class='card-text'>" . $row['descricao'] . "</p>";
+            echo "      <a class='btn btn-secondary' href='locaisUser.php'>Ver Locais</a>";
+            echo "    </div>";
+            echo "  </div>";
+            echo "</div>";
+        }
+        echo "</div>";
+    }
+    ?>
       <footer>
         <div class="footer-section">
             <h3>Este Site</h3>

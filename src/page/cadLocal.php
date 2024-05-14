@@ -51,10 +51,14 @@
                             <label for="endereco" class="form-label">Endereço</label>
                             <input type="text" name="endereco" minlength="3" id="endereco" placeholder="Endereço" 
                             title="Informe um endereço válido. Minimo 3 digitos" class="form-control" required>
-                            
+
+                            <label for="link" class="form-label">Link do Mapa</label>
+                            <input type="text" name="link" minlength="3" id="link" placeholder="Link do Mapa" class="form-control" 
+                            title="Informe um link válido. Minimo 3 digitos" required> 
+
                             <label for="referencia" class="form-label">Referência</label>
                             <input type="text" name="referencia" minlength="3" id="referencia" placeholder="Referência" class="form-control" 
-                            title="Informe uma referência válido. Minimo 3 digitos" required> 
+                            title="Informe uma referência válida. Minimo 3 digitos" required> 
                             
                             <div class="row">
                                 <div class="col">
@@ -72,8 +76,8 @@
                             <br>  
                             <div>
                               <br>
-                              <input type="button" value="Cancelar" class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" onclick="window.location.href='homeUsers.php'">
-                              <input  class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" type="submit" value="Cadastrar Local">
+                              <input type="button" value="Cancelar" class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" onclick="window.location.href='homeAdm.php'">
+                              <input  class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" type="submit" value="Cadastrar Local" onclick="window.location.href='locais.php'">
                             </div>
                     </form>
                 </div>

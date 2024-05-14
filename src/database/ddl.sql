@@ -1,4 +1,3 @@
-
 DROP DATABASE IF EXISTS green_path_db;
 
 CREATE DATABASE green_path_db
@@ -9,6 +8,8 @@ USE green_path_db;
 CREATE TABLE LocalDescarte (
     id_local_descarte INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     endereco VARCHAR(255) NOT NULL,
+    link VARCHAR(255) NOT NULL,
+    imagem MEDIUMBLOB DEFAULT NULL,
     nome VARCHAR(100) UNIQUE NOT NULL,
     referencia VARCHAR(255),
     horario_abertura TIME NOT NULL,
@@ -32,8 +33,9 @@ CREATE TABLE Empresa (
 
 CREATE TABLE TipoResiduo (
     id_tipo_residuo INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    imagem MEDIUMBLOB DEFAULT NULL,
     nome VARCHAR(100) UNIQUE NOT NULL,
-    classificacao VARCHAR(50) NOT NULL,
+    descricao VARCHAR(255) NOT NULL,
     toxico BOOLEAN NOT NULL
 );
 

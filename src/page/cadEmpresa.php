@@ -73,7 +73,7 @@
                             <br>  
                             <div>
                               <br>
-                              <input type="button" value="Cancelar" class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" onclick="window.location.href='homeUsers.php'">
+                              <input type="button" value="Cancelar" class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" onclick="window.location.href='listarEmpresas.php'">
                               <input  class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" type="submit" value="Cadastrar Empresa">
                             </div>
                     </form>

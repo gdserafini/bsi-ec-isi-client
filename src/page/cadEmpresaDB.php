@@ -24,7 +24,7 @@
     $setor   = ($_POST['setor']);
 
     $sql = "INSERT INTO Empresa (nome_fantasia, cnpj, telefone, razao_social, bairro, setor, avatar, fk_Usuario_id) 
-    VALUES ('$nome_fantasia','$cnpj', '$telefone','$razao_social','$bairro','$setor', NULL)";
+    VALUES ('$nome_fantasia','$cnpj', '$telefone','$razao_social','$bairro','$setor', NULL, 1)";
     
     
     $conn = new mysqli($servername, $username, $password, $database);

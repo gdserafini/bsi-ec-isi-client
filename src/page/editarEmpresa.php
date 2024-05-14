@@ -30,7 +30,6 @@
                     $id_empresa  = $row['id_empresa'];
                     $nome_fantasia = $row['nome_fantasia'];
                     $razao_social = $row['razao_social'];
-                    $id_tipo_usu = $row['fk_TipoUsuario_id'];
                     $cnpj = $row['cnpj'];
                     $telefone = $row['telefone'];
                     $setor = $row['setor'];
@@ -60,7 +59,7 @@
         </div>
             <div class="col-md-8">
             <div class="card-body text-bg-light rounded-end">
-                <form id="form" action="editarEmpresaDB.php" method="POST">
+                <form id="form" action="editarEmpresaDB.php" method="POST" enctype="multipart/form-data">
                 <h2 id="signup-title">Editar <?php echo $nome_fantasia; ?></h2>
                 <input type="hidden" id="id_empresa" name="id_empresa" value="<?php echo $id_empresa; ?>">
 
@@ -114,7 +113,7 @@
                             <div>
                               <br>
                               <input type="button" value="Cancelar" class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" onclick="window.location.href='listarEmpresas.php'">
-                              <input  class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" type="submit" value="Cadastrar Empresa">
+                              <input  class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" type="submit" value="Editar Empresa">
                             </div>
                     </form>
                     <?php

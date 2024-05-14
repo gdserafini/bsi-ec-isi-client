@@ -70,7 +70,7 @@
       }
       ?>
 <?php
-            $sql = "SELECT id_tipo_residuo, nome, classificacao, toxico
+            $sql = "SELECT id_tipo_residuo, nome, imagem, descricao, toxico
             FROM TipoResiduo ORDER BY nome";
             echo "<div class='container text-bg-light rounded shadow-sm p-2 mb-5'>";
             echo "<form class='d-flex' role='search'>
@@ -82,7 +82,8 @@
                 echo "	<tr>";
                 echo "	  <th width='5%'>Código</th>";
                 echo "	  <th width='10%'>Tipo</th>";
-                echo "	  <th width='10%'>Classificação</th>";
+                echo "	  <th width='10%'>Imagem</th>";
+                echo "	  <th width='10%'>Descrição</th>";
                 echo "	  <th width='5%'>Tóxico</th>";
                 echo "	  <th width='7%'>Editar</th>";
                 echo "	  <th width='7%'>Excluir</th>";
@@ -95,8 +96,20 @@
                         echo $cod;
                         echo "</td><td>";
                         echo $row["nome"];
-                        echo "</td><td>";
-                        echo $row["classificacao"];
+                        echo "</td>";
+                        if ($row['imagem']) {?>
+                          <td>
+                              <img id="imagemSelecionada" class="rounded-circle" src="data:image/png;base64,<?= base64_encode($row['imagem']) ?>" />
+                          </td><td>
+                          <?php
+                      } else {
+                          ?>
+                          <td>
+                              <img id="imagemSelecionada" class="rounded-circle" src="../../resources/ImagemS.png" />
+                          </td><td>
+                          <?php 
+                      }
+                        echo $row["descricao"];
                         echo "</td><td>";
                         echo $row["toxico"];
                         echo "</td><td>";

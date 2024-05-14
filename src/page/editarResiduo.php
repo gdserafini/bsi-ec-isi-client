@@ -20,7 +20,7 @@
 					die("<strong> Falha de conexão: </strong>" . mysqli_connect_error());
 				}
 
-        $sql = "SELECT id_tipo_residuo, nome, classificacao, toxico
+        $sql = "SELECT id_tipo_residuo, nome, imagem, descricao, toxico
                 FROM TipoResiduo WHERE id_tipo_residuo = $id_tipo_residuo";
 
         echo "<div class='container'>";
@@ -29,7 +29,8 @@
                     $row = mysqli_fetch_assoc($result); 
                     $id_tipo_residuo  = $row['id_tipo_residuo'];
                     $nome = $row['nome'];
-                    $classificacao = $row['classificacao'];
+                    $imagem = $row['imagem'];
+                    $descricao = $row['descricao'];
                     $toxico = $row['toxico'];
                     
 				?>
@@ -56,27 +57,48 @@
         </div>
             <div class="col-md-8">
             <div class="card-body text-bg-light rounded-end">
-                <form id="form" action="editarResiduoDB.php" method="POST">
+                <form id="form" action="editarResiduoDB.php" method="POST" enctype="multipart/form-data">
                 <h2 id="signup-title">Editar <?php echo $nome; ?></h2>
                 <input type="hidden" id="id_tipo_residuo" name="id_tipo_residuo" value="<?php echo $id_tipo_residuo; ?>">
                 <label for="nome" class="form-label">Tipo de Residuo</label>
                             <input type="text" name="nome" minlength="3" id="nome" placeholder="Tipo de Residuo" 
                             class="form-control" title="Informe um nome válido. Minimo 3 digitos" value="<?php echo $nome; ?>" required>                           
                             
-                            <label for="classificacao" class="form-label">Classificação</label>
-                            <input type="text" name="classificacao" minlength="3" id="classificacao" placeholder="Classificação" 
-                            title="Informe uma classificação válido. Minimo 3 digitos" class="form-control" value="<?php echo $classificacao; ?>" required>
+                            <label for="descricao" class="form-label">Descrição</label>
+                            <input type="text" name="descricao" minlength="3" id="descricao" placeholder="Descrição" 
+                            title="Informe uma descriçao válida. Minimo 3 digitos" class="form-control" value="<?php echo $descricao; ?>" required>
                             
                             <label for="toxico" class="form-label">Toxicidade </label>
-                            <input type="text" name="toxico" minlength="3" id="toxico" placeholder="Toxicidade " class="form-control" 
-                            title="Informe um valor válido. Minimo 3 digitos" value="<?php echo $toxico; ?>" required> 
-                              
+                            <input type="text" name="toxico" id="toxico" placeholder="Toxicidade " class="form-control" 
+                            title="Informe um valor válido." value="<?php echo $toxico; ?>" required> 
+                              <br>
+                            <div class="mb-3">
+                    <td>
+                            <?php
+                            if ($imagem) {?>
+                                <p style="text-align:center">
+                                    <img id="imagemSelecionada" class="rounded-circle" src="data:image/png;base64,<?= base64_encode($imagem) ; ?>" />
+                                </p> 
+                                <?php
+                            } else {
+                                ?>
+                                <p style="text-align:center">
+                                    <img id="imagemSelecionada" class="rounded-circle" src="../../resources/ImagemS.png" />
+                                </p>
+                                <?php
+                            }
+                            ?>
+                            <p>
+							<label>
+                            <input type="hidden" name="MAX_FILE_SIZE" value="16777215" />
+                            <input type="file" id="imagem" name="imagem" onchange="validaImagem(this);" /></label>
+                            </p>
+                        </td>
                             <div>
                               <br>
                               <input type="button" value="Cancelar" class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" onclick="window.location.href='listarResiduos.php'">
-                              <input  class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" type="submit" value="Cadastrar Residuo">
+                              <input  class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" type="submit" value="Editar Resíduo">
                             </div>
-                    </form>
                     <?php
         } else {
             ?>
@@ -92,6 +114,7 @@
 				echo "</div>";
 				$conn->close();
 				?>
+        </form>
 </div>
 </p>
 </div>

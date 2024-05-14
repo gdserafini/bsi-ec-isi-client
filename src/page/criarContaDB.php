@@ -39,7 +39,6 @@
         $msg = "Erro executando INSERT: " . $conn-> error . " Tente novo cadastro.";
     }
 
-    // primeira coisa a fazer, se não autenticar o login, encerra a conexao com bd
     $_SESSION['nao_autenticado'] = true;
     $_SESSION['mensagem_header'] = "Cadastro";
     $_SESSION['mensagem']        = $msg;

@@ -47,16 +47,16 @@
                             <input type="text" name="nome" minlength="3" id="nome" placeholder="Tipo de Residuo" 
                             class="form-control" title="Informe um nome válido. Minimo 3 digitos" required>                           
                             
-                            <label for="classificacao" class="form-label">Classificação</label>
-                            <input type="text" name="classificacao" minlength="3" id="classificacao" placeholder="Classificação" 
-                            title="Informe uma classificação válido. Minimo 3 digitos" class="form-control" required>
+                            <label for="descricao" class="form-label">Descrição</label>
+                            <input type="text" name="descricao" minlength="3" id="descricao" placeholder="Descrição" 
+                            title="Informe uma Ddescrição válida. Minimo 3 digitos" class="form-control" required>
                             
                             <label for="toxico" class="form-label">Toxicidade </label>
-                            <input type="text" name="toxico" minlength="3" id="toxico" placeholder="Toxicidade " class="form-control" 
-                            title="Informe um valor válido. Minimo 3 digitos" required> 
+                            <input type="text" name="toxico" id="toxico" placeholder="Toxicidade " class="form-control" 
+                            title="Informe um valor válido." required> 
                             
                               <br>
-                              <input type="button" value="Cancelar" class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" onclick="window.location.href='homeUsers.php'">
+                              <input type="button" value="Cancelar" class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" onclick="window.location.href='listarResiduos.php'">
                               <input  class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" type="submit" value="Cadastrar Residuo">
                             </div>
                     </form>

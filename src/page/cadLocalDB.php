@@ -18,13 +18,14 @@
 
     $nome = ($_POST['nome']);    
     $endereco   = ($_POST['endereco']);  
+    $link   = ($_POST['link']);  
     $referencia = ($_POST['referencia']);
     $horario_abertura   = ($_POST['horario_abertura']); 
     $horario_fechamento   = ($_POST['horario_fechamento']);  
     $tipo   = ($_POST['tipo']);
 
-    $sql = "INSERT INTO LocalDescarte (nome, endereco, referencia, horario_abertura, horario_fechamento, tipo) 
-    VALUES ('$nome','$endereco', '$referencia','$horario_abertura','$horario_fechamento','$tipo')";
+    $sql = "INSERT INTO LocalDescarte (nome, endereco, link, referencia, horario_abertura, horario_fechamento, tipo) 
+    VALUES ('$nome','$endereco', '$link', '$referencia','$horario_abertura','$horario_fechamento','$tipo')";
     
     
     $conn = new mysqli($servername, $username, $password, $database);

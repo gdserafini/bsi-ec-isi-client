@@ -68,7 +68,6 @@
                 <h5 class="card-title">Usuários</h5>
                 <p class="card-text">Ver relação e cadastrar usuários.</p>
                 <a href="#" onclick="window.location.href='listarContas.php'" class="btn btn-secondary">Usuários Cadastrados</a>
-                <a href="#" onclick="window.location.href='criarConta.php'" class="btn btn-secondary">Cadastrar Usúario</a>
               </div>
             </div>
           </div>

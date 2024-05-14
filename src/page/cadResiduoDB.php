@@ -17,11 +17,11 @@
     require '../database/connectDB.php';
 
     $nome = ($_POST['nome']);    
-    $classificacao   = ($_POST['classificacao']);  
+    $descricao   = ($_POST['descricao']);  
     $toxico = ($_POST['toxico']);
 
-    $sql = "INSERT INTO TipoResiduo (nome, classificacao, toxico) 
-    VALUES ('$nome','$classificacao', '$toxico')";
+    $sql = "INSERT INTO TipoResiduo (nome, descricao, toxico) 
+    VALUES ('$nome','$descricao', '$toxico')";
     
     
     $conn = new mysqli($servername, $username, $password, $database);

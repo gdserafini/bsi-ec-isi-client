@@ -88,7 +88,7 @@
 							<p>
 							<label><b>Nome: </b> <?php echo $row['nome']; ?> </label></p>
 							<p>
-							<label><b>Classificação: </b><?php echo $row['classificacao']; ?></label></p>
+							<label><b>Descrição: </b><?php echo $row['descricao']; ?></label></p>
 							<p>
 							<label><b>Toxicidade : </b><?php echo $row['toxico']; ?></label></p>
 							<p>

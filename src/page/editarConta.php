@@ -11,7 +11,7 @@
     <?php
 require '../database/connectDB.php';
 		
-    $id_usu = $_GET['id'];
+    $id_usu = $_GET['id_usu'];
 
     $conn = mysqli_connect($servername, $username, $password, $database);
 

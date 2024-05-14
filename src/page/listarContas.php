@@ -88,7 +88,6 @@
                 echo "	  <th width='10%'>E-mail</th>";
                 echo "	  <th width='7%'>Telefone</th>";
                 echo "	  <th width='7%'>CPF/CNPJ</th>";
-                echo "	  <th width='7%'>Editar</th>";
                 echo "	  <th width='7%'>Excluir</th>";
                 echo "	</tr>";
                 if (mysqli_num_rows($result) > 0) {
@@ -120,8 +119,7 @@
                         echo $row["cpf_cnpj"];
                         echo "</td><td>";
         ?>      
-                        <a class="btn btn-secondary" href='editarConta.php?id=<?php echo $cod; ?>'>Editar</a>
-                        </td><td>
+                        
                         <a class="btn btn-danger" href='excluirConta.php?id=<?php echo $cod; ?>'>Excluir</a>
                         </td>
                         </tr>
