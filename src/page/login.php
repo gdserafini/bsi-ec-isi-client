@@ -70,6 +70,7 @@
                             <input type="password" name="senha" minlength="8" id="senha" placeholder="Senha" 
                             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,8}"
                             title="Deve conter ao menos um número, uma letra maiúscula, uma letra minúscula, um caracter especial, e ter de 6 a 8 caracteres" class="form-control">
+                            
                             <br>
                             <br>
                             <div>

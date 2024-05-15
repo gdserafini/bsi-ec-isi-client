@@ -50,18 +50,13 @@
           $sql = "SELECT id_tipo_residuo, nome, imagem, descricao, toxico FROM TipoResiduo ORDER BY nome";
           ?>
         <div class="row g-1 mx-auto p-2">
-          <div class="col-md-6 mx-auto">
-            <img src="../../resources/imgGreen.png" class="img-fluid" alt="Imagem Sobre" style="max-width: 400px">
-          </div>
-          <div class="card ml-3 text-bg-light mx-auto rounded shadow-sm p-2 mb-5" style="max-width: 650px; max-height: 300px;">
+          <div class="card ml-3 text-bg-light mx-auto rounded shadow-sm p-2 mb-5" style="max-width: 1000px; max-height: 250px;">
           <div class="card-body">
             <h5 class="card-title fs-2 text-secondary">Sobre</h5>
             <p class="card-text fs-5 text-secondary"> GreenPath é um aplicativo que ajuda os usuários a <br>
-                                  localizar pontos de descarte de lixo correto de forma<br>
-                                  rápida e conveniente.<br>
+                                  localizar pontos de descarte de lixo correto de forma rápida e conveniente.<br>
                                   Estabelecimentos podem cadastrar, e fornecer informações sobre a<br>
-                                  reciclagem de diferentes tipos de resíduos, promovendo práticas<br>
-                                  de descarte sustentáveis.</p>
+                                  reciclagem de diferentes tipos de resíduos, promovendo práticasde descarte sustentáveis.</p>
           </div>
         </div>
         </div>
@@ -85,6 +80,7 @@
         echo "</div>";
     }
     ?>
+        </div>
       <footer>
         <div class="footer-section">
             <h3>Este Site</h3>

@@ -9,6 +9,17 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
     <body>
+    <?php require '../database/connectDB.php'; ?>
+    <?php
+      $conn = new mysqli($servername, $username, $password, $database);
+
+      if ($conn->connect_error) {
+        die("<strong> Falha de conexão: </strong>" . $conn->connect_error);
+      }
+      ?>
+<?php
+            $sql = "SELECT id_usu, TU.nome_tipo AS nome_tipo, nome
+            FROM Usuario AS U INNER JOIN TipoUsuario AS TU ON (U.fk_TipoUsuario_id = TU.id_tipo_usu)";?>
   <nav class="navbar navbar-expand-lg bg-body-tertiary shadow p-2 mb-5 rounded border-bottom border-primary-subtle">
           <div class="container-fluid">
             <a class="navbar-brand" href="#">
@@ -31,8 +42,19 @@
                 <li class="nav-item">
                   <a class="nav-link text-secondary fs-5 p-3" href="#" onclick="window.location.href='logout.php'">Logout</a>
                 </li>
+                  <?php 
+
+                echo "<li class='nav-item'>";
+                    if ($result = mysqli_query($conn, $sql)) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                          $cod = $row["id_usu"];
+                    echo "<a class='nav-link text-secondary fs-5 p-3' href='editarConta.php?id=<?php echo $cod; ?>'>" . $row['nome_tipo'] . ' - ' . $row['nome'] . "</a>";
+                echo "</li>";}
+                echo "</div>";
+    }
+    ?>
                 <li class="nav-item">
-                <a class="nav-link p-3" href="#" onclick="window.location.href='editarConta.php'">
+                <a class="nav-link p-3" href="#" onclick="window.location.href='editarConta.php?id=<?php echo $cod; ?>'">
                   <img src="../../resources/perfilIcon.png" alt="GreenPath" style="max-width: 35px;"></a>                 
                 </li>
               </ul>
@@ -50,11 +72,11 @@
             class="btn btn-light text-info m-3 shadow-sm p-2 mb-5 rounded">Logout</button>
           </div>
           <div class="col-md-6 mx-auto">
-            <img src="../../resources/imgInicio.jpeg" class="img-fluid" alt="Imagem Inicio" style="max-width: 600px;">
+            <img src="../../resources/imgInicio.jpeg" class="img-fluid" alt="Imagem Inicio" style="max-width: 700px;">
           </div>
         </div>
         <br>
-        <div class="container-fluid text-bg-secondary">
+        <div class="container-fluid text-bg-secondary text-center">
           <br>
           <h1 class="text-center">Sobre</h1>
           <h5 class="text-center"> GreenPath é um aplicativo que ajuda os usuários a <br>
@@ -62,7 +84,7 @@
                                   rápida e conveniente.<br>
                                   Estabelecimentos podem cadastrar, e fornecer informações sobre a<br>
                                   reciclagem de diferentes tipos de resíduos, promovendo práticas<br>
-                                  de descarte sustentáveis.</h5>
+                                  de descarte sustentáveis.</h5><br>
                              <button type="button" onclick="window.location.href='sobre.php'"
                             class="btn btn-light text-info shadow-sm p-2 mb-5 rounded">Saiba Mais</button>
         </div>
