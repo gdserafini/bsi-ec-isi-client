@@ -1,7 +1,7 @@
 INSERT INTO TipoUsuario(nome_tipo, nivel)
 VALUES ('Administrador', 1), ('Usuário', 2);
 
-INSERT INTO TipoResiduo(nome, classificacao, toxico)
+INSERT INTO TipoResiduo(nome, descricao, toxico)
 VALUES
     ('Pilha', 'Lixo eletrônico', TRUE),
     ('Seringa', 'Lixo hospitalar', TRUE),
