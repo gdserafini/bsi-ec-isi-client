@@ -1,3 +1,4 @@
+
 #main{
     border:solid;
     height:100vh;
@@ -8,9 +9,9 @@
   }
 
 footer {
-    border-top: 1px solid #0499AE;
+    border-top: 1px solid #535A76;
     background-color: whitesmoke;
-    color: #0499AE;
+    color: #535A76;
     font-family: "Poppins", sans-serif;
     display: flex;
     flex-wrap: wrap;

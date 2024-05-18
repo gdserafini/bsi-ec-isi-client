@@ -1,13 +1,9 @@
--- Drop the database if it exists
 DROP DATABASE IF EXISTS green_path_db;
 
--- Create the database
 CREATE DATABASE green_path_db DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
--- Use the created database
 USE green_path_db;
 
--- Create table for waste disposal locations
 CREATE TABLE LocalDescarte (
     id_local_descarte INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     endereco VARCHAR(255) NOT NULL,
@@ -17,10 +13,10 @@ CREATE TABLE LocalDescarte (
     referencia VARCHAR(255) NOT NULL,
     horario_abertura TIME NOT NULL,
     horario_fechamento TIME NOT NULL,
+    tipo VARCHAR(50) NOT NULL,
     fk_Empresa_id INT
 );
 
--- Create table for companies providing waste disposal services
 CREATE TABLE Empresa (
     id_empresa INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     nome_fantasia VARCHAR(50) UNIQUE NOT NULL,
@@ -35,7 +31,6 @@ CREATE TABLE Empresa (
     CONSTRAINT check_cnpj_digits CHECK(cnpj REGEXP '^[0-9]{14}$')
 );
 
--- Create table for types of waste
 CREATE TABLE TipoResiduo (
     id_tipo_residuo INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     nome VARCHAR(50) NOT NULL,
@@ -44,7 +39,6 @@ CREATE TABLE TipoResiduo (
     imagem MEDIUMBLOB DEFAULT NULL
 );
 
--- Create table for users
 CREATE TABLE Usuario (
     id_usu INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     nome VARCHAR(100) NOT NULL,
@@ -58,7 +52,6 @@ CREATE TABLE Usuario (
     CONSTRAINT check_cnpj_cpf_digits CHECK(cpf_cnpj REGEXP '^[0-9]{9,14}$')
 );
 
--- Create table for user types
 CREATE TABLE TipoUsuario (
     id_tipo_usu INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     nome_tipo VARCHAR(50) UNIQUE NOT NULL,
@@ -66,14 +59,12 @@ CREATE TABLE TipoUsuario (
     CONSTRAINT check_level_range CHECK(nivel >= 1 AND nivel <=3)
 );
 
--- Create table to establish a many-to-many relationship between waste types and disposal locations
 CREATE TABLE TipoResiduo_LocalDescarte (
     fk_TipoResiduo_id INT,
     fk_LocalDescarte_id INT,
     PRIMARY KEY (fk_TipoResiduo_id, fk_LocalDescarte_id)
 );
 
--- Add foreign key constraints
 ALTER TABLE LocalDescarte ADD CONSTRAINT FK_LocalDescarte_Empresa 
 FOREIGN KEY (fk_Empresa_id) 
 REFERENCES Empresa(id_empresa) 

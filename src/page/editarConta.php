@@ -7,10 +7,38 @@
         <link rel="icon" type="image/x-icon" href="../../resources/favicon.ico">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-    <body>
-    <?php
-require '../database/connectDB.php';
-		
+<body style="background-color: #EEEEEC;">
+    <?php require '../database/connectDB.php'; ?>    <nav class="navbar navbar-expand-lg shadow p-2 mb-5" style="background-color: #535A76;">
+          <div class="container-fluid" style="background-color: #535A76;">
+            <a class="navbar-brand" href="#">
+              <img src="../../resources/GreenPath.png" alt="GreenPath" width="200" height="59">
+            </a>          
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link text-light fs-5 p-3" href="#" onclick="window.location.href='homeUsers.php'">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light fs-5 p-3" href="#" onclick="window.location.href='sobre.php'">Sobre</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light fs-5 p-3" href="#" onclick="window.location.href='locaisUser.php'">Locais</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light fs-5 p-3" href="#" onclick="window.location.href='logout.php'">Logout</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link p-3" href="#" onclick="window.location.href='editarConta.php?id=<?php echo $cod; ?>'">
+                  <img src="../../resources/do-utilizador.png" alt="GreenPath" style="max-width: 35px;"></a>                 
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+    <?php		
     $id_usu = $_GET['id_usu'];
 
     $conn = mysqli_connect($servername, $username, $password, $database);
@@ -36,48 +64,17 @@ require '../database/connectDB.php';
             $avatar = $row['avatar'];
 
             ?>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary shadow p-2 mb-5 rounded border-bottom border-primary-subtle">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-              <img src="../../resources/logoNome-removebg-preview.png" alt="GreenPath" width="171" height="50">
-            </a>          
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                  <a class="nav-link text-secondary fs-5 p-3" href="#" onclick="window.location.href='homeUsers.php'">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-secondary fs-5 p-3" href="#" onclick="window.location.href='sobre.php'">Sobre</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-secondary fs-5 p-3" href="#" onclick="window.location.href='locais.php'">Locais</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-secondary fs-5 p-3" href="#" onclick="window.location.href='logout.php'">Logout</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link p-3" href="#" onclick="window.location.href='editarConta.php'">
-                  <img src="../../resources/perfilIcon.png" alt="GreenPath" style="max-width: 35px;"></a>                 
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-
         <div class="card mb-3 mx-auto rounded shadow-sm p-2 mb-5" style="max-width: 800px;">
         <div class="row g-0">
-            <div class="col-md-4 text-bg-secondary text-center rounded-start">
+            <div class="col-md-4 text-center rounded-start" style="background-color: #535A76;">
             <p><br><img src="../../resources/logo-removebg.png" class="img-fluid rounded-start" alt="logo" style="max-width: 100px;"></p>
-            <p class="text-center fs-2 text">Deseja Sair?</p>
-            <p><button type="button" onclick="window.location.href='logout.php'" class="btn btn-light text-info shadow-sm p-2 mb-5 rounded">Logout</button></p>
+            <p class="text-center text-light fs-2 text">Deseja Sair?</p>
+            <p><button type="button" style="color: #535A76;" onclick="window.location.href='logout.php'" class="btn btn-light shadow-sm p-2 mb-5 rounded">Logout</button></p>
         </div>
             <div class="col-md-8">
             <div class="card-body text-bg-light rounded-end">
                     <form id="form" action="editarContaDB.php" method="POST" enctype="multipart/form-data">                    
-                    <h2 id="signup-title">Editar Conta de <?php echo $nome; ?></h2>
+                    <h2 id="signup-title" style="color: #535A76;">Editar Conta de <?php echo $nome; ?></h2>
                     <input type="hidden" id="id_usu" name="id_usu" value="<?php echo $id_usu; ?>">
 
                     <label for="nome" class="form-label"></label>
@@ -115,13 +112,13 @@ require '../database/connectDB.php';
                             <?php
                             if ($avatar) {?>
                                 <p style="text-align:center">
-                                    <img id="imagemSelecionada" class="rounded-circle" src="data:image/png;base64,<?= base64_encode($avatar) ; ?>" />
+                                    <img id="imagemSelecionada" class="rounded-circle" style="max-width: 40px;" src="data:image/png;base64,<?= base64_encode($avatar) ; ?>" />
                                 </p> 
                                 <?php
                             } else {
                                 ?>
                                 <p style="text-align:center">
-                                    <img id="imagemSelecionada" class="rounded-circle" src="../../resources/perfilIconListar.png" />
+                                    <img id="imagemSelecionada" class="rounded-circle" src="../../resources/do-utilizador.png" style="max-width: 40px;" />
                                 </p>
                                 <?php
                             }
@@ -134,8 +131,8 @@ require '../database/connectDB.php';
                         </td>
 
                     <div>
-                    <input class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" type="submit" value="Alterar">
-                    <input class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" type="button" value="Cancelar" onclick="window.location.href='listarContas.php'">
+                    <input class="btn btn-light shadow-sm p-2 mb-5 rounded" type="submit" style="color: #535A76;" value="Alterar">
+                    <input class="btn btn-light shadow-sm p-2 mb-5 rounded" type="button" style="color: #535A76;" value="Cancelar" onclick="window.location.href='homeUsers.php'">
                     </div>
                 </form>
             <?php

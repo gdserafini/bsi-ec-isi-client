@@ -7,10 +7,33 @@
         <link rel="icon" type="image/x-icon" href="../../resources/favicon.ico">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-    <body>
-    <?php
-    require '../database/connectDB.php';
-
+<body style="background-color: #EEEEEC;">
+	<?php require '../database/connectDB.php'; ?>
+  <nav class="navbar navbar-expand-lg shadow p-2 mb-5" style="background-color: #535A76;">
+          <div class="container-fluid" style="background-color: #535A76;">
+            <a class="navbar-brand" href="#">
+              <img src="../../resources/GreenPath.png" alt="GreenPath" width="200" height="59">
+            </a>          
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                  <a class="nav-link text-light fs-5 p-3" href="#" onclick="window.location.href='homeAdm.php'">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light fs-5 p-3" href="#" onclick="window.location.href='logout.php'">Logout</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link p-3" href="#" onclick="window.location.href='editarConta.php?id=<?php echo $cod; ?>'">
+                  <img src="../../resources/do-utilizador.png" alt="GreenPath" style="max-width: 35px;"></a>                 
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+<?php
     $id_local_descarte = $_GET['id'];
 
 
@@ -37,31 +60,17 @@
                     $horario_fechamento = $row['horario_fechamento'];
                     $tipo = $row['tipo'];
 				?>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary shadow p-2 mb-5 rounded border-bottom border-primary-subtle">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-              <img src="../../resources/logoNome-removebg-preview.png" alt="GreenPath" width="171" height="50">
-            </a>          
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-              </ul>
-            </div>
-          </div>
-        </nav>
         <div class="card mb-3 mx-auto rounded shadow-sm p-2 mb-5" style="max-width: 800px;">
         <div class="row g-0">
-            <div class="col-md-4 text-bg-secondary text-center rounded-start">
+            <div class="col-md-4 text-center rounded-start" style="background-color: #535A76;">
             <p><br><img src="../../resources/logo-removebg.png" class="img-fluid rounded-start" alt="logo" style="max-width: 100px;"></p>
-            <p class="text-center fs-2 text">Já Possui um Local Cadastrado?</p>
-            <p><button type="button" onclick="window.location.href='locais.php'" class="btn btn-light text-info shadow-sm p-2 mb-5 rounded">Ver Locais</button></p>
+            <p class="text-center fs-2 text text-light">Já Possui um Local Cadastrado?</p>
+            <p><button type="button" onclick="window.location.href='locais.php'" style="color: #535A76;" class="btn btn-light shadow-sm p-2 mb-5 rounded">Ver Locais</button></p>
         </div>
             <div class="col-md-8">
             <div class="card-body text-bg-light rounded-end">
                 <form id="form" action="editarLocalDB.php" method="POST" enctype="multipart/form-data">
-                <h2 id="signup-title">Editar <?php echo $nome; ?></h2>
+                <h2 id="signup-title" style="color: #535A76;">Editar <?php echo $nome; ?></h2>
                 <input type="hidden" id="id_local_descarte" name="id_local_descarte" value="<?php echo $id_local_descarte; ?>">
                 <label for="nome" class="form-label">Nome do Local</label>
                             <input type="text" name="nome" minlength="3" id="nome" placeholder="Nome da Local" 
@@ -99,13 +108,13 @@
                             <?php
                             if ($imagem) {?>
                                 <p style="text-align:center">
-                                    <img id="imagemSelecionada" class="rounded-circle" src="data:image/png;base64,<?= base64_encode($imagem) ; ?>" />
+                                    <img id="imagemSelecionada" class="rounded-circle" style="max-width: 40px;" src="data:image/png;base64,<?= base64_encode($imagem) ; ?>" />
                                 </p> 
                                 <?php
                             } else {
                                 ?>
                                 <p style="text-align:center">
-                                    <img id="imagemSelecionada" class="rounded-circle" src="../../resources/ImagemS.png" />
+                                    <img id="imagemSelecionada" class="rounded-circle" src="../../resources/fotoIcon.jpg" style="max-width: 40px;"  />
                                 </p>
                                 <?php
                             }
@@ -118,8 +127,8 @@
                         </td>
                             <div>
                               <br>
-                              <input type="button" value="Cancelar" class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" onclick="window.location.href='listarEmpresas.php'">
-                              <input  class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" type="submit" value="Editar Local">
+                              <input type="button" value="Cancelar" style="color: #535A76;" class="btn btn-light shadow-sm p-2 mb-5 rounded" onclick="window.location.href='locais.php'">
+                              <input  class="btn btn-light shadow-sm p-2 mb-5 rounded" style="color: #535A76;" type="submit" value="Editar Local">
                             </div>
                     <?php
         } else {

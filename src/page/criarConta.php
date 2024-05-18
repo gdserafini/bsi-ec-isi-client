@@ -10,7 +10,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
 </head>
-    <body>
+<body style="background-color: #EEEEEC;">
     <?php
     session_start();
     require '../database/connectDB.php';
@@ -31,29 +31,35 @@
 				}
 
 				?>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary shadow p-2 mb-5 rounded border-bottom border-primary-subtle">
-          <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg shadow p-2 mb-5" style="background-color: #535A76;">
+  <div class="container-fluid" style="background-color: #535A76;">
             <a class="navbar-brand" href="#">
-              <img src="../../resources/logoNome-removebg-preview.png" alt="GreenPath" width="171" height="50">
+            <img src="../../resources/GreenPath.png" alt="GreenPath" width="200" height="59">
             </a>          
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link text-light fs-5 p-3" href="#" onclick="window.location.href='login.php'">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light fs-5 p-3" href="#" onclick="window.location.href='criarConta.php'">Criar Conta</a>
+                </li>
               </ul>
             </div>
           </div>
         </nav>
         <div class="card mb-3 mx-auto rounded shadow-sm p-2 mb-5" style="max-width: 800px;">
         <div class="row g-0">
-            <div class="col-md-4 text-bg-secondary text-center rounded-start">
+            <div class="col-md-4 text-light text-center rounded-start" style="background-color: #535A76;">
             <p><br><img src="../../resources/logo-removebg.png" class="img-fluid rounded-start" alt="logo" style="max-width: 100px;"></p>
             <p class="text-center fs-2 text">Já Possui uma Conta?</p>
-            <p><button type="button" onclick="window.location.href='login.php'" class="btn btn-light text-info shadow-sm p-2 mb-5 rounded">Login</button></p>
+            <p><button type="button" onclick="window.location.href='login.php'" class="btn btn-light shadow-sm p-2 mb-5 rounded" style="color: #535A76;">Login</button></p>
         </div>
             <div class="col-md-8">
-            <div class="card-body text-bg-light rounded-end">
+            <div class="card-body text-bg-light rounded-end" style="color: #535A76;">
                 <h5 class="card-title">Criar Conta</h5>
                 <br>
                 <form id="form" action="criarContaDB.php" method="POST">
@@ -90,8 +96,8 @@
                             <input type="checkbox" name="use-term" id="use-term" checked required>  Aceito os termos de uso 
                             <div>
                             <br>  
-                            <input type="button" value="Cancelar" class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" onclick="window.location.href='homePage.php'">
-                              <input  class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" type="submit" value="Criar conta">
+                            <input type="button" value="Cancelar" class="btn btn-light shadow-sm p-2 mb-5 rounded" style="color: #535A76;"onclick="window.location.href='homePage.php'">
+                              <input  class="btn btn-light shadow-sm p-2 mb-5 rounded" type="submit" style="color: #535A76;" value="Criar conta">
                             </div>
                     </form>
                 </div>

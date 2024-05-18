@@ -8,7 +8,7 @@
         <link rel="icon" type="image/x-icon" href="../../resources/favicon.ico">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-    <body>
+    <body style="background-color: #EEEEEC;">
     <?php require '../database/connectDB.php'; ?>
     <?php
       $conn = new mysqli($servername, $username, $password, $database);
@@ -17,13 +17,10 @@
         die("<strong> Falha de conexão: </strong>" . $conn->connect_error);
       }
       ?>
-<?php
-            $sql = "SELECT id_usu, TU.nome_tipo AS nome_tipo, nome
-            FROM Usuario AS U INNER JOIN TipoUsuario AS TU ON (U.fk_TipoUsuario_id = TU.id_tipo_usu)";?>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary shadow p-2 mb-5 rounded border-bottom border-primary-subtle">
-          <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg shadow p-2 mb-5" style="background-color: #535A76;">
+          <div class="container-fluid" style="background-color: #535A76;">
             <a class="navbar-brand" href="#">
-              <img src="../../resources/logoNome-removebg-preview.png" alt="GreenPath" width="171" height="50">
+              <img src="../../resources/GreenPath.png" alt="GreenPath" width="200" height="59">
             </a>          
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -31,74 +28,86 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                  <a class="nav-link text-secondary fs-5 p-3" href="#" onclick="window.location.href='homeUsers.php'">Home</a>
+                  <a class="nav-link text-light fs-5 p-3" href="#" onclick="window.location.href='homeUsers.php'">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-secondary fs-5 p-3" href="#" onclick="window.location.href='sobre.php'">Sobre</a>
+                  <a class="nav-link text-light fs-5 p-3" href="#" onclick="window.location.href='sobre.php'">Sobre</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-secondary fs-5 p-3" href="#" onclick="window.location.href='locaisUser.php'">Locais</a>
+                  <a class="nav-link text-light fs-5 p-3" href="#" onclick="window.location.href='locaisUser.php'">Locais</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-secondary fs-5 p-3" href="#" onclick="window.location.href='logout.php'">Logout</a>
+                  <a class="nav-link text-light fs-5 p-3" href="#" onclick="window.location.href='logout.php'">Logout</a>
                 </li>
-                  <?php 
-
-                echo "<li class='nav-item'>";
-                    if ($result = mysqli_query($conn, $sql)) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                          $cod = $row["id_usu"];
-                    echo "<a class='nav-link text-secondary fs-5 p-3' href='editarConta.php?id=<?php echo $cod; ?>'>" . $row['nome_tipo'] . ' - ' . $row['nome'] . "</a>";
-                echo "</li>";}
-                echo "</div>";
-    }
-    ?>
                 <li class="nav-item">
                 <a class="nav-link p-3" href="#" onclick="window.location.href='editarConta.php?id=<?php echo $cod; ?>'">
-                  <img src="../../resources/perfilIcon.png" alt="GreenPath" style="max-width: 35px;"></a>                 
+                  <img src="../../resources/do-utilizador.png" alt="GreenPath" style="max-width: 35px;"></a>                 
                 </li>
               </ul>
             </div>
           </div>
         </nav>
         <div class="row g-1 mx-auto p-2">
-        <div id="titulo" class="col-md-4 p-4 text-center text-secondary ">
-            <h1>Bem-vindo ao Greenpath</h1><br>
+          <div id="titulo" style="color: #535A76;" class="col-md-4 mx-auto text-center text-secondary ">
+            <br>
+          <h1>Bem-vindo ao Greenpath</h1>
+            <p class="text-center fs-5 text-secondary"> 
+            GreenPath é uma plataforma que facilita aos usuários a localização rápida e conveniente de pontos de descarte de resíduos de forma correta. Estabelecimentos podem se cadastrar na plataforma e disponibilizar informações sobre a reciclagem de diversos tipos de materiais, incentivando práticas de descarte sustentáveis.</p>
             <button type="button" onclick="window.location.href='sobre.php'"
-            class="btn btn-light text-info m-3 shadow-sm p-2 mb-5 rounded">Sobre os Resíduos</button>
-            <button type="button" onclick="window.location.href='locaisUser.php'"
-            class="btn btn-light text-info m-3 shadow-sm p-2 mb-5 rounded">Ver Locais</button>
-            <button type="button" onclick="window.location.href='logout.php'"
-            class="btn btn-light text-info m-3 shadow-sm p-2 mb-5 rounded">Logout</button>
+            class="btn btn-light m-3 shadow-sm p-2 mb-5 rounded" style="color: #535A76;" >Saiba mais</button>
           </div>
-          <div class="col-md-6 mx-auto">
-            <img src="../../resources/imgInicio.jpeg" class="img-fluid" alt="Imagem Inicio" style="max-width: 700px;">
+          <div class="col-md-7">
+          <img src="../../resources/imgHome.png" class="img-fluid" alt="Imagem Inicio" style="max-width: 650px;">
           </div>
         </div>
         <br>
-        <div class="container-fluid text-bg-secondary text-center">
+        <br>
+        <div class="container-fluid text-bg-secondary mx-auto text-center">
           <br>
-          <h1 class="text-center">Sobre</h1>
-          <h5 class="text-center"> GreenPath é um aplicativo que ajuda os usuários a <br>
-                                  localizar pontos de descarte de lixo correto de forma<br>
-                                  rápida e conveniente.<br>
-                                  Estabelecimentos podem cadastrar, e fornecer informações sobre a<br>
-                                  reciclagem de diferentes tipos de resíduos, promovendo práticas<br>
-                                  de descarte sustentáveis.</h5><br>
-                             <button type="button" onclick="window.location.href='sobre.php'"
-                            class="btn btn-light text-info shadow-sm p-2 mb-5 rounded">Saiba Mais</button>
+            <h2>Veja os melhores lugares!</h2>
+        <div class="row g-1 p-2">
+        <div class="col-md-5 p-4 text-center">
+            <img src="../../resources/mapa.png" class="img-fluid border border-light" alt="mapa" style="max-width: 350px;">
+          </div>
+          <div class="col-md-5 mx-auto"><br><br><br>
+          <h5>Com o GreenPath, você tem acesso a uma ampla rede de locais disponíveis para o descarte correto de resíduos. Nossas empresas parceiras cadastram seus pontos de coleta na plataforma, oferecendo uma variedade de opções para você escolher o que mais se adequa às suas necessidades e conveniências. Assim, você pode selecionar o local mais próximo, ou o que melhor se encaixa em sua rota diária, garantindo um descarte sustentável e responsável.</h5>
+          <br>
+          <button type="button" onclick="window.location.href='locaisUser.php'"
+            class="btn btn-light shadow-sm p-2 mb-5 rounded" style="color: #535A76;">Ver Locais</button>
+          </div>
         </div>
         <br>
-        <div class="card text-center text-info mx-auto rounded shadow-sm p-2 mb-5" style="max-width: 500px;">
-          <div class="card-header">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Locais Cadastrados</h5>
-            <p class="card-text">Veja os melhores lugares para descartar resíduos corretamente.</p>
-            <button type="button" onclick="window.location.href='locaisUser.php'"
-            class="btn btn-light text-info rounded">Ver Locais</button>
-          </div>
-          <div class="card-footer text-body-secondary">
+      </div>
+        <br><br>
+        <?php
+        $sql = "SELECT id_empresa, nome_fantasia, avatar, bairro
+        FROM Empresa
+        ORDER BY nome_fantasia";
+        ?>
+        <div class="container text-bg-light text-center rounded shadow-sm p-2 mb-5">
+          <h2 style="color: #535A76;">Empresas</h2><br>
+<?php
+    if ($result = mysqli_query($conn, $sql)) {
+      echo "<div class='row row-cols-1 row-cols-md-4 g-6'>";
+      while ($row = mysqli_fetch_assoc($result)) {
+        echo "<div class='col'>";
+        echo "  <div class='card'>";
+        echo "    <img src='" . ($row['avatar'] ? "data:image/png;base64," . base64_encode($row['imagem']) : "../../resources/fotoIcon.jpg") . "' class='card-img-top' alt='...'>";
+        echo "    <div class='card-body'>";
+        echo "      <h5 class='card-title'>" . $row['nome_fantasia'] . "</h5>";
+        echo "      <p class='card-text'>" . $row['bairro'] . "</p>";
+        echo "      <a class='btn btn-light' style='color: #535A76;' href='locaisUser.php?id=" . "'>Ver locais</a>";
+        echo "    </div>";
+        echo "  </div>";
+        echo "</div>";
+    }
+    echo "</div>";
+} else {
+    echo "<p>Nenhum local de descarte encontrado.</p>";
+}    
+
+mysqli_close($conn);
+?>
           </div>
         </div>
         </div>
