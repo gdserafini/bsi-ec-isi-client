@@ -20,7 +20,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                  <a class="nav-link text-light fs-5 p-3" href="#" onclick="window.location.href='homeAdm.php'">Home</a>
+                  <a class="nav-link text-light fs-5 p-3" href="../../index.php">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-light fs-5 p-3" href="#" onclick="window.location.href='logout.php'">Logout</a>

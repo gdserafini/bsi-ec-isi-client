@@ -94,32 +94,32 @@ if (!empty($_GET['search'])) {
     </div>
 </div>
 <footer>
-    <div class="footer-section">
-        <h3>Este Site</h3>
-        <ul>
-            <li><a href="#">Locais</a></li>
-            <li><a href="#">Cadastre Seu Local</a></li>
-            <li><a href="#">Ajuda e Suporte</a></li>
-            <li><a href="#">Preferências</a></li>
-        </ul>
-    </div>
-    <div class="footer-section">
-        <h3>Outros Sites Green</h3>
-        <ul>
-            <li><a href="#">Sobre a GreenPath</a></li>
-            <li><a href="#">Soluções para descarte</a></li>
-            <li><a href="#">Trabalhe conosco</a></li>
-            <li><a href="#">GreenInsight</a></li>
-        </ul>
-    </div>
-    <div class="footer-bottom">
-        <a href="#">Página Inicial</a> |
-        <a href="#">Benefícios</a> |
-        <a href="#">Termos de Serviço</a> |
-        <a href="#">Privacidade</a> |
-        <a href="#">Configuração de Cookies</a>
-        <p style="margin-left: 10px;">Copyright ©2024 GreenPath Inc. Todos Direitos Reservados.</p>
-    </div>
+<div class="footer-section">
+            <h3>Este Site</h3>
+            <ul>
+                <li><a href="#" onclick="window.location.href='locaisUser.php'">Locais</a></li>
+                <li><a href="#" onclick="window.location.href='cadLocal.php'">Cadastre Seu Local</a></li>
+                <li><a href="#">Ajuda e Suporte</a></li>
+                <li><a href="#">Preferências</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Outros Sites Green</h3>
+            <ul>
+                <li><a href="#" onclick="window.location.href='sobre.php'">Sobre a GreenPath</a></li>
+                <li><a href="#">Soluções para descarte</a></li>
+                <li><a href="#">Trabalhe conosco</a></li>
+                <li><a href="#">GreenInsight</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <a href="#" onclick="window.location.href='homeUsers.php'">Página Inicial</a> | 
+            <a href="#">Benefícios</a> | 
+            <a href="#">Termos de Serviço</a> | 
+            <a href="#">Privacidade</a> | 
+            <a href="#">Configuração de Cookies</a>
+            <p style="margin-left: 10px;">Copyright ©2024 GreenPath Inc. Todos Direitos Reservados.</p>
+        </div>
 </footer>
 
 <script type="text/javascript" src="../script/script.js"></script>

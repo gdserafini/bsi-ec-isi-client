@@ -22,7 +22,7 @@ if ($conn->connect_error) {
 ?>
 <nav class="navbar navbar-expand-lg shadow p-2 mb-5" style="background-color: #535A76;">
     <div class="container-fluid" style="background-color: #535A76;">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="../../index.php">
             <img src="../../resources/GreenPath.png" alt="GreenPath" width="200" height="59">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -118,32 +118,32 @@ $sql = "SELECT id_empresa, nome_fantasia, avatar, bairro FROM Empresa ORDER BY n
 </div>
 </div>
 <footer>
-    <div class="footer-section">
-        <h3>Este Site</h3>
-        <ul>
-            <li><a href="#">Locais</a></li>
-            <li><a href="#">Cadastre Seu Local</a></li>
-            <li><a href="#">Ajuda e Suporte</a></li>
-            <li><a href="#">Preferências</a></li>
-        </ul>
-    </div>
-    <div class="footer-section">
-        <h3>Outros Sites Green</h3>
-        <ul>
-            <li><a href="#">Sobre a GreenPath</a></li>
-            <li><a href="#">Soluções para descarte</a></li>
-            <li><a href="#">Trabalhe conosco</a></li>
-            <li><a href="#">GreenInsight</a></li>
-        </ul>
-    </div>
-    <div class="footer-bottom">
-        <a href="#">Página Inicial</a> | 
-        <a href="#">Benefícios</a> | 
-        <a href="#">Termos de Serviço</a> | 
-        <a href="#">Privacidade</a> | 
-        <a href="#">Configuração de Cookies</a>
-        <p style="margin-left: 10px;">Copyright ©2024 GreenPath Inc. Todos Direitos Reservados.</p>
-    </div>
+<div class="footer-section">
+            <h3>Este Site</h3>
+            <ul>
+                <li><a href="#" onclick="window.location.href='locaisUser.php'">Locais</a></li>
+                <li><a href="#" onclick="window.location.href='cadLocal.php'">Cadastre Seu Local</a></li>
+                <li><a href="#">Ajuda e Suporte</a></li>
+                <li><a href="#">Preferências</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Outros Sites Green</h3>
+            <ul>
+                <li><a href="#" onclick="window.location.href='sobre.php'">Sobre a GreenPath</a></li>
+                <li><a href="#">Soluções para descarte</a></li>
+                <li><a href="#">Trabalhe conosco</a></li>
+                <li><a href="#">GreenInsight</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <a href="#" onclick="window.location.href='homeUsers.php'">Página Inicial</a> | 
+            <a href="#">Benefícios</a> | 
+            <a href="#">Termos de Serviço</a> | 
+            <a href="#">Privacidade</a> | 
+            <a href="#">Configuração de Cookies</a>
+            <p style="margin-left: 10px;">Copyright ©2024 GreenPath Inc. Todos Direitos Reservados.</p>
+        </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
