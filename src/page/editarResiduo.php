@@ -11,7 +11,7 @@
 	<?php require '../database/connectDB.php'; ?>
   <nav class="navbar navbar-expand-lg shadow p-2 mb-5" style="background-color: #535A76;">
           <div class="container-fluid" style="background-color: #535A76;">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="../../index.php">
               <img src="../../resources/GreenPath.png" alt="GreenPath" width="200" height="59">
             </a>          
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
