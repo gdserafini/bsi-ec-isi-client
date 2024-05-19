@@ -32,14 +32,14 @@
     AND email = '$email' AND senha = md5('$senha')";
 
     if ($result = $conn->query($sql)) {
-        if ($result->num_rows == 1) { 
+        if ($result->num_rows == 1) { // se usuario existe
             $row = $result->fetch_assoc();
             $_SESSION ['email']       = $email;
             $_SESSION ['id_tipo_usu'] = $row['id_tipo_usu'];
             $_SESSION ['id_usu']  = $row['id_usu'];
             $_SESSION ['nome']        = $row['nome'];
             unset($_SESSION['nao_autenticado']);       
-            if( $_SESSION ['id_tipo_usu'] == 1){           
+            if( $_SESSION ['id_tipo_usu'] == 1){           // tipo usuario
                 $conn->close(); 
                 header('location: /bsi-ec-isi-client/src/page/homeAdm.php'); 
                 exit();
@@ -48,23 +48,19 @@
                 header('location: /bsi-ec-isi-client/src/page/homeUsers.php');  
                 exit();
             }
+
         }else{
             $_SESSION['nao_autenticado'] = true;
-            $_SESSION['mensagem_header'] = "email";
-            $_SESSION['mensagem']        = "Senha ou e-mail incorreto.";
+            $_SESSION['mensagem_header'] = "email";                   
+            $_SESSION['mensagem']        = "Senha ou e-mail incorreto.";     
+   
             $conn->close(); 
-            header('location: /bsi-ec-isi-client/index.php'); 
+            header('location: /bsi-ec-isi-client/src/page/login.php'); 
+            
             exit();
         }
     }
-    else {
-        $msg = "Erro ao acessar o Banco de Dados: " . $conn-> error . ".";
-        $_SESSION['nao_autenticado'] = true;
-        $_SESSION['mensagem_header'] = "email";
-        $_SESSION['mensagem']        = $msg;
-        $conn->close();
-        header('location: /bsi-ec-isi-client/index.php'); 
-    }
+ 
 ?>
 	</body>
 </html>
