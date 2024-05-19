@@ -25,9 +25,19 @@
                 <li class="nav-item">
                   <a class="nav-link text-light fs-5 p-3" href="#" onclick="window.location.href='logout.php'">Logout</a>
                 </li>
-                <li class="nav-item">
-                <a class="nav-link p-3" href="#" onclick="window.location.href='editarConta.php?id=<?php echo $cod; ?>'">
-                  <img src="../../resources/do-utilizador.png" alt="GreenPath" style="max-width: 35px;"></a>                 
+                <li class="nav-item d-flex align-items-center justify-content-between">
+                    <a class="nav-link p-3" href="#" onclick="window.location.href='editarConta.php'">
+                        <img src="../../resources/do-utilizador.png" alt="GreenPath" style="max-width: 35px;"></a>
+                        <span class="navbar-text text-light">
+                        <?php
+                            if (session_status() === PHP_SESSION_NONE) {
+                              session_start();
+                            } 
+                            if (isset($_SESSION['nome'])) {
+                                echo "Olá, " . htmlspecialchars($_SESSION['nome']) . "!";
+                            }
+                        ?>
+                        </span>
                 </li>
               </ul>
             </div>
