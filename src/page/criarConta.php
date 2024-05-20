@@ -8,7 +8,6 @@
         <link rel="icon" type="image/x-icon" href="../../resources/favicon.ico">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
 </head>
 <body style="background-color: #EEEEEC;">
     <?php
@@ -85,11 +84,35 @@
                             <label for="cpf_cnpj" class="form-label">CPF/CNPJ</label>
                             <input type="text" name="cpf_cnpj" maxlength="18" id="cpf_cnpj" placeholder="CPF/CNPJ" 
                             pattern="^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$|^\d{2}\.?\d{3}\.?\d{3}\/?[0-9]{4}-?\d{2}$" 
-                            title="Deve estar no formato 00000000000 ou 000.000.000-00" class="form-control" required>
-                            
+                            title="Deve estar no formato 00000000000 ou 000.000.000-00" class="form-control" required
+                            oninput="mascaraCPF(this)">
+                            <script>
+                              function mascaraCPF(campo) {
+                                  const campoOriginal = campo.value;
+                                  campo.value = campo.value.replace(/\D/g, '');
+                                  if (campo.value.length <= 11) {
+                                      campo.value = campo.value.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+                                  } else {
+                                      campo.value = campo.value.replace(/\D/g, '');
+                                      campo.value = campo.value.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
+                                  }
+                                  campo.setAttribute('cpf_cnpj', campoOriginal);
+                              }
+                            </script>
+
                             <label for="telefone" class="form-label">Telefone</label>
                             <input type="text" name="telefone" maxlength="15" id="telefone" placeholder="Telefone" class="form-control" 
-                            pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$" title="Deve estar no formato 00000000000 ou (00) 00000-0000" required>
+                            pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$" title="Deve estar no formato 00000000000 ou (00) 00000-0000" required
+                            oninput="mascaraTelefone(this)">
+                            <script>
+                              function mascaraTelefone(campo) {
+                                  const campoOriginal = campo.value;
+                                  campo.value = campo.value.replace(/\D/g, '');
+                                  campo.value = campo.value.replace(/^(\d{2})(\d)/g, '($1) $2');
+                                  campo.value = campo.value.replace(/(\d{5})(\d)/, '$1-$2');
+                                  campo.setAttribute('telefone', campoOriginal);
+                                }
+                            </script>
                              
                             <label for="senha" class="form-label">Senha</label>
                             <div class="input-group">
@@ -108,7 +131,7 @@
                             <div>
                             <br>  
                             <input type="button" value="Cancelar" class="btn btn-light shadow-sm p-2 mb-5 rounded" style="color: #535A76;"onclick="window.location.href='homePage.php'">
-                              <input  class="btn btn-light shadow-sm p-2 mb-5 rounded" type="submit" style="color: #535A76;" value="Criar conta">
+                              <input  class="btn btn-light shadow-sm p-2 mb-5 rounded" type="submit" style="color: #535A76;" value="Criar conta" onsubmit="reverteValores(this)">
                             </div>
                     </form>
                 </div>

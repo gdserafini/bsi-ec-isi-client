@@ -35,9 +35,9 @@
     }
 
     $nome    = $conn->real_escape_string($_POST['nome']);   
-    $email   = $conn->real_escape_string($_POST['email']);   
-    $cpf_cnpj   = $conn->real_escape_string($_POST['cpf_cnpj']);  
-    $telefone = $conn->real_escape_string($_POST['telefone']);
+    $email   = $conn->real_escape_string($_POST['email']);  
+    $cpf_cnpj   = $conn->real_escape_string(preg_replace('/\D/', '', $_POST['cpf_cnpj']));  
+    $telefone = $conn->real_escape_string(preg_replace('/\D/', '', $_POST['telefone']));
     $senha   = $conn->real_escape_string($_POST['senha']);  
 	$md5Senha = md5($senha);
 
