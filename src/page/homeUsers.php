@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,13 +9,25 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body style="background-color: #EEEEEC;">
-<?php require '../database/connectDB.php'; ?>
-<?php
+<?php require '../database/connectDB.php';
 $conn = new mysqli($servername, $username, $password, $database);
 
 if ($conn->connect_error) {
     die("<strong> Falha de conexão: </strong>" . $conn->connect_error);
 }
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+    $s_name = session_name();
+    $offset = 600;
+    $dateFormat = "d/m/Y h:i:s";
+    $timeNDate = gmdate($dateFormat, time()-$offset);
+    if(isset($_SESSION['LAST_ACTIVITY']) && 
+        (time() - $_SESSION['LAST_ACTIVITY'] > $offset)){
+            header("Location: logout.php");
+    }
+    $_SESSION['LAST_ACTIVITY'] = time(); 
+  } 
 ?>
 <nav class="navbar navbar-expand-lg shadow p-2 mb-5" style="background-color: #535A76;">
     <div class="container-fluid" style="background-color: #535A76;">

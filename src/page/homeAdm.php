@@ -1,5 +1,16 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+  $s_name = session_name();
+  $offset = 600;
+  $dateFormat = "d/m/Y h:i:s";
+  $timeNDate = gmdate($dateFormat, time()-$offset);
+  if(isset($_SESSION['LAST_ACTIVITY']) && 
+      (time() - $_SESSION['LAST_ACTIVITY'] > $offset)){
+          header("Location: logout.php");
+  }
+  $_SESSION['LAST_ACTIVITY'] = time(); 
+} 
 ?>
 <!doctype html>
 <html lang="en">
@@ -63,6 +74,15 @@ session_start();
                         <?php
                           if (session_status() === PHP_SESSION_NONE) {
                             session_start();
+                            $s_name = session_name();
+                            $offset = 600;
+                            $dateFormat = "d/m/Y h:i:s";
+                            $timeNDate = gmdate($dateFormat, time()-$offset);
+                            if(isset($_SESSION['LAST_ACTIVITY']) && 
+                                (time() - $_SESSION['LAST_ACTIVITY'] > $offset)){
+                                    header("Location: logout.php");
+                            }
+                            $_SESSION['LAST_ACTIVITY'] = time(); 
                           } 
                             if (isset($_SESSION['nome'])) {
                                 echo "Olá, " . htmlspecialchars($_SESSION['nome']) . "!";

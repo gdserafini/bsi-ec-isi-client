@@ -20,7 +20,10 @@
             <h2>Fechando a sessão ...</h2>
             <img src="../../resources/processando.gif" style="max-width:300px">
 <?php
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    } 
+    session_unset();
     session_destroy();
     $url = "Location: ../../index.php";
     header($url);

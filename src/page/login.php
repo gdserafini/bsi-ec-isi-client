@@ -9,7 +9,18 @@
     <script type="text/javascript">
         // Verifica se a mensagem de pop-up está configurada e exibe o alerta
         <?php
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+            $s_name = session_name();
+            $offset = 600;
+            $dateFormat = "d/m/Y h:i:s";
+            $timeNDate = gmdate($dateFormat, time()-$offset);
+            if(isset($_SESSION['LAST_ACTIVITY']) && 
+                (time() - $_SESSION['LAST_ACTIVITY'] > $offset)){
+                    header("Location: logout.php");
+            }
+            $_SESSION['LAST_ACTIVITY'] = time(); 
+          } 
         if (isset($_SESSION['popup_message'])): ?>
             alert("<?php echo $_SESSION['popup_message']; ?>");
             <?php unset($_SESSION['popup_message']); // Remove a mensagem após exibir o pop-up ?>
