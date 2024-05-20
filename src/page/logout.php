@@ -12,9 +12,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
     <body> 
-        <?php
-            session_start();
-        ?>
         <div class="header">
             <a href="../../index.php">
                 <img src="../../resources/logoNome-removebg-preview.png" class="logoNome"/>
@@ -22,12 +19,12 @@
         </div>
             <h2>Fechando a sessão ...</h2>
             <img src="../../resources/processando.gif" style="max-width:300px">
-                
-                <?php
-                    session_destroy();
-                    $url = "Location: ../../index.php";
-                    header($url);
-                    exit();
-                ?>
+<?php
+    session_start();
+    session_destroy();
+    $url = "Location: ../../index.php";
+    header($url);
+    exit();
+?>
 	</body>
 </html>
