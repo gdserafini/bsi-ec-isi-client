@@ -47,7 +47,7 @@
 					echo "<p>&nbsp;Erro executando UPDATE: " . $conn-> error . "</p>";
 				}
 				?>
-				<button type="submit" class="btn btn-secondary" onclick="window.location.href='listarContas.php'">Ok</button>
+				<button type="submit" class="btn btn-secondary" onclick="window.location.href='homeUsers.php'">Ok</button>
 				<?php
 				echo "</div>";
 				$conn->close();

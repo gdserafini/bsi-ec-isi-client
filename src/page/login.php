@@ -40,30 +40,36 @@ if (isset($_SESSION['nao_autenticado'])) {
     $style = "display:none";
 }
 ?>
-<nav class="navbar navbar-expand-lg bg-body-tertiary shadow p-2 mb-5 rounded border-bottom border-primary-subtle">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="../../resources/logoNome-removebg-preview.png" alt="GreenPath" width="171" height="50">
-        </a>          
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-            </ul>
-        </div>
-    </div>
-</nav>
+  <nav class="navbar navbar-expand-lg shadow p-2 mb-5" style="background-color: #535A76;">
+  <div class="container-fluid" style="background-color: #535A76;">
+            <a class="navbar-brand" href="../../index.php">
+              <img src="../../resources/GreenPath.png" alt="GreenPath" width="200" height="59">
+            </a>          
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link text-light fs-5 p-3" href="#" onclick="window.location.href='login.php'">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light fs-5 p-3" href="#" onclick="window.location.href='criarConta.php'">Criar Conta</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
 <div class="card mb-3 mx-auto rounded shadow-sm p-2 mb-5" style="max-width: 800px;">
     <div class="row g-0">
-        <div class="col-md-4 text-bg-secondary text-center rounded-start">
+        <div class="col-md-4 text-center rounded-start" style="background-color: #535A76;">
             <p><br><img src="../../resources/logo-removebg.png" class="img-fluid rounded-start" alt="logo" style="max-width: 100px;"></p>
-            <p class="text-center fs-2 text">Não Possui uma Conta?</p>
-            <p><button type="button" onclick="window.location.href='criarConta.php'" class="btn btn-light text-info shadow-sm p-2 mb-5 rounded">Criar Conta</button></p>
+            <p class="text-center text-light fs-2 text">Não Possui uma Conta?</p>
+            <p><button type="button" onclick="window.location.href='criarConta.php'" class="btn btn-light shadow-sm p-2 mb-5 rounded" style="color: #535A76;">Criar Conta</button></p>
         </div>
         <div class="col-md-8">
             <div class="card-body text-bg-light rounded-end">
-                <h5 class="card-title">Login</h5>
+                <h5 class="card-title" style="color: #535A76;">Login</h5>
                 <?php if ($msg): ?>
                     <div class="alert alert-danger" role="alert">
                         <?php echo $msg; ?>
@@ -83,7 +89,7 @@ if (isset($_SESSION['nao_autenticado'])) {
                     <br>
                     <br>
                     <div>
-                        <input class="btn btn-light text-info shadow-sm p-2 mb-5 rounded" type="submit" value="Login">
+                        <input class="btn btn-light shadow-sm p-2 mb-5 rounded" style="color: #535A76;" type="submit" value="Login">
                     </div>
                 </form>
             </div>
