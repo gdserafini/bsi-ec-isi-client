@@ -109,10 +109,17 @@
                     echo "<td>" . $row["razao_social"] . "</td>";
                     echo "<td>" . $row["setor"] . "</td>";
                     echo "<td>" . $row["bairro"] . "</td>";
-                    if ($row['avatar']) {
-                        echo "<td><img id='imagemSelecionada' class='rounded-circle' src='data:image/png;base64," . base64_encode($row['avatar']) . "style='max-width: 40px;' /></td>";
+                    if ($row['avatar']) {?>
+                        <td>
+                            <img id="imagemSelecionada" class="rounded-circle" src="data:image/png;base64,<?= base64_encode($row['avatar']) ?>" style='max-width: 40px;'  />
+                        </td>
+                        <?php
                     } else {
-                        echo "<td><img id='imagemSelecionada' class='rounded-circle' src='../../resources/fotoIcon.jpg' style='max-width: 40px;' /></td>";
+                        ?>
+                        <td>
+                            <img id="imagemSelecionada" class="rounded-circle" src="../../resources/fotoIcon.jpg" style='max-width: 40px;' />
+                        </td>
+                        <?php 
                     }
                     echo "<td><a class='btn btn-light' style='color: #535A76;' href='editarEmpresa.php?id=" . $cod . "'>Editar</a></td>";
                     echo "<td><a class='btn btn-danger' href='excluirEmpresa.php?id=" . $cod . "'>Excluir</a></td>";

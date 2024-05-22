@@ -96,8 +96,8 @@ if (!empty($_GET['search'])) {
                 echo "  <div class='card'>";
                 echo "    <img src='" . ($row['imagem'] ? "data:image/png;base64," . base64_encode($row['imagem']) : "../../resources/fotoIcon.jpg") . "' class='card-img-top' alt='...'>";
                 echo "    <div class='card-body'>";
-                echo "      <h5 class='card-title'>Descarte de " . $row['nome'] . "</h5>";
-                echo "      <p class='card-text'>" . $row['descricao'] . "</p>";
+                echo "      <h5 style='color: #535A76;' class='card-title'>Descarte de " . $row['nome'] . "</h5>";
+                echo "      <p style='color: #535A76;' class='card-text'>" . $row['descricao'] . "</p>";
                 echo "      <a class='btn btn-light' style='color: #535A76;' href='locaisUser.php'>Ver Locais</a>";
                 echo "    </div>";
                 echo "  </div>";

@@ -100,10 +100,17 @@
                 echo "<td>" . $cod . "</td>";
                 echo "<td>" . $row["nome_tipo"] . "</td>";
                 echo "<td>" . $row["nome"] . "</td>";
-                if ($row['avatar']) {
-                    echo "<td><img id='imagemSelecionada' class='rounded-circle' src='data:image/png;base64," . base64_encode($row['avatar']) . " style='max-width: 40px;' /></td>";
+                if ($row['avatar']) {?>
+                    <td>
+                        <img id="imagemSelecionada" class="rounded-circle" src="data:image/png;base64,<?= base64_encode($row['avatar']) ?>" style='max-width: 40px;'  />
+                    </td>
+                    <?php
                 } else {
-                    echo "<td><img id='imagemSelecionada' class='rounded-circle' src='../../resources/do-utilizador.png' style='max-width: 40px;' /></td>";
+                    ?>
+                    <td>
+                        <img id="imagemSelecionada" class="rounded-circle" src="../../resources/do-utilizador.png" style='max-width: 40px;' />
+                    </td>
+                    <?php 
                 }
                 echo "<td>" . $row["email"] . "</td>";
                 echo "<td>" . $row["telefone"] . "</td>";

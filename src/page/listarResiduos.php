@@ -96,10 +96,17 @@
                     echo "<tr>";
                     echo "<td>" . $cod . "</td>";
                     echo "<td>" . $row["nome"] . "</td>";
-                    if ($row['imagem']) {
-                        echo "<td><img id='imagemSelecionada' class='rounded-circle' src='data:image/png;base64," . base64_encode($row['imagem']) . "style='max-width: 40px;'  /></td>";
+                    if ($row['imagem']) {?>
+                        <td>
+                            <img id="imagemSelecionada" class="rounded-circle" src="data:image/png;base64,<?= base64_encode($row['imagem']) ?>" style='max-width: 40px;'  />
+                        </td>
+                        <?php
                     } else {
-                        echo "<td><img id='imagemSelecionada' class='rounded-circle' src='../../resources/fotoIcon.jpg' style='max-width: 40px;' /></td>";
+                        ?>
+                        <td>
+                            <img id="imagemSelecionada" class="rounded-circle" src="../../resources/fotoIcon.jpg" style='max-width: 40px;' />
+                        </td>
+                        <?php 
                     }
                     echo "<td>" . $row["descricao"] . "</td>";
                     echo "<td>" . $row["toxico"] . "</td>";

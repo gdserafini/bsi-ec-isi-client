@@ -69,12 +69,12 @@ if ($conn->connect_error) {
 $searchValue = '';
 if (!empty($_GET['search'])) {
     $searchValue = $_GET['search'];
-    $sql = "SELECT id_local_descarte, nome, imagem, endereco, referencia, horario_abertura, horario_fechamento, tipo, fk_Empresa_id, nome_fantasia
+    $sql = "SELECT id_local_descarte, link, nome, imagem, endereco, referencia, horario_abertura, horario_fechamento, tipo, fk_Empresa_id, nome_fantasia
     FROM LocalDescarte AS LD INNER JOIN Empresa AS E ON (LD.fk_Empresa_id = E.id_empresa)
             WHERE nome LIKE '%$searchValue%' OR endereco LIKE '%$searchValue%' OR referencia LIKE '%$searchValue%' OR tipo LIKE '%$searchValue%' OR nome_fantasia LIKE '%$searchValue%' 
             ORDER BY nome";
 } else {
-    $sql = "SELECT id_local_descarte, nome, imagem, endereco, referencia, horario_abertura, horario_fechamento, tipo, fk_Empresa_id, nome_fantasia
+    $sql = "SELECT id_local_descarte, link, nome, imagem, endereco, referencia, horario_abertura, horario_fechamento, tipo, fk_Empresa_id, nome_fantasia
     FROM LocalDescarte AS LD INNER JOIN Empresa AS E ON (LD.fk_Empresa_id = E.id_empresa)
     ORDER BY nome";
 }
@@ -95,9 +95,9 @@ if (!empty($_GET['search'])) {
             echo "  <div class='card'>";
             echo "    <img src='" . ($row['imagem'] ? "data:image/png;base64," . base64_encode($row['imagem']) : "../../resources/fotoIcon.jpg") . "' class='card-img-top' alt='...'>";
             echo "    <div class='card-body'>";
-            echo "      <h5 class='card-title'>" . $row['nome'] . "</h5>";
-            echo "      <p class='card-text'>" . $row['tipo'] . '<br>' . $row['nome_fantasia'] . "</p>";
-            echo "      <a class='btn btn-light' style='color: #535A76;'  href='local.php?id=" . $row['id_local_descarte'] . "'>Ver mais</a>";
+            echo "      <h5 style='color: #535A76;' class='card-title'>" . $row['nome'] . "</h5>";
+            echo "       <p style='color: #535A76;' class='card-text'>" . "Endereço: " . $row['endereco'] ."<br>Empresa: " . $row['nome_fantasia'] . "<br> Referência: " .  $row['referencia'] . "<br> Horário: " . $row['horario_abertura'] . " - " . $row['horario_fechamento'] . "<br>Tipo de resíduo: " . $row['tipo'] . "</p>";
+            echo "      <a class='btn btn-light' style='color: #535A76;'  href='" . $row['link'] . "' target='_blank'>Ir até o Local</a>";
             echo "    </div>";
             echo "  </div>";
             echo "</div>";
