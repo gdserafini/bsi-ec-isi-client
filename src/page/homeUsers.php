@@ -102,10 +102,23 @@ if (session_status() === PHP_SESSION_NONE) {
 </div>
 <br><br>
 <?php
-$sql = "SELECT id_empresa, nome_fantasia, avatar, bairro FROM Empresa ORDER BY nome_fantasia";
+$searchValue = '';
+if (!empty($_GET['search'])) {
+    $searchValue = $_GET['search'];
+    $sql = "SELECT id_empresa, nome_fantasia, avatar, bairro 
+        FROM Empresa WHERE nome_fantasia LIKE '%$searchValue%' OR bairro LIKE '%$searchValue%'
+        ORDER BY nome_fantasia";
+} else {
+    $sql = "SELECT id_empresa, nome_fantasia, avatar, bairro
+    FROM Empresa ORDER BY nome_fantasia";
+}
 ?>
 <div class="container text-bg-light text-center rounded shadow-sm p-2 mb-5">
     <h2 style="color: #535A76;">Empresas</h2><br>
+    <form class="d-flex" role="search" onsubmit='event.preventDefault(); searchData();'>
+        <input class="form-control me-2" id="search" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-secondary" type="submit">Search</button>
+    </form><br>
     <?php
     if ($result = mysqli_query($conn, $sql)) {
         echo "<div class='row row-cols-1 row-cols-md-4 g-6'>";
@@ -161,5 +174,18 @@ $sql = "SELECT id_empresa, nome_fantasia, avatar, bairro FROM Empresa ORDER BY n
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script type="text/javascript" src="../script/script.js"></script>
+<script>
+        document.getElementById('search').addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                searchData();
+            }
+        });
+
+        function searchData() {
+            const search = document.getElementById('search').value;
+            window.location.href = 'homeUsers.php?search=' + search;
+        }
+    </script>
 </body>
 </html>
